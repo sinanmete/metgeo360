@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tour start="node2" appversion="7.1.11" apprev="21010" hassounds="0">
+  <panorama id="node8">
+    <input levelingroll="0" leveltileurl="tiles/node8/cf_%c/l_%l/c_%x/tile_%y.jpg" height="2992" levelbias="0.400" overlap="1" width="2992" levelingpitch="0" levelbiashidpi="1.000" leveltilesize="510">
+      <level predecode="0" height="2992" preload="0" width="2992"/>
+      <level predecode="0" height="1496" preload="0" width="1496"/>
+      <level predecode="0" height="748" preload="0" width="748"/>
+      <level predecode="1" height="374" preload="1" width="374"/>
+      <preview strip="1" color="0x808080"/>
+    </input>
+    <view pannorth="-21.2027" fovmode="2">
+      <start pan="-167.146" tilt="0.90686" fov="100" projection="4"/>
+      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
+      <min pan="0" tilt="-90" fovpixel="2"/>
+      <max fovfisheye="360" scaletofit="1" pan="360" tilt="90" fov="140" fovstereographic="330"/>
+    </view>
+    <userdata title="Enkay İnşaat" altitude="0.00" description="" author="" heading="-21.2027" streetviewlink="https://www.google.com/maps/@37.8507196,32.5117126,3a,75y,145.94h,90t/data=!3m4!1e1!3m2!1sCIABIhAO_Fm4cOtTIla_fgG3Ofp4!2e10" nodeid="node8" longitude="32.51171261" latitude="37.85071958" tags="enkay" customnodeid="" info="" comment="" datetime="10.01.2026 16:30" copyright="" source=""/>
+    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
+      <label textalpha="1" background="1" enabled="1" backgroundalpha="1" borderalpha="1" height="20" bordercolor="0x000000" width="180" border="1" textcolor="0x000000" backgroundcolor="0xffffff" borderradius="1" wordwrap="1"/>
+      <polystyle mode="0" backgroundcolor="0x0000ff" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" handcursor="1"/>
+      <hotspot title="Enkay İnşaat" id="Point01" pan="-153.459" tilt="0" description="" distance="3.50066" target="$fwd" skinid="ht_node" url="{node7}"/>
+    </hotspots>
+    <media/>
+    <transition zoomin="0" zoomafterinfov="140" enabled="1" softedge="0" blendcolor="0x000000" zoomafteroutfov="40" zoomoutpause="1" zoomout="0" zoomspeed="2" delay="none" type="crossdissolve" blendtime="1" zoomfov="40"/>
+    <animation useinautorotation="0" clipsrandom="0" animsequence="Animation01" syncanimationwithvideo="0"/>
+    <control speedwheel="1" invertcontrol="1" hideabout="0" dblclickfullscreen="0" invertwheel="0" contextvr="1" lockedwheel="0" lockedkeyboardzoom="0" simulatemass="1" zoomcentercursor="1" rubberband="0" lockedkeyboard="0" contextfullscreen="1" contextprojections="0" sensitivity="8" lockedmouse="0"/>
+  </panorama>
+  <panorama id="node7">
+    <input levelingroll="0" leveltileurl="tiles/node7/cf_%c/l_%l/c_%x/tile_%y.jpg" height="2992" levelbias="0.400" overlap="1" width="2992" levelingpitch="0" levelbiashidpi="1.000" leveltilesize="510">
+      <level predecode="0" height="2992" preload="0" width="2992"/>
+      <level predecode="0" height="1496" preload="0" width="1496"/>
+      <level predecode="0" height="748" preload="0" width="748"/>
+      <level predecode="1" height="374" preload="1" width="374"/>
+      <preview strip="1" color="0x808080"/>
+    </input>
+    <view pannorth="-37.1294" fovmode="2">
+      <start pan="-178.638" tilt="2.16595" fov="100" projection="4"/>
+      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
+      <min pan="0" tilt="-90" fovpixel="2"/>
+      <max fovfisheye="360" scaletofit="1" pan="360" tilt="90" fov="140" fovstereographic="330"/>
+    </view>
+    <userdata title="Enkay İnşaat" altitude="0.00" description="" author="" heading="-37.1294" streetviewlink="https://www.google.com/maps/@37.8506984,32.5117421,3a,75y,141.51h,90t/data=!3m4!1e1!3m2!1sCIABIhBj-MB_-wbM83UEnSY9_F48!2e10" nodeid="node7" longitude="32.51174212" latitude="37.85069841" tags="enkay" customnodeid="" info="" comment="" datetime="10.01.2026 16:30" copyright="" source=""/>
+    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
+      <label textalpha="1" background="1" enabled="1" backgroundalpha="1" borderalpha="1" height="20" bordercolor="0x000000" width="180" border="1" textcolor="0x000000" backgroundcolor="0xffffff" borderradius="1" wordwrap="1"/>
+      <polystyle mode="0" backgroundcolor="0x0000ff" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" handcursor="1"/>
+      <hotspot title="Enkay İnşaat" id="Point01" pan="10.6146" tilt="0" description="" distance="3.50066" target="$fwd" skinid="ht_node" url="{node8}"/>
+      <hotspot title="Enkay İnşaat" id="Point02" pan="-166.947" tilt="0" description="" distance="4.13805" target="$fwd" skinid="ht_node" url="{node4}"/>
+    </hotspots>
+    <media/>
+    <transition zoomin="0" zoomafterinfov="140" enabled="1" softedge="0" blendcolor="0x000000" zoomafteroutfov="40" zoomoutpause="1" zoomout="0" zoomspeed="2" delay="none" type="crossdissolve" blendtime="1" zoomfov="40"/>
+    <animation useinautorotation="0" clipsrandom="0" animsequence="Animation01" syncanimationwithvideo="0"/>
+    <control speedwheel="1" invertcontrol="1" hideabout="0" dblclickfullscreen="0" invertwheel="0" contextvr="1" lockedwheel="0" lockedkeyboardzoom="0" simulatemass="1" zoomcentercursor="1" rubberband="0" lockedkeyboard="0" contextfullscreen="1" contextprojections="0" sensitivity="8" lockedmouse="0"/>
+  </panorama>
+  <panorama id="node4">
+    <input levelingroll="0" leveltileurl="tiles/node4/cf_%c/l_%l/c_%x/tile_%y.jpg" height="2992" levelbias="0.400" overlap="1" width="2992" levelingpitch="0" levelbiashidpi="1.000" leveltilesize="510">
+      <level predecode="0" height="2992" preload="0" width="2992"/>
+      <level predecode="0" height="1496" preload="0" width="1496"/>
+      <level predecode="0" height="748" preload="0" width="748"/>
+      <level predecode="1" height="374" preload="1" width="374"/>
+      <preview strip="1" color="0x808080"/>
+    </input>
+    <view pannorth="140.151" fovmode="2">
+      <start pan="3.8886" tilt="-5.37123" fov="100" projection="4"/>
+      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
+      <min pan="0" tilt="-90" fovpixel="2"/>
+      <max fovfisheye="360" scaletofit="1" pan="360" tilt="90" fov="140" fovstereographic="330"/>
+    </view>
+    <userdata title="Enkay İnşaat" altitude="0.00" description="" author="" heading="140.151" streetviewlink="https://www.google.com/maps/@37.8506746,32.5117783,3a,75y,136.26h,90t/data=!3m4!1e1!3m2!1sCIABIhAZylKIA1nSX8pyvFiMbDrQ!2e10" nodeid="node4" longitude="32.51177832" latitude="37.85067458" tags="enkay" customnodeid="" info="" comment="" datetime="10.01.2026 16:28" copyright="" source=""/>
+    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
+      <label textalpha="1" background="1" enabled="1" backgroundalpha="1" borderalpha="1" height="20" bordercolor="0x000000" width="180" border="1" textcolor="0x000000" backgroundcolor="0xffffff" borderradius="1" wordwrap="1"/>
+      <polystyle mode="0" backgroundcolor="0x0000ff" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" handcursor="1"/>
+      <hotspot title="Enkay İnşaat" id="Point02" pan="190.334" tilt="0" description="" distance="4.13805" target="$fwd" skinid="ht_node" url="{node7}"/>
+      <hotspot title="Enkay İnşaat" id="Point01" pan="275.157" tilt="0" description="" distance="3.49696" target="$fwd" skinid="ht_node" url="{node5}"/>
+      <hotspot title="Enkay İnşaat" id="Point03" pan="99.0492" tilt="0" description="" distance="3.67284" target="$fwd" skinid="ht_node" url="{node6}"/>
+      <hotspot title="Enkay İnşaat" id="Point04" pan="99.0492" tilt="0" description="" distance="3.67284" target="$fwd" skinid="ht_node" url="{node6}"/>
+      <hotspot title="Enkay İnşaat" id="Point05" pan="12.7094" tilt="0" description="" distance="4.74627" target="$fwd" skinid="ht_node" url="{node2}"/>
+    </hotspots>
+    <media/>
+    <transition zoomin="0" zoomafterinfov="140" enabled="1" softedge="0" blendcolor="0x000000" zoomafteroutfov="40" zoomoutpause="1" zoomout="0" zoomspeed="2" delay="none" type="crossdissolve" blendtime="1" zoomfov="40"/>
+    <animation useinautorotation="0" clipsrandom="0" animsequence="Animation01" syncanimationwithvideo="0"/>
+    <control speedwheel="1" invertcontrol="1" hideabout="0" dblclickfullscreen="0" invertwheel="0" contextvr="1" lockedwheel="0" lockedkeyboardzoom="0" simulatemass="1" zoomcentercursor="1" rubberband="0" lockedkeyboard="0" contextfullscreen="1" contextprojections="0" sensitivity="8" lockedmouse="0"/>
+  </panorama>
+  <panorama id="node5">
+    <input levelingroll="0" leveltileurl="tiles/node5/cf_%c/l_%l/c_%x/tile_%y.jpg" height="2992" levelbias="0.400" overlap="1" width="2992" levelingpitch="0" levelbiashidpi="1.000" leveltilesize="510">
+      <level predecode="0" height="2992" preload="0" width="2992"/>
+      <level predecode="0" height="1496" preload="0" width="1496"/>
+      <level predecode="0" height="748" preload="0" width="748"/>
+      <level predecode="1" height="374" preload="1" width="374"/>
+      <preview strip="1" color="0x808080"/>
+    </input>
+    <view pannorth="-43.9485" fovmode="2">
+      <start pan="102.088" tilt="-15.4511" fov="100" projection="4"/>
+      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
+      <min pan="0" tilt="-90" fovpixel="2"/>
+      <max fovfisheye="360" scaletofit="1" pan="360" tilt="90" fov="140" fovstereographic="330"/>
+    </view>
+    <userdata title="Enkay İnşaat" altitude="0.00" description="" author="" heading="-43.9485" streetviewlink="https://www.google.com/maps/@37.8506523,32.5117502,3a,75y,213.96h,90t/data=!3m4!1e1!3m2!1sCIABIhBsd16vupQLTgE1FKEHBk7a!2e10" nodeid="node5" longitude="32.51175016" latitude="37.85065234" tags="enkay" customnodeid="" info="" comment="" datetime="10.01.2026 16:29" copyright="" source=""/>
+    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
+      <label textalpha="1" background="1" enabled="1" backgroundalpha="1" borderalpha="1" height="20" bordercolor="0x000000" width="180" border="1" textcolor="0x000000" backgroundcolor="0xffffff" borderradius="1" wordwrap="1"/>
+      <polystyle mode="0" backgroundcolor="0x0000ff" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" handcursor="1"/>
+      <hotspot title="Enkay İnşaat" id="Point01" pan="-88.9427" tilt="0" description="" distance="3.49696" target="$fwd" skinid="ht_node" url="{node4}"/>
+    </hotspots>
+    <media/>
+    <transition zoomin="0" zoomafterinfov="140" enabled="1" softedge="0" blendcolor="0x000000" zoomafteroutfov="40" zoomoutpause="1" zoomout="0" zoomspeed="2" delay="none" type="crossdissolve" blendtime="1" zoomfov="40"/>
+    <animation useinautorotation="0" clipsrandom="0" animsequence="Animation01" syncanimationwithvideo="0"/>
+    <control speedwheel="1" invertcontrol="1" hideabout="0" dblclickfullscreen="0" invertwheel="0" contextvr="1" lockedwheel="0" lockedkeyboardzoom="0" simulatemass="1" zoomcentercursor="1" rubberband="0" lockedkeyboard="0" contextfullscreen="1" contextprojections="0" sensitivity="8" lockedmouse="0"/>
+  </panorama>
+  <panorama id="node6">
+    <input levelingroll="0" leveltileurl="tiles/node6/cf_%c/l_%l/c_%x/tile_%y.jpg" height="2992" levelbias="0.400" overlap="1" width="2992" levelingpitch="0" levelbiashidpi="1.000" leveltilesize="510">
+      <level predecode="0" height="2992" preload="0" width="2992"/>
+      <level predecode="0" height="1496" preload="0" width="1496"/>
+      <level predecode="0" height="748" preload="0" width="748"/>
+      <level predecode="1" height="374" preload="1" width="374"/>
+      <preview strip="1" color="0x808080"/>
+    </input>
+    <view pannorth="133.648" fovmode="2">
+      <start pan="83.8408" tilt="-2.0165" fov="100" projection="4"/>
+      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
+      <min pan="0" tilt="-90" fovpixel="2"/>
+      <max fovfisheye="360" scaletofit="1" pan="360" tilt="90" fov="140" fovstereographic="330"/>
+    </view>
+    <userdata title="Enkay İnşaat" altitude="0.00" description="" author="" heading="133.648" streetviewlink="https://www.google.com/maps/@37.8506995,32.5118058,3a,75y,49.81h,90t/data=!3m4!1e1!3m2!1sCIABIhAKaQY7WtZChzxFvCqu40Os!2e10" nodeid="node6" longitude="32.51180582" latitude="37.85069947" tags="enkay" customnodeid="" info="" comment="" datetime="10.01.2026 16:29" copyright="" source=""/>
+    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
+      <label textalpha="1" background="1" enabled="1" backgroundalpha="1" borderalpha="1" height="20" bordercolor="0x000000" width="180" border="1" textcolor="0x000000" backgroundcolor="0xffffff" borderradius="1" wordwrap="1"/>
+      <polystyle mode="0" backgroundcolor="0x0000ff" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" handcursor="1"/>
+      <hotspot title="Enkay İnşaat" id="Point03" pan="272.546" tilt="0" description="" distance="3.67284" target="$fwd" skinid="ht_node" url="{node4}"/>
+    </hotspots>
+    <media/>
+    <transition zoomin="0" zoomafterinfov="140" enabled="1" softedge="0" blendcolor="0x000000" zoomafteroutfov="40" zoomoutpause="1" zoomout="0" zoomspeed="2" delay="none" type="crossdissolve" blendtime="1" zoomfov="40"/>
+    <animation useinautorotation="0" clipsrandom="0" animsequence="Animation01" syncanimationwithvideo="0"/>
+    <control speedwheel="1" invertcontrol="1" hideabout="0" dblclickfullscreen="0" invertwheel="0" contextvr="1" lockedwheel="0" lockedkeyboardzoom="0" simulatemass="1" zoomcentercursor="1" rubberband="0" lockedkeyboard="0" contextfullscreen="1" contextprojections="0" sensitivity="8" lockedmouse="0"/>
+  </panorama>
+  <panorama id="node3">
+    <input levelingroll="0" leveltileurl="tiles/node3/cf_%c/l_%l/c_%x/tile_%y.jpg" height="2992" levelbias="0.400" overlap="1" width="2992" levelingpitch="0" levelbiashidpi="1.000" leveltilesize="510">
+      <level predecode="0" height="2992" preload="0" width="2992"/>
+      <level predecode="0" height="1496" preload="0" width="1496"/>
+      <level predecode="0" height="748" preload="0" width="748"/>
+      <level predecode="1" height="374" preload="1" width="374"/>
+      <preview strip="1" color="0x808080"/>
+    </input>
+    <view pannorth="-51.0806" fovmode="2">
+      <start pan="179.225" tilt="-3.68274" fov="100" projection="4"/>
+      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
+      <min pan="0" tilt="-90" fovpixel="2"/>
+      <max fovfisheye="360" scaletofit="1" pan="360" tilt="90" fov="140" fovstereographic="330"/>
+    </view>
+    <userdata title="Enkay İnşaat" altitude="0.00" description="" author="" heading="-51.0806" streetviewlink="https://www.google.com/maps/@37.8506211,32.5117931,3a,75y,129.69h,90t/data=!3m4!1e1!3m2!1sCIABIhAeOvpDrJflVHtuinCYpZNT!2e10" nodeid="node3" longitude="32.51179308" latitude="37.85062110" tags="enkay" customnodeid="" info="" comment="" datetime="10.01.2026 16:27" copyright="" source=""/>
+    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
+      <label textalpha="1" background="1" enabled="1" backgroundalpha="1" borderalpha="1" height="20" bordercolor="0x000000" width="180" border="1" textcolor="0x000000" backgroundcolor="0xffffff" borderradius="1" wordwrap="1"/>
+      <polystyle mode="0" backgroundcolor="0x0000ff" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" handcursor="1"/>
+      <hotspot title="Enkay İnşaat" id="Point01" pan="-90.0078" tilt="0" description="" distance="3.93498" target="$fwd" skinid="ht_node" url="{node2}"/>
+    </hotspots>
+    <media/>
+    <transition zoomin="0" zoomafterinfov="140" enabled="1" softedge="0" blendcolor="0x000000" zoomafteroutfov="40" zoomoutpause="1" zoomout="0" zoomspeed="2" delay="none" type="crossdissolve" blendtime="1" zoomfov="40"/>
+    <animation useinautorotation="0" clipsrandom="0" animsequence="Animation01" syncanimationwithvideo="0"/>
+    <control speedwheel="1" invertcontrol="1" hideabout="0" dblclickfullscreen="0" invertwheel="0" contextvr="1" lockedwheel="0" lockedkeyboardzoom="0" simulatemass="1" zoomcentercursor="1" rubberband="0" lockedkeyboard="0" contextfullscreen="1" contextprojections="0" sensitivity="8" lockedmouse="0"/>
+  </panorama>
+  <panorama id="node2">
+    <input levelingroll="0" leveltileurl="tiles/node2/cf_%c/l_%l/c_%x/tile_%y.jpg" height="2992" levelbias="0.400" overlap="1" width="2992" levelingpitch="0" levelbiashidpi="1.000" leveltilesize="510">
+      <level predecode="0" height="2992" preload="0" width="2992"/>
+      <level predecode="0" height="1496" preload="0" width="1496"/>
+      <level predecode="0" height="748" preload="0" width="748"/>
+      <level predecode="1" height="374" preload="1" width="374"/>
+      <preview strip="1" color="0x808080"/>
+    </input>
+    <view pannorth="155.089" fovmode="2">
+      <start pan="15.2305" tilt="-12.7442" fov="100" projection="4"/>
+      <flyin pan="-2" tilt="-90" fov="170" projection="9"/>
+      <min pan="0" tilt="-90" fovpixel="2"/>
+      <max fovfisheye="360" scaletofit="1" pan="360" tilt="90" fov="140" fovstereographic="330"/>
+    </view>
+    <userdata title="Enkay İnşaat" altitude="0.00" description="" author="" heading="155.089" streetviewlink="https://www.google.com/maps/@37.8506486,32.5118212,3a,75y,139.86h,90t/data=!3m4!1e1!3m2!1sCIABIhDm0AUmUtrd2YaEWQN4yGUM!2e10" nodeid="node2" longitude="32.51182124" latitude="37.85064863" tags="enkay" customnodeid="" info="" comment="" datetime="10.01.2026 16:27" copyright="" source=""/>
+    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
+      <label textalpha="1" background="1" enabled="1" backgroundalpha="1" borderalpha="1" height="20" bordercolor="0x000000" width="180" border="1" textcolor="0x000000" backgroundcolor="0xffffff" borderradius="1" wordwrap="1"/>
+      <polystyle mode="0" backgroundcolor="0x0000ff" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" handcursor="1"/>
+      <hotspot title="Enkay İnşaat" id="Point01" pan="296.162" tilt="0" description="" distance="3.93498" target="$fwd" skinid="ht_node" url="{node3}"/>
+      <hotspot title="Enkay İnşaat" id="Point02" pan="118.779" tilt="0" description="" distance="3.58081" target="$fwd" skinid="ht_node" url="{node9}"/>
+      <hotspot title="Enkay İnşaat" id="Point03" pan="207.647" tilt="0" description="" distance="4.74627" target="$fwd" skinid="ht_node" url="{node4}"/>
+    </hotspots>
+    <media/>
+    <transition zoomin="0" zoomafterinfov="140" enabled="1" softedge="0" blendcolor="0x000000" zoomafteroutfov="40" zoomoutpause="1" zoomout="0" zoomspeed="2" delay="none" type="crossdissolve" blendtime="1" zoomfov="40"/>
+    <animation useinautorotation="0" clipsrandom="0" animsequence="Animation01" syncanimationwithvideo="0"/>
+    <control speedwheel="1" invertcontrol="1" hideabout="0" dblclickfullscreen="0" invertwheel="0" contextvr="1" lockedwheel="0" lockedkeyboardzoom="0" simulatemass="1" zoomcentercursor="1" rubberband="0" lockedkeyboard="0" contextfullscreen="1" contextprojections="0" sensitivity="8" lockedmouse="0"/>
+  </panorama>
+  <panorama id="node9">
+    <input levelingroll="0" leveltileurl="tiles/node9/cf_%c/l_%l/c_%x/tile_%y.jpg" height="2992" levelbias="0.400" overlap="1" width="2992" levelingpitch="0" levelbiashidpi="1.000" leveltilesize="510">
+      <level predecode="0" height="2992" preload="0" width="2992"/>
+      <level predecode="0" height="1496" preload="0" width="1496"/>
+      <level predecode="0" height="748" preload="0" width="748"/>
+      <level predecode="1" height="374" preload="1" width="374"/>
+      <preview strip="1" color="0x808080"/>
+    </input>
+    <view pannorth="-119.735" fovmode="2">
+      <start pan="100.672" tilt="-12.3179" fov="100" projection="4"/>
+      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
+      <min pan="0" tilt="-90" fovpixel="2"/>
+      <max fovfisheye="360" scaletofit="1" pan="360" tilt="90" fov="140" fovstereographic="330"/>
+    </view>
+    <userdata title="Enkay İnşaat" description="" author="" heading="-119.735" streetviewlink="https://www.google.com/maps/@37.8506746,32.5118454,3a,75y,139.59h,90t/data=!3m4!1e1!3m2!1sCIABIhCl-w_J5FLvH7dsIH95OXpN!2e10" nodeid="node9" longitude="32.51184539" latitude="37.85067458" tags="Downloads" customnodeid="" info="" comment="" datetime="" copyright="" source=""/>
+    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
+      <label textalpha="1" background="1" enabled="1" backgroundalpha="1" borderalpha="1" height="20" bordercolor="0x000000" width="180" border="1" textcolor="0x000000" backgroundcolor="0xffffff" borderradius="1" wordwrap="1"/>
+      <polystyle mode="0" backgroundcolor="0x0000ff" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" handcursor="1"/>
+      <hotspot title="Enkay İnşaat" id="Point02" pan="23.955" tilt="0" description="" distance="3.58081" target="$fwd" skinid="ht_node" url="{node2}"/>
+    </hotspots>
+    <media/>
+    <transition zoomin="0" zoomafterinfov="140" enabled="1" softedge="0" blendcolor="0x000000" zoomafteroutfov="40" zoomoutpause="1" zoomout="0" zoomspeed="2" delay="none" type="crossdissolve" blendtime="1" zoomfov="40"/>
+    <animation useinautorotation="0" clipsrandom="0" animsequence="Animation01" syncanimationwithvideo="0"/>
+    <control speedwheel="1" invertcontrol="1" hideabout="0" dblclickfullscreen="0" invertwheel="0" contextvr="1" lockedwheel="0" lockedkeyboardzoom="0" simulatemass="1" zoomcentercursor="1" rubberband="0" lockedkeyboard="0" contextfullscreen="1" contextprojections="0" sensitivity="8" lockedmouse="0"/>
+  </panorama>
+  <masternode>
+    <userdata title="" description="" tags="" author="" comment="" copyright=""/>
+    <animationsequences>
+      <sequence title="Animation01"/>
+    </animationsequences>
+  </masternode>
+</tour>
