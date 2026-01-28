@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tour apprev="21010" appversion="7.1.11" start="node18" hassounds="0">
+  <panorama id="node18">
+    <input height="2048" leveltilesize="510" overlap="1" levelingpitch="0" width="2048" leveltileurl="tiles/node18/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2048" preload="0" width="2048" predecode="0"/>
+      <level height="1024" preload="0" width="1024" predecode="0"/>
+      <level height="512" preload="0" width="512" predecode="0"/>
+      <level height="256" preload="1" width="256" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="16.4116">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="16.4116" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:20" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.9019821,32.477136,3a,75y,16.41h,90t/data=!3m4!1e1!3m2!1sCIABIhDiYu2xnFuRz21HzNCyYe6G!2e10" longitude="32.47713597" nodeid="node18" title="Tepegözü" latitude="37.90198212" altitude="115.40"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point02" target="$fwd" tilt="-83.64" url="{node3}" pan="-288.73" distance="3.82152" title="Sokak Girişi"/>
+      <hotspot skinid="ht_image_1" description="" id="Point03" pan="-240.36" target="" tilt="-6.68" title="Akıncılar Parkı" url="images/orig.jpg"/>
+      <hotspot skinid="ht_image_1" description="" id="Point04" pan="-275.31" target="" tilt="1.06" title="Sille" url="images/caption.jpg"/>
+      <hotspot skinid="ht_image_1" description="" id="Point01" pan="-157.39" target="" tilt="-6.14" title="Dedeman Otel" url="images/orig 1.jpg"/>
+      <hotspot skinid="ht_image_1" description="" id="Point06" pan="-123.73" target="" tilt="-7.05" title="Anemon Otel" url="images/indir.jpg"/>
+      <hotspot skinid="ht_image_1" description="" id="Point07" pan="-106.71" target="" tilt="-21.19" title="" url="images/konya-il-nufus-ve-vatandaslik-mudurlugu-374938.jpg"/>
+      <hotspot skinid="ht_image_1" description="" id="Point05" pan="-349.55" target="" tilt="-75.79" title="ÖZEL Neşeli Saatler Kreş ve Anaokulu" url="images/WhatsApp Image 2026-01-29 at 01.12.12.jpeg"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node3">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node3/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="177.365">
+      <start fov="100" pan="160.541" projection="4" tilt="-0.121062"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="177.365" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:15" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.9020144,32.4771508,3a,75y,16.82h,90t/data=!3m4!1e1!3m2!1sCIABIhAkmgNEQaR_AaVe4YHqNQH2!2e10" longitude="32.47715078" nodeid="node3" title="Sokak Girişi" latitude="37.90201444" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-24.17" url="{node1}" pan="-189.24" distance="4.68425" title="Ön Bahçe"/>
+      <hotspot skinid="ht_node_1" description="" id="Point02" target="$fwd" tilt="3.94" url="{node18}" pan="-16.52" distance="3.82152" title="Tepegözü"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node1">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node1/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="16.4274">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="1.1" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="16.4274" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:14" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.9020514,32.4771765,3a,75y,16.43h,90t/data=!3m4!1e1!3m2!1sCIABIhBxI4IKcqyBLgctNejzQSmD!2e10" longitude="32.47717649" nodeid="node1" title="Ön Bahçe" latitude="37.90205136" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-24.39" url="{node17}" pan="-0.659989" distance="8.922" title="Giriş Alanı"/>
+      <hotspot skinid="ht_node_1" description="" id="Point02" target="$fwd" tilt="-36.7" url="{node3}" pan="-181.44" distance="4.68425" title="Sokak Girişi"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node17">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node17/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="28.1653">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="28.1653" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:13" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.9021169,32.4772351,3a,75y,28.17h,90t/data=!3m4!1e1!3m2!1sCIABIhD3UvDUSy-oaueT_GzZHw0-!2e10" longitude="32.47723508" nodeid="node17" title="Giriş Alanı" latitude="37.90211694" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-26.05" url="{node12}" pan="-316.13" distance="6.37033" title="Koridor"/>
+      <hotspot skinid="ht_node_1" description="" id="Point02" target="$fwd" tilt="-23.42" url="{node11}" pan="-332.55" distance="4.87285" title="WC/Lavabo"/>
+      <hotspot skinid="ht_node_1" description="" id="Point03" target="" tilt="-27.46" url="{node5}" pan="-59" distance="6.00429" title="Koridor 2"/>
+      <hotspot skinid="ht_node_1" description="" id="Point04" target="$fwd" tilt="-31.82" url="{node1}" pan="-165.05" distance="8.922" title="Ön Bahçe"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node12">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node12/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="33.2046">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="33.2046" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:07" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.9021648,32.4771953,3a,75y,33.2h,90t/data=!3m4!1e1!3m2!1sCIABIhB-NC4IED_a-dRFXvgw0SNY!2e10" longitude="32.47719527" nodeid="node12" title="Koridor" latitude="37.90216485" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-46.68" url="{node9}" pan="-176.9" distance="4.14034" title="Eğitim Alanı2"/>
+      <hotspot skinid="ht_node_1" description="" id="Point02" target="$fwd" tilt="-51.52" url="{node10}" pan="-272.65" distance="5.5586" title="Uyku Odası"/>
+      <hotspot skinid="ht_node_1" description="" id="Point03" target="$fwd" tilt="-25.95" url="{node13}" pan="-354.71" distance="7.5673" title="Koridor 3"/>
+      <hotspot skinid="ht_node" description="" id="Point04" target="" tilt="-28.01" url="{node17}" pan="-113.71" distance="6.37033" title="Giriş Alanı"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node11">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node11/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="208.641">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="208.641" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:06" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.9021599,32.477224,3a,75y,208.64h,90t/data=!3m4!1e1!3m2!1sCIABIhAlWHmbKFwLmFU-kJQHObw5!2e10" longitude="32.47722399" nodeid="node11" title="WC/Lavabo" latitude="37.90215988" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-32.1" url="{node12}" pan="-10.75" distance="2.57977" title="Koridor"/>
+      <hotspot skinid="ht_node_1" description="" id="Point02" target="$fwd" tilt="-33.4" url="{node17}" pan="-341.15" distance="4.87285" title="Giriş Alanı"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node4">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node4/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="298.522">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="298.522" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:01" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.902095,32.4772685,3a,75y,298.52h,90t/data=!3m4!1e1!3m2!1sCIABIhDFzFsPLCBjulfB2DIc-CcB!2e10" longitude="32.47726849" nodeid="node4" title="Müdür" latitude="37.90209501" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-39.87" url="{node5}" pan="-73.99" distance="3.74023" title="Koridor 2"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node5">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node5/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="115.223">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="115.223" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:02" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.9021143,32.4773034,3a,75y,115.22h,90t/data=!3m4!1e1!3m2!1sCIABIhAknZPZSNA4k4ve1sp_5TrM!2e10" longitude="32.47730343" nodeid="node5" title="Koridor 2" latitude="37.90211428" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-37.86" url="{node4}" pan="-137.63" distance="3.74023" title="Müdür"/>
+      <hotspot skinid="ht_node_1" description="" id="Point02" target="$fwd" tilt="-37.23" url="{node7}" pan="-271.35" distance="2.53916" title="Koridor3"/>
+      <hotspot skinid="ht_node_1" description="" id="Point03" target="$fwd" tilt="-34.91" url="{node6}" pan="-24.01" distance="4.20724" title="Tuz Odası"/>
+      <hotspot skinid="ht_node_1" description="" id="Point04" target="$fwd" tilt="-30.8" url="{node17}" pan="-164.57" distance="6.00429" title="Giriş Alanı"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node6">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node6/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="122.761">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="122.761" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:03" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.9020815,32.4773273,3a,75y,122.76h,90t/data=!3m4!1e1!3m2!1sCIABIhB94uBHpk6vRUSPfmB4PZIg!2e10" longitude="32.47732729" nodeid="node6" title="Tuz Odası" latitude="37.90208146" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-33.93" url="{node5}" pan="-200.06" distance="4.20724" title="Koridor 2"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node7">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node7/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="41.7148">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="41.7148" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:03" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.9021257,32.4773285,3a,75y,41.71h,90t/data=!3m4!1e1!3m2!1sCIABIhAk07pqPNIDhtghfBrdhTTU!2e10" longitude="32.47732852" nodeid="node7" title="Koridor3" latitude="37.90212566" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-40.3" url="{node8}" pan="-168.15" distance="2.12236" title="Eğitim Alanı"/>
+      <hotspot skinid="ht_node_1" description="" id="Point02" target="$fwd" tilt="-37.78" url="{node5}" pan="-262.24" distance="2.53916" title="Koridor 2"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node8">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node8/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="17.9228">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="17.9228" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:04" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.902114,32.4773477,3a,75y,17.92h,90t/data=!3m4!1e1!3m2!1sCIABIhDPpRaMNBXy0DUIoZf7WVUO!2e10" longitude="32.47734771" nodeid="node8" title="Eğitim Alanı" latitude="37.90211404" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-34.22" url="{node7}" pan="-217.38" distance="2.12236" title="Koridor3"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node9">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node9/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="115.857">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="115.857" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:04" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.9021388,32.4771615,3a,75y,115.86h,90t/data=!3m4!1e1!3m2!1sCIABIhA1UpInySnAQMRtjJtFdLr_!2e10" longitude="32.47716154" nodeid="node9" title="Eğitim Alanı2" latitude="37.90213881" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-36.28" url="{node12}" pan="-294.84" distance="4.14034" title="Koridor"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node10">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node10/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="218.568">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="218.568" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:05" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.9022016,32.4771523,3a,75y,218.57h,90t/data=!3m4!1e1!3m2!1sCIABIhB_yOotICDPzpgmM0pel2s4!2e10" longitude="32.47715235" nodeid="node10" title="Uyku Odası" latitude="37.90220162" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-22.74" url="{node12}" pan="-334.33" distance="5.5586" title="Koridor"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node13">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node13/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="46.3263">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="46.3263" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:07" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.9022202,32.4772454,3a,75y,46.33h,90t/data=!3m4!1e1!3m2!1sCIABIhDKWPqNIb62hl7DqRrLpvbz!2e10" longitude="32.47724545" nodeid="node13" title="Koridor 3" latitude="37.90222020" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-28.26" url="{node12}" pan="-165.25" distance="7.5673" title="Koridor"/>
+      <hotspot skinid="ht_node_1" description="" id="Point02" target="$fwd" tilt="-28.58" url="{node14}" pan="-346.86" distance="4.76985" title="Koridor 4"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node14">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node14/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="23.9018">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="23.9018" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:08" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.9022539,32.4772792,3a,75y,23.9h,90t/data=!3m4!1e1!3m2!1sCIABIhDF2p9fQwrdaUGFoOBtpFLF!2e10" longitude="32.47727915" nodeid="node14" title="Koridor 4" latitude="37.90225386" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-29.36" url="{node13}" pan="-186.73" distance="4.76985" title="Koridor 3"/>
+      <hotspot skinid="ht_node_1" description="" id="Point02" target="$fwd" tilt="-31.14" url="{node16}" pan="-98.88" distance="7.15987" title="Yemek Odası"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node16">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node16/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="103.762">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="103.762" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:10" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.9022084,32.477337,3a,75y,103.76h,90t/data=!3m4!1e1!3m2!1sCIABIhDmkFBHWce_YUf9FZBqTbSl!2e10" longitude="32.47733698" nodeid="node16" title="Yemek Odası" latitude="37.90220843" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-34.26" url="{node15}" pan="-48.59" distance="5.34384" title="Eğitim Alanı3"/>
+      <hotspot skinid="ht_node_1" description="" id="Point02" target="$fwd" tilt="-49.7" url="{node14}" pan="-115.63" distance="7.15987" title="Koridor 4"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <panorama id="node15">
+    <input height="2992" leveltilesize="510" overlap="1" levelingpitch="0" width="2992" leveltileurl="tiles/node15/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbiashidpi="1.000" levelingroll="0" levelbias="0.400">
+      <level height="2992" preload="0" width="2992" predecode="0"/>
+      <level height="1496" preload="0" width="1496" predecode="0"/>
+      <level height="748" preload="0" width="748" predecode="0"/>
+      <level height="374" preload="1" width="374" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="2" pannorth="105.306">
+      <start fov="100" pan="0" projection="4" tilt="0"/>
+      <flyin fov="170" pan="0" projection="9" tilt="-90"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fov="140" fovstereographic="330" scaletofit="1" pan="360" fovfisheye="360" tilt="90"/>
+    </view>
+    <userdata heading="105.306" description="" customnodeid="" copyright="" info="" comment="" datetime="26.01.2026 17:09" tags="grntler" author="" source="" streetviewlink="https://www.google.com/maps/@37.9021713,32.4773757,3a,75y,105.31h,90t/data=!3m4!1e1!3m2!1sCIABIhDUOD6SRhzG3uUExppEiKdu!2e10" longitude="32.47737571" nodeid="node15" title="Eğitim Alanı3" latitude="37.90217134" altitude="0.00"/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label height="20" backgroundcolor="0xffffff" backgroundalpha="1" width="180" borderalpha="1" enabled="1" textcolor="0x000000" borderradius="1" background="1" bordercolor="0x000000" wordwrap="1" border="1" textalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" backgroundalpha="0.25098" bordercolor="0x0000ff" handcursor="1" mode="0" borderalpha="1"/>
+      <hotspot skinid="ht_node_1" description="" id="Point01" target="$fwd" tilt="-25.89" url="{node16}" pan="-164.17" distance="5.34384" title="Yemek Odası"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" zoomspeed="2" delay="none" enabled="1" zoomafterinfov="140" blendtime="0" zoomoutpause="1" blendcolor="0x000000" zoomfov="40" zoomafteroutfov="40" zoomin="0" zoomout="0" softedge="0"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control invertwheel="0" contextfullscreen="1" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" sensitivity="8" contextprojections="0" lockedwheel="0" lockedmouse="0" zoomcentercursor="1" rubberband="0" simulatemass="1" lockedkeyboard="0" invertcontrol="1" hideabout="0" contextvr="1"/>
+    <vr defaulthsscale="100" skinbuttonposition="0" toggleskinbutton="1"/>
+  </panorama>
+  <masternode>
+    <userdata author="" description="" copyright="" title="" comment="" tags=""/>
+    <animationsequences>
+      <sequence title="Animation01"/>
+    </animationsequences>
+  </masternode>
+</tour>
