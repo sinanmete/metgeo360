@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 7.1.11/21010
 // Filename: Sinan_orb.ggsk
-// Generated 2026-01-29T01:32:51
+// Generated 2026-01-29T02:19:14
 
 function pano2vrSkin(player,base) {
 	player.addVariable('vis_sounds_splashscreen', 2, false, { ignoreInState: 1  });
@@ -18239,19 +18239,20 @@ alert("The current view has been copied.");
 		}
 		el=me._ht_node_1=document.createElement('div');
 		el.ggId="ht_node_1";
+		el.ggDx=-500;
 		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1,def:'' };
 		el.ggVisible=true;
 		el.className="ggskin ggskin_hotspot ";
 		el.ggType='hotspot';
 		hs ='';
+		hs+='bottom : 580px;';
 		hs+='height : 0px;';
-		hs+='left : 100px;';
+		hs+='left : calc(50% - ((0px + 0px) / 2) - 500px);';
 		hs+='position : absolute;';
-		hs+='top : 220px;';
 		hs+='visibility : inherit;';
 		hs+='width : 0px;';
 		hs+='pointer-events:auto;';
-		hs+='transform-style: preserve-3d; transform:';
+		hs+='transform-style: preserve-3d; transform: transform: rotateX(255deg);';
 		el.setAttribute('style',hs);
 		el.style.transformOrigin='50% 50%';
 		me._ht_node_1.ggIsActive=function() {
@@ -18270,7 +18271,7 @@ alert("The current view has been copied.");
 		}
 		me._ht_node_1.onclick=function (e) {
 			player.setVariableValue('node_data', player._(me.hotspot.url));
-			player.moveTo(me.hotspot.pan,me.hotspot.tilt,"70","15.0000");
+			player.moveTo(me.hotspot.pan,me.hotspot.tilt,"10","5.0000");
 			player.setVariableValue('node_view', player._(me.hotspot.target));
 			skin._timer_node_change.ggTimeout=Number("0.25") * 1000.0;
 			skin._timer_node_change.ggTimestamp=skin.ggCurrentTime;
@@ -18320,12 +18321,12 @@ alert("The current view has been copied.");
 		el.className="ggskin ggskin_svg ";
 		el.ggType='svg';
 		hs ='';
+		hs+='bottom : 20px;';
 		hs+='cursor : pointer;';
 		hs+='height : 120px;';
 		hs+='left : calc(50% - ((120px + 0px) / 2) + 0px);';
 		hs+='opacity : 0.6;';
 		hs+='position : absolute;';
-		hs+='top : -140px;';
 		hs+='visibility : inherit;';
 		hs+='width : 120px;';
 		hs+='pointer-events:auto;';
@@ -18391,12 +18392,12 @@ alert("The current view has been copied.");
 		el.className="ggskin ggskin_svg ";
 		el.ggType='svg';
 		hs ='';
+		hs+='bottom : 20px;';
 		hs+='cursor : pointer;';
 		hs+='height : 120px;';
 		hs+='left : calc(50% - ((120px + 0px) / 2) + 0px);';
 		hs+='opacity : 0.4;';
 		hs+='position : absolute;';
-		hs+='top : -140px;';
 		hs+='visibility : inherit;';
 		hs+='width : 120px;';
 		hs+='pointer-events:auto;';
@@ -18461,12 +18462,12 @@ alert("The current view has been copied.");
 		el.className="ggskin ggskin_svg ";
 		el.ggType='svg';
 		hs ='';
+		hs+='bottom : 20px;';
 		hs+='cursor : pointer;';
 		hs+='height : 120px;';
 		hs+='left : calc(50% - ((120px + 0px) / 2) + 0px);';
 		hs+='opacity : 0.6;';
 		hs+='position : absolute;';
-		hs+='top : -140px;';
 		hs+='visibility : inherit;';
 		hs+='width : 120px;';
 		hs+='pointer-events:auto;';
@@ -18934,7 +18935,7 @@ this.__div.style.top = vs.height / 2 + "px";
 				me._tt_ht_3d.logicBlock_visible();
 			};
 		me.ggUse3d=true;
-		me.gg3dDistance=500;
+		me.gg3dDistance=100;
 			me.__div = me._ht_node_1;
 	};
 	function SkinElement_map_pin_Class(parentScope,ggParent) {
@@ -22757,10 +22758,10 @@ this.__div.style.top = vs.height / 2 + "px";
 					((player.getVariableValue('resp_phone') == false))
 				)
 			) {
-				let pdfInterval_69 = setInterval(() => {
+				let pdfInterval_151 = setInterval(() => {
 					if (skin._popup_pdf__pdf.contentWindow.PDFViewerApplication && skin._popup_pdf__pdf.contentWindow.PDFViewerApplication.initialized && skin._popup_pdf__pdf.contentWindow.PDFViewerApplication.downloadComplete && skin._popup_pdf__pdf.contentWindow.PDFViewerApplication.pdfViewer._pageViewsReady) {
 						skin._popup_pdf.ggSetCurrentPage(Number(player._(me.hotspot.target)));
-						clearInterval(pdfInterval_69);
+						clearInterval(pdfInterval_151);
 					}
 				}, 50);
 			}
@@ -22776,10 +22777,10 @@ this.__div.style.top = vs.height / 2 + "px";
 					((player.getVariableValue('resp_phone') == true))
 				)
 			) {
-				let pdfInterval_70 = setInterval(() => {
+				let pdfInterval_152 = setInterval(() => {
 					if (skin._pdf_popup_phone__pdf.contentWindow.PDFViewerApplication && skin._pdf_popup_phone__pdf.contentWindow.PDFViewerApplication.initialized && skin._pdf_popup_phone__pdf.contentWindow.PDFViewerApplication.downloadComplete && skin._pdf_popup_phone__pdf.contentWindow.PDFViewerApplication.pdfViewer._pageViewsReady) {
 						skin._pdf_popup_phone.ggSetCurrentPage(Number(player._(me.hotspot.target)));
-						clearInterval(pdfInterval_70);
+						clearInterval(pdfInterval_152);
 					}
 				}, 50);
 			}
