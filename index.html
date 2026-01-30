@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<link rel="icon" type="image/png" href="favicon.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetGeo360 | Çok Yakında</title>
+    <title>Metehan Harita Mühendisliği | MetGeo360</title>
     <style>
         body, html {
             height: 100%;
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         .bg {
-            /* Arkaplan resmi ayarları */
+            /* Arkaplan resmi ayarları - Mevcut resim korunuyor */
             background-image: url('arkaplan.jpg');
             height: 100%;
             background-position: center;
@@ -21,10 +19,9 @@
             background-size: cover;
             position: relative;
         }
-
         .overlay {
             /* Resmin üzerine hafif siyah perde çeker, yazı okunsun diye */
-            background-color: rgba(0,0,0, 0.6); 
+            background-color: rgba(0,0,0, 0.7); /* Biraz daha koyulaştırdım ki altın renk daha iyi patlasın */
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -34,32 +31,47 @@
             text-align: center;
             padding: 20px;
         }
-
+        /* Şirket Adı */
         h1 {
-            font-size: 4rem;
-            margin-bottom: 0.2em;
-            letter-spacing: 5px;
+            font-size: 3rem;
+            margin-bottom: 0.1em;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            font-weight: 300;
+            font-weight: 600;
+            color: #ffffff;
         }
-
+        /* Marka Adı - Altın Renkli */
         h2 {
-            font-size: 2rem;
+            font-size: 4rem;
             color: #f1c40f; /* Altın sarısı renk */
             margin-top: 0;
-            font-weight: 600;
+            margin-bottom: 0.2em;
+            font-weight: 700;
+            letter-spacing: 5px;
         }
-
-        p {
-            font-size: 1.2rem;
+        /* Durum Mesajı */
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 300;
             margin-top: 20px;
+            margin-bottom: 10px;
             color: #ddd;
+            text-transform: uppercase;
+        }
+        /* Yeni Slogan */
+        p {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            color: #ccc;
+            font-weight: 400;
         }
 
         /* Mobilde yazılar küçülsün */
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 1.5rem; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 2.5rem; }
+            h3 { font-size: 1.2rem; }
+            p { font-size: 1rem; }
         }
     </style>
 </head>
@@ -67,11 +79,13 @@
 
 <div class="bg">
     <div class="overlay">
-        <h1>METGEO360</h1>
-        <h2>ÇOK YAKINDA HİZMETİNİZDEYİZ</h2>
-        <p>Türkiye'nin Dijital İkizi Üzerinde Çalışıyoruz.</p>
+        <h1>METEHAN HARİTA MÜHENDİSLİĞİ</h1>
+        <h2>METGEO360</h2>
+        <h3>ÇOK YAKINDA...</h3>
+        <p>Sanal Gerçeklik ve Dijital İkizleriniz Burada.</p>
     </div>
 </div>
 
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3bad85a2ba0a4d0ab30f726cd28c80f7"}'></script>
 </body>
 </html>
