@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tour start="node12" hassounds="0" appversion="7.1.11" apprev="21010">
+  <panorama id="node12">
+    <input height="2048" leveltilesize="510" levelbiashidpi="1.000" levelbias="0.400" levelingpitch="0" overlap="1" width="2048" levelingroll="0" leveltileurl="tiles/node12/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level height="2048" width="2048" predecode="0" preload="0"/>
+      <level height="1024" width="1024" predecode="0" preload="0"/>
+      <level height="512" width="512" predecode="0" preload="0"/>
+      <level height="256" width="256" predecode="1" preload="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view pannorth="0" fovmode="2">
+      <start fov="100" projection="4" tilt="-36.7226" pan="-14.1626"/>
+      <flyin fov="170" projection="9" tilt="-90" pan="0"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max fov="140" fovstereographic="330" tilt="90" fovfisheye="360" pan="360" scaletofit="1"/>
+    </view>
+    <userdata customnodeid="" title="TepeGöz" altitude="135.90" description="" heading="0" datetime="28.01.2026 11:05" tags="grntler" nodeid="node12" latitude="37.867758" copyright="" source="" comment="" longitude="32.462325" info="" author=""/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label backgroundalpha="1" borderalpha="1" height="20" textcolor="0x000000" bordercolor="0x000000" borderradius="1" border="1" wordwrap="1" backgroundcolor="0xffffff" width="180" enabled="1" background="1" textalpha="1"/>
+      <polystyle handcursor="1" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" mode="0" backgroundcolor="0x0000ff"/>
+      <hotspot title="Sokak" description="" id="Point01" skinid="ht_node" url="{node13}" target="-168.8/4.6/108.5" tilt="-59.74" distance="81.6118" pan="-354.78"/>
+      <hotspot title="KONYA ŞEKER FABRİKASI" description="" tilt="-8.51" id="Point02" pan="-171.55" skinid="ht_image_1" url="images/kampus2.jpg" target=""/>
+      <hotspot title="Melihşah Çarşamba Pazarı" description="" tilt="-30.78" id="Point03" pan="-66.9" skinid="ht_image_1" url="images/meliksah_bit_pazari.jpg" target=""/>
+      <hotspot title="Necmettin Erbakan Üniversitesi Eğitim Fakültesi" description="" tilt="-6.49" id="Point04" pan="-37.27" skinid="ht_image_1" url="images/akef-giris.jpg" target=""/>
+      <hotspot title="Cadde Meram AVM" description="" tilt="-12.57" id="Point05" pan="-226.67" skinid="ht_image_1" url="images/images 1.jpg" target=""/>
+      <hotspot title="Melihşah Kafeler Sokağı" description="" tilt="-25.38" id="Point06" pan="-216.51" skinid="ht_image_1" url="images/Screenshot_2.jpg" target=""/>
+      <hotspot title="Meram Yeniyol Caddesi" description="" tilt="-22.55" id="Point07" pan="-238.78" skinid="ht_image_1" url="images/3911734279_d3b93d39b7_b.jpg" target=""/>
+      <hotspot title="Bubble Bee - Tea &amp; Coffee" description="" tilt="-54.81" id="Point08" pan="-0.28" skinid="ht_image_1" url="images/images 2.jpg" target=""/>
+    </hotspots>
+    <media/>
+    <transition softedge="0" zoomspeed="2" delay="none" blendcolor="0x000000" zoomout="0" zoomafteroutfov="40" zoomoutpause="1" enabled="1" zoomafterinfov="140" zoomfov="40" type="crossdissolve" zoomin="0" blendtime="1"/>
+    <animation useinautorotation="0" syncanimationwithvideo="0" animsequence="Animation01" clipsrandom="0"/>
+    <control contextprojections="0" dblclickfullscreen="0" invertcontrol="1" lockedkeyboard="0" lockedkeyboardzoom="0" speedwheel="1" contextfullscreen="1" hideabout="0" sensitivity="8" rubberband="0" lockedmouse="0" simulatemass="1" lockedwheel="0" zoomcentercursor="1" invertwheel="0" contextvr="1"/>
+  </panorama>
+  <panorama id="node13">
+    <input height="2992" leveltilesize="510" levelbiashidpi="1.000" levelbias="0.400" levelingpitch="0" overlap="1" width="2992" levelingroll="0" leveltileurl="tiles/node13/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level height="2992" width="2992" predecode="0" preload="0"/>
+      <level height="1496" width="1496" predecode="0" preload="0"/>
+      <level height="748" width="748" predecode="0" preload="0"/>
+      <level height="374" width="374" predecode="1" preload="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view pannorth="61.7755" fovmode="2">
+      <start fov="100" projection="4" tilt="6.9994" pan="-168.939"/>
+      <flyin fov="170" projection="9" tilt="-90" pan="0"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max fov="140" fovstereographic="330" tilt="90" fovfisheye="360" pan="360" scaletofit="1"/>
+    </view>
+    <userdata customnodeid="" title="Sokak" altitude="0.00" description="" heading="61.7755" datetime="28.01.2026 11:36" tags="grntler" nodeid="node13" latitude="37.86708919" copyright="" source="" comment="" longitude="32.46194208" info="" author=""/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label backgroundalpha="1" borderalpha="1" height="20" textcolor="0x000000" bordercolor="0x000000" borderradius="1" border="1" wordwrap="1" backgroundcolor="0xffffff" width="180" enabled="1" background="1" textalpha="1"/>
+      <polystyle handcursor="1" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" mode="0" backgroundcolor="0x0000ff"/>
+      <hotspot title="Kış Bahçesi" description="" id="Point01" skinid="ht_node" url="{node6}" target="-5.9/-6.0/108.2" tilt="-12.42" distance="2.73219" pan="-166.82"/>
+      <hotspot title="TepeGöz" description="" id="Point02" skinid="ht_node" url="{node12}" target="-3.5/-38.2/94.6" tilt="-2.09" distance="81.6118" pan="-2.01"/>
+    </hotspots>
+    <media/>
+    <transition softedge="0" zoomspeed="2" delay="none" blendcolor="0x000000" zoomout="0" zoomafteroutfov="40" zoomoutpause="1" enabled="1" zoomafterinfov="140" zoomfov="40" type="crossdissolve" zoomin="0" blendtime="1"/>
+    <animation useinautorotation="0" syncanimationwithvideo="0" animsequence="Animation01" clipsrandom="0"/>
+    <control contextprojections="0" dblclickfullscreen="0" invertcontrol="1" lockedkeyboard="0" lockedkeyboardzoom="0" speedwheel="1" contextfullscreen="1" hideabout="0" sensitivity="8" rubberband="0" lockedmouse="0" simulatemass="1" lockedwheel="0" zoomcentercursor="1" invertwheel="0" contextvr="1"/>
+  </panorama>
+  <panorama id="node6">
+    <input height="2992" leveltilesize="510" levelbiashidpi="1.000" levelbias="0.400" levelingpitch="0" overlap="1" width="2992" levelingroll="0" leveltileurl="tiles/node6/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level height="2992" width="2992" predecode="0" preload="0"/>
+      <level height="1496" width="1496" predecode="0" preload="0"/>
+      <level height="748" width="748" predecode="0" preload="0"/>
+      <level height="374" width="374" predecode="1" preload="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view pannorth="-125.677" fovmode="2">
+      <start fov="126.58" projection="4" tilt="-2.702" pan="-6.99497"/>
+      <flyin fov="170" projection="9" tilt="-90" pan="0"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max fov="140" fovstereographic="330" tilt="90" fovfisheye="360" pan="360" scaletofit="1"/>
+    </view>
+    <userdata customnodeid="" title="Kış Bahçesi" altitude="0.00" description="" heading="-125.677" datetime="28.01.2026 11:39" tags="grntler" nodeid="node6" latitude="37.86706982" copyright="" source="" comment="" longitude="32.46192293" info="" author=""/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label backgroundalpha="1" borderalpha="1" height="20" textcolor="0x000000" bordercolor="0x000000" borderradius="1" border="1" wordwrap="1" backgroundcolor="0xffffff" width="180" enabled="1" background="1" textalpha="1"/>
+      <polystyle handcursor="1" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" mode="0" backgroundcolor="0x0000ff"/>
+      <hotspot title="İç mekan" description="" id="Point01" skinid="ht_node" url="{node2}" target="-9.9/-4.3/108.5" tilt="-26.68" distance="3.58244" pan="-4.53"/>
+      <hotspot title="Kış Bahçesi" description="" id="Point02" skinid="ht_node" url="{node7}" target="-49.8/-8.0/108.2" tilt="-23" distance="1.63156" pan="-277.58"/>
+      <hotspot title="Sokak" description="" id="Point03" skinid="ht_node" url="{node13}" target="-169.7/2.5/108.5" tilt="-34.43" distance="2.73219" pan="-187.03"/>
+    </hotspots>
+    <media/>
+    <transition softedge="0" zoomspeed="2" delay="none" blendcolor="0x000000" zoomout="0" zoomafteroutfov="40" zoomoutpause="1" enabled="1" zoomafterinfov="140" zoomfov="40" type="crossdissolve" zoomin="0" blendtime="1"/>
+    <animation useinautorotation="0" syncanimationwithvideo="0" animsequence="Animation01" clipsrandom="0"/>
+    <control contextprojections="0" dblclickfullscreen="0" invertcontrol="1" lockedkeyboard="0" lockedkeyboardzoom="0" speedwheel="1" contextfullscreen="1" hideabout="0" sensitivity="8" rubberband="0" lockedmouse="0" simulatemass="1" lockedwheel="0" zoomcentercursor="1" invertwheel="0" contextvr="1"/>
+  </panorama>
+  <panorama id="node7">
+    <input height="2992" leveltilesize="510" levelbiashidpi="1.000" levelbias="0.400" levelingpitch="0" overlap="1" width="2992" levelingroll="0" leveltileurl="tiles/node7/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level height="2992" width="2992" predecode="0" preload="0"/>
+      <level height="1496" width="1496" predecode="0" preload="0"/>
+      <level height="748" width="748" predecode="0" preload="0"/>
+      <level height="374" width="374" predecode="1" preload="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view pannorth="-111.99" fovmode="2">
+      <start fov="100" projection="4" tilt="-11.037" pan="-59.7776"/>
+      <flyin fov="170" projection="9" tilt="-90" pan="0"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max fov="140" fovstereographic="330" tilt="90" fovfisheye="360" pan="360" scaletofit="1"/>
+    </view>
+    <userdata customnodeid="" title="Kış Bahçesi" altitude="0.00" description="" heading="-111.99" datetime="28.01.2026 11:39" tags="grntler" nodeid="node7" latitude="37.86705953" copyright="" source="" comment="" longitude="32.46193618" info="" author=""/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label backgroundalpha="1" borderalpha="1" height="20" textcolor="0x000000" bordercolor="0x000000" borderradius="1" border="1" wordwrap="1" backgroundcolor="0xffffff" width="180" enabled="1" background="1" textalpha="1"/>
+      <polystyle handcursor="1" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" mode="0" backgroundcolor="0x0000ff"/>
+      <hotspot title="Kış Bahçesi" description="" id="Point01" skinid="ht_node" url="{node6}" target="-6.2/-1.2/117.0" tilt="-19.59" distance="1.63156" pan="-67.62"/>
+      <hotspot title="Kış Bahçesi" description="" id="Point02" skinid="ht_node" url="{node8}" target="-21.4/-10.0/108.2" tilt="-19.72" distance="1.62444" pan="-240.04"/>
+      <hotspot title="Kış Bahçesi" description="" id="Point03" skinid="ht_node" url="{node9}" target="162.6/-7.7/108.8" tilt="-22.3" distance="2.25571" pan="-328.68"/>
+    </hotspots>
+    <media/>
+    <transition softedge="0" zoomspeed="2" delay="none" blendcolor="0x000000" zoomout="0" zoomafteroutfov="40" zoomoutpause="1" enabled="1" zoomafterinfov="140" zoomfov="40" type="crossdissolve" zoomin="0" blendtime="1"/>
+    <animation useinautorotation="0" syncanimationwithvideo="0" animsequence="Animation01" clipsrandom="0"/>
+    <control contextprojections="0" dblclickfullscreen="0" invertcontrol="1" lockedkeyboard="0" lockedkeyboardzoom="0" speedwheel="1" contextfullscreen="1" hideabout="0" sensitivity="8" rubberband="0" lockedmouse="0" simulatemass="1" lockedwheel="0" zoomcentercursor="1" invertwheel="0" contextvr="1"/>
+  </panorama>
+  <panorama id="node8">
+    <input height="2992" leveltilesize="510" levelbiashidpi="1.000" levelbias="0.400" levelingpitch="0" overlap="1" width="2992" levelingroll="0" leveltileurl="tiles/node8/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level height="2992" width="2992" predecode="0" preload="0"/>
+      <level height="1496" width="1496" predecode="0" preload="0"/>
+      <level height="748" width="748" predecode="0" preload="0"/>
+      <level height="374" width="374" predecode="1" preload="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view pannorth="-90.4995" fovmode="2">
+      <start fov="100" projection="4" tilt="0.349655" pan="-24.3107"/>
+      <flyin fov="170" projection="9" tilt="-90" pan="0"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max fov="140" fovstereographic="330" tilt="90" fovfisheye="360" pan="360" scaletofit="1"/>
+    </view>
+    <userdata customnodeid="" title="Kış Bahçesi" altitude="0.00" description="" heading="-90.4995" datetime="28.01.2026 11:40" tags="grntler" nodeid="node8" latitude="37.86705418" copyright="" source="" comment="" longitude="32.46195340" info="" author=""/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label backgroundalpha="1" borderalpha="1" height="20" textcolor="0x000000" bordercolor="0x000000" borderradius="1" border="1" wordwrap="1" backgroundcolor="0xffffff" width="180" enabled="1" background="1" textalpha="1"/>
+      <polystyle handcursor="1" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" mode="0" backgroundcolor="0x0000ff"/>
+      <hotspot title="Kış Bahçesi" description="" id="Point01" skinid="ht_node" url="{node7}" target="-51.9/-7.5/108.2" tilt="-17.18" distance="1.62444" pan="-50"/>
+      <hotspot title="Kış Bahçesi" description="" id="Point02" skinid="ht_node" url="{node9}" target="157.1/-14.1/108.5" tilt="-15.86" distance="2.64341" pan="-348.94"/>
+    </hotspots>
+    <media/>
+    <transition softedge="0" zoomspeed="2" delay="none" blendcolor="0x000000" zoomout="0" zoomafteroutfov="40" zoomoutpause="1" enabled="1" zoomafterinfov="140" zoomfov="40" type="crossdissolve" zoomin="0" blendtime="1"/>
+    <animation useinautorotation="0" syncanimationwithvideo="0" animsequence="Animation01" clipsrandom="0"/>
+    <control contextprojections="0" dblclickfullscreen="0" invertcontrol="1" lockedkeyboard="0" lockedkeyboardzoom="0" speedwheel="1" contextfullscreen="1" hideabout="0" sensitivity="8" rubberband="0" lockedmouse="0" simulatemass="1" lockedwheel="0" zoomcentercursor="1" invertwheel="0" contextvr="1"/>
+  </panorama>
+  <panorama id="node9">
+    <input height="2992" leveltilesize="510" levelbiashidpi="1.000" levelbias="0.400" levelingpitch="0" overlap="1" width="2992" levelingroll="0" leveltileurl="tiles/node9/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level height="2992" width="2992" predecode="0" preload="0"/>
+      <level height="1496" width="1496" predecode="0" preload="0"/>
+      <level height="748" width="748" predecode="0" preload="0"/>
+      <level height="374" width="374" predecode="1" preload="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view pannorth="69.5518" fovmode="2">
+      <start fov="100" projection="4" tilt="-9.70916" pan="17.7244"/>
+      <flyin fov="170" projection="9" tilt="-90" pan="0"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max fov="140" fovstereographic="330" tilt="90" fovfisheye="360" pan="360" scaletofit="1"/>
+    </view>
+    <userdata customnodeid="" title="Kış Bahçesi" altitude="0.00" description="" heading="69.5518" datetime="28.01.2026 11:41" tags="grntler" nodeid="node9" latitude="37.86704000" copyright="" source="" comment="" longitude="32.46192923" info="" author=""/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label backgroundalpha="1" borderalpha="1" height="20" textcolor="0x000000" bordercolor="0x000000" borderradius="1" border="1" wordwrap="1" backgroundcolor="0xffffff" width="180" enabled="1" background="1" textalpha="1"/>
+      <polystyle handcursor="1" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" mode="0" backgroundcolor="0x0000ff"/>
+      <hotspot title="Kış Bahçesi" description="" id="Point01" skinid="ht_node" url="{node8}" target="-22.0/-6.6/108.2" tilt="-17.56" distance="2.64341" pan="-20.07"/>
+      <hotspot title="Kış Bahçesi" description="" id="Point02" skinid="ht_node" url="{node7}" target="-50.1/-9.8/108.2" tilt="-24.45" distance="2.25571" pan="-307.88"/>
+      <hotspot title="Kış Bahçesi" description="" id="Point03" skinid="ht_node" url="{node10}" target="178.6/-11.7/117.0" tilt="-15.2" distance="3.82477" pan="-196.81"/>
+    </hotspots>
+    <media/>
+    <transition softedge="0" zoomspeed="2" delay="none" blendcolor="0x000000" zoomout="0" zoomafteroutfov="40" zoomoutpause="1" enabled="1" zoomafterinfov="140" zoomfov="40" type="crossdissolve" zoomin="0" blendtime="1"/>
+    <animation useinautorotation="0" syncanimationwithvideo="0" animsequence="Animation01" clipsrandom="0"/>
+    <control contextprojections="0" dblclickfullscreen="0" invertcontrol="1" lockedkeyboard="0" lockedkeyboardzoom="0" speedwheel="1" contextfullscreen="1" hideabout="0" sensitivity="8" rubberband="0" lockedmouse="0" simulatemass="1" lockedwheel="0" zoomcentercursor="1" invertwheel="0" contextvr="1"/>
+  </panorama>
+  <panorama id="node10">
+    <input height="2992" leveltilesize="510" levelbiashidpi="1.000" levelbias="0.400" levelingpitch="0" overlap="1" width="2992" levelingroll="0" leveltileurl="tiles/node10/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level height="2992" width="2992" predecode="0" preload="0"/>
+      <level height="1496" width="1496" predecode="0" preload="0"/>
+      <level height="748" width="748" predecode="0" preload="0"/>
+      <level height="374" width="374" predecode="1" preload="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view pannorth="97.6881" fovmode="2">
+      <start fov="100" projection="4" tilt="-10.5788" pan="16.2553"/>
+      <flyin fov="170" projection="9" tilt="-90" pan="0"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max fov="140" fovstereographic="330" tilt="90" fovfisheye="360" pan="360" scaletofit="1"/>
+    </view>
+    <userdata customnodeid="" title="Kış Bahçesi" altitude="0.00" description="" heading="97.6881" datetime="28.01.2026 11:41" tags="grntler" nodeid="node10" latitude="37.86701323" copyright="" source="" comment="" longitude="32.46190187" info="" author=""/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label backgroundalpha="1" borderalpha="1" height="20" textcolor="0x000000" bordercolor="0x000000" borderradius="1" border="1" wordwrap="1" backgroundcolor="0xffffff" width="180" enabled="1" background="1" textalpha="1"/>
+      <polystyle handcursor="1" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" mode="0" backgroundcolor="0x0000ff"/>
+      <hotspot title="Kış Bahçesi" description="" id="Point01" skinid="ht_node" url="{node11}" target="35.7/-26.8/108.2" tilt="-21.14" distance="7.99287" pan="-170.63"/>
+      <hotspot title="Kış Bahçesi" description="" id="Point02" skinid="ht_node" url="{node9}" target="-1.5/-13.6/100.3" tilt="-23.57" distance="3.82477" pan="-351.96"/>
+    </hotspots>
+    <media/>
+    <transition softedge="0" zoomspeed="2" delay="none" blendcolor="0x000000" zoomout="0" zoomafteroutfov="40" zoomoutpause="1" enabled="1" zoomafterinfov="140" zoomfov="40" type="crossdissolve" zoomin="0" blendtime="1"/>
+    <animation useinautorotation="0" syncanimationwithvideo="0" animsequence="Animation01" clipsrandom="0"/>
+    <control contextprojections="0" dblclickfullscreen="0" invertcontrol="1" lockedkeyboard="0" lockedkeyboardzoom="0" speedwheel="1" contextfullscreen="1" hideabout="0" sensitivity="8" rubberband="0" lockedmouse="0" simulatemass="1" lockedwheel="0" zoomcentercursor="1" invertwheel="0" contextvr="1"/>
+  </panorama>
+  <panorama id="node11">
+    <input height="2992" leveltilesize="510" levelbiashidpi="1.000" levelbias="0.400" levelingpitch="0" overlap="1" width="2992" levelingroll="0" leveltileurl="tiles/node11/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level height="2992" width="2992" predecode="0" preload="0"/>
+      <level height="1496" width="1496" predecode="0" preload="0"/>
+      <level height="748" width="748" predecode="0" preload="0"/>
+      <level height="374" width="374" predecode="1" preload="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view pannorth="72.9816" fovmode="2">
+      <start fov="100" projection="4" tilt="-14.7115" pan="-173.343"/>
+      <flyin fov="170" projection="9" tilt="-90" pan="0"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max fov="140" fovstereographic="330" tilt="90" fovfisheye="360" pan="360" scaletofit="1"/>
+    </view>
+    <userdata customnodeid="" title="Kış Bahçesi" altitude="0.00" description="" heading="72.9816" datetime="28.01.2026 11:42" tags="grntler" nodeid="node11" latitude="37.86697270" copyright="" source="" comment="" longitude="32.46182667" info="" author=""/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label backgroundalpha="1" borderalpha="1" height="20" textcolor="0x000000" bordercolor="0x000000" borderradius="1" border="1" wordwrap="1" backgroundcolor="0xffffff" width="180" enabled="1" background="1" textalpha="1"/>
+      <polystyle handcursor="1" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" mode="0" backgroundcolor="0x0000ff"/>
+      <hotspot title="Kış Bahçesi" description="" id="Point01" skinid="ht_node" url="{node10}" target="26.2/-5.1/117.0" tilt="-19.47" distance="7.99287" pan="-352.31"/>
+      <hotspot title="İç mekan" description="" id="Point02" skinid="ht_node" url="{node3}" target="-166.5/-12.1/108.2" tilt="-28.93" distance="6.69928" pan="-268.87"/>
+    </hotspots>
+    <media/>
+    <transition softedge="0" zoomspeed="2" delay="none" blendcolor="0x000000" zoomout="0" zoomafteroutfov="40" zoomoutpause="1" enabled="1" zoomafterinfov="140" zoomfov="40" type="crossdissolve" zoomin="0" blendtime="1"/>
+    <animation useinautorotation="0" syncanimationwithvideo="0" animsequence="Animation01" clipsrandom="0"/>
+    <control contextprojections="0" dblclickfullscreen="0" invertcontrol="1" lockedkeyboard="0" lockedkeyboardzoom="0" speedwheel="1" contextfullscreen="1" hideabout="0" sensitivity="8" rubberband="0" lockedmouse="0" simulatemass="1" lockedwheel="0" zoomcentercursor="1" invertwheel="0" contextvr="1"/>
+  </panorama>
+  <panorama id="node2">
+    <input height="2992" leveltilesize="510" levelbiashidpi="1.000" levelbias="0.400" levelingpitch="0" overlap="1" width="2992" levelingroll="0" leveltileurl="tiles/node2/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level height="2992" width="2992" predecode="0" preload="0"/>
+      <level height="1496" width="1496" predecode="0" preload="0"/>
+      <level height="748" width="748" predecode="0" preload="0"/>
+      <level height="374" width="374" predecode="1" preload="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view pannorth="-94.855" fovmode="2">
+      <start fov="100" projection="4" tilt="-6.24422" pan="-21.8665"/>
+      <flyin fov="170" projection="9" tilt="-90" pan="0"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max fov="140" fovstereographic="330" tilt="90" fovfisheye="360" pan="360" scaletofit="1"/>
+    </view>
+    <userdata customnodeid="" title="İç mekan" altitude="0.00" description="" heading="-94.855" datetime="28.01.2026 11:20" tags="grntler" nodeid="node2" latitude="37.86705235" copyright="" source="" comment="" longitude="32.46188864" info="" author=""/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label backgroundalpha="1" borderalpha="1" height="20" textcolor="0x000000" bordercolor="0x000000" borderradius="1" border="1" wordwrap="1" backgroundcolor="0xffffff" width="180" enabled="1" background="1" textalpha="1"/>
+      <polystyle handcursor="1" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" mode="0" backgroundcolor="0x0000ff"/>
+      <hotspot title="İç mekan" description="" id="Point01" skinid="ht_node" url="{node3}" target="-34.6/-9.4/108.2" tilt="-20.38" distance="4.27694" pan="-342.62"/>
+      <hotspot title="Kış Bahçesi" description="" id="Point02" skinid="ht_node" url="{node6}" target="170.7/-11.9/108.2" tilt="-26.13" distance="3.58244" pan="-162.19"/>
+    </hotspots>
+    <media/>
+    <transition softedge="0" zoomspeed="2" delay="none" blendcolor="0x000000" zoomout="0" zoomafteroutfov="40" zoomoutpause="1" enabled="1" zoomafterinfov="140" zoomfov="40" type="crossdissolve" zoomin="0" blendtime="1"/>
+    <animation useinautorotation="0" syncanimationwithvideo="0" animsequence="Animation01" clipsrandom="0"/>
+    <control contextprojections="0" dblclickfullscreen="0" invertcontrol="1" lockedkeyboard="0" lockedkeyboardzoom="0" speedwheel="1" contextfullscreen="1" hideabout="0" sensitivity="8" rubberband="0" lockedmouse="0" simulatemass="1" lockedwheel="0" zoomcentercursor="1" invertwheel="0" contextvr="1"/>
+  </panorama>
+  <panorama id="node3">
+    <input height="2992" leveltilesize="510" levelbiashidpi="1.000" levelbias="0.400" levelingpitch="0" overlap="1" width="2992" levelingroll="0" leveltileurl="tiles/node3/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level height="2992" width="2992" predecode="0" preload="0"/>
+      <level height="1496" width="1496" predecode="0" preload="0"/>
+      <level height="748" width="748" predecode="0" preload="0"/>
+      <level height="374" width="374" predecode="1" preload="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view pannorth="247.204" fovmode="2">
+      <start fov="100" projection="4" tilt="-5.61679" pan="-33.026"/>
+      <flyin fov="170" projection="9" tilt="-90" pan="0"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max fov="140" fovstereographic="330" tilt="90" fovfisheye="360" pan="360" scaletofit="1"/>
+    </view>
+    <userdata customnodeid="" title="İç mekan" altitude="0.00" description="" heading="247.204" datetime="28.01.2026 11:20" tags="grntler" nodeid="node3" latitude="37.86703040" copyright="" source="" comment="" longitude="32.46184863" info="" author=""/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label backgroundalpha="1" borderalpha="1" height="20" textcolor="0x000000" bordercolor="0x000000" borderradius="1" border="1" wordwrap="1" backgroundcolor="0xffffff" width="180" enabled="1" background="1" textalpha="1"/>
+      <polystyle handcursor="1" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" mode="0" backgroundcolor="0x0000ff"/>
+      <hotspot title="İç mekan" description="" id="Point01" skinid="ht_node" url="{node4}" target="139.4/-23.4/127.0" tilt="-23.58" distance="3.72785" pan="-41.65"/>
+      <hotspot title="Kış Bahçesi" description="" id="Point02" skinid="ht_node" url="{node11}" target="14.4/-10.3/100.0" tilt="-33.48" distance="6.69928" pan="-310.85"/>
+      <hotspot title="İç mekan" description="" id="Point03" skinid="ht_node" url="{node2}" target="-179.7/-3.9/117.4" tilt="-19.74" distance="4.27694" pan="-195.32"/>
+    </hotspots>
+    <media/>
+    <transition softedge="0" zoomspeed="2" delay="none" blendcolor="0x000000" zoomout="0" zoomafteroutfov="40" zoomoutpause="1" enabled="1" zoomafterinfov="140" zoomfov="40" type="crossdissolve" zoomin="0" blendtime="1"/>
+    <animation useinautorotation="0" syncanimationwithvideo="0" animsequence="Animation01" clipsrandom="0"/>
+    <control contextprojections="0" dblclickfullscreen="0" invertcontrol="1" lockedkeyboard="0" lockedkeyboardzoom="0" speedwheel="1" contextfullscreen="1" hideabout="0" sensitivity="8" rubberband="0" lockedmouse="0" simulatemass="1" lockedwheel="0" zoomcentercursor="1" invertwheel="0" contextvr="1"/>
+  </panorama>
+  <panorama id="node4">
+    <input height="2992" leveltilesize="510" levelbiashidpi="1.000" levelbias="0.400" levelingpitch="0" overlap="1" width="2992" levelingroll="0" leveltileurl="tiles/node4/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level height="2992" width="2992" predecode="0" preload="0"/>
+      <level height="1496" width="1496" predecode="0" preload="0"/>
+      <level height="748" width="748" predecode="0" preload="0"/>
+      <level height="374" width="374" predecode="1" preload="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view pannorth="260.612" fovmode="2">
+      <start fov="100" projection="4" tilt="-33.7538" pan="120.51"/>
+      <flyin fov="170" projection="9" tilt="-90" pan="0"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max fov="140" fovstereographic="330" tilt="90" fovfisheye="360" pan="360" scaletofit="1"/>
+    </view>
+    <userdata customnodeid="" title="İç mekan" altitude="0.00" description="" heading="260.612" datetime="28.01.2026 11:21" tags="grntler" nodeid="node4" latitude="37.86702276" copyright="" source="" comment="" longitude="32.46180728" info="" author=""/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label backgroundalpha="1" borderalpha="1" height="20" textcolor="0x000000" bordercolor="0x000000" borderradius="1" border="1" wordwrap="1" backgroundcolor="0xffffff" width="180" enabled="1" background="1" textalpha="1"/>
+      <polystyle handcursor="1" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" mode="0" backgroundcolor="0x0000ff"/>
+      <hotspot title="İç mekan" description="" id="Point01" skinid="ht_node" url="{node3}" target="142.2/-11.6/100.0" tilt="-24.78" distance="3.72785" pan="-197.04"/>
+      <hotspot title="WC" description="" id="Point02" skinid="ht_node" url="{node5}" target="2.1/-5.6/127.0" tilt="-54.42" distance="2.30577" pan="-264.31"/>
+    </hotspots>
+    <media/>
+    <transition softedge="0" zoomspeed="2" delay="none" blendcolor="0x000000" zoomout="0" zoomafteroutfov="40" zoomoutpause="1" enabled="1" zoomafterinfov="140" zoomfov="40" type="crossdissolve" zoomin="0" blendtime="1"/>
+    <animation useinautorotation="0" syncanimationwithvideo="0" animsequence="Animation01" clipsrandom="0"/>
+    <control contextprojections="0" dblclickfullscreen="0" invertcontrol="1" lockedkeyboard="0" lockedkeyboardzoom="0" speedwheel="1" contextfullscreen="1" hideabout="0" sensitivity="8" rubberband="0" lockedmouse="0" simulatemass="1" lockedwheel="0" zoomcentercursor="1" invertwheel="0" contextvr="1"/>
+  </panorama>
+  <panorama id="node5">
+    <input height="2992" leveltilesize="510" levelbiashidpi="1.000" levelbias="0.400" levelingpitch="0" overlap="1" width="2992" levelingroll="0" leveltileurl="tiles/node5/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level height="2992" width="2992" predecode="0" preload="0"/>
+      <level height="1496" width="1496" predecode="0" preload="0"/>
+      <level height="748" width="748" predecode="0" preload="0"/>
+      <level height="374" width="374" predecode="1" preload="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view pannorth="242.34" fovmode="2">
+      <start fov="100" projection="4" tilt="-9.49657" pan="1.16828"/>
+      <flyin fov="170" projection="9" tilt="-90" pan="0"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max fov="140" fovstereographic="330" tilt="90" fovfisheye="360" pan="360" scaletofit="1"/>
+    </view>
+    <userdata customnodeid="" title="WC" altitude="0.00" description="" heading="242.34" datetime="28.01.2026 11:22" tags="grntler" nodeid="node5" latitude="37.86700234" copyright="" source="" comment="" longitude="32.46181185" info="" author=""/>
+    <hotspots height="20" width="180" wordwrap="1" smoothmovement="0">
+      <label backgroundalpha="1" borderalpha="1" height="20" textcolor="0x000000" bordercolor="0x000000" borderradius="1" border="1" wordwrap="1" backgroundcolor="0xffffff" width="180" enabled="1" background="1" textalpha="1"/>
+      <polystyle handcursor="1" backgroundalpha="0.25098" borderalpha="1" bordercolor="0x0000ff" mode="0" backgroundcolor="0x0000ff"/>
+      <hotspot title="İç mekan" description="" id="Point01" skinid="ht_node" url="{node4}" target="143.6/-30.4/117.4" tilt="-20.63" distance="2.30577" pan="-33.51"/>
+    </hotspots>
+    <media/>
+    <transition softedge="0" zoomspeed="2" delay="none" blendcolor="0x000000" zoomout="0" zoomafteroutfov="40" zoomoutpause="1" enabled="1" zoomafterinfov="140" zoomfov="40" type="crossdissolve" zoomin="0" blendtime="1"/>
+    <animation useinautorotation="0" syncanimationwithvideo="0" animsequence="Animation01" clipsrandom="0"/>
+    <control contextprojections="0" dblclickfullscreen="0" invertcontrol="1" lockedkeyboard="0" lockedkeyboardzoom="0" speedwheel="1" contextfullscreen="1" hideabout="0" sensitivity="8" rubberband="0" lockedmouse="0" simulatemass="1" lockedwheel="0" zoomcentercursor="1" invertwheel="0" contextvr="1"/>
+  </panorama>
+  <masternode>
+    <userdata copyright="" title="" comment="" description="" tags="" author=""/>
+    <animationsequences>
+      <sequence title="Animation01"/>
+    </animationsequences>
+  </masternode>
+</tour>
