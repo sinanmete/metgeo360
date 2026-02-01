@@ -9,7 +9,7 @@
       <preview color="0x808080" strip="1"/>
     </input>
     <view pannorth="16.4116" fovmode="2">
-      <start pan="0" fov="141.58" projection="4" tilt="0"/>
+      <start pan="4.38127" fov="72.7591" projection="4" tilt="-78.8017"/>
       <flyin pan="0" fov="170" projection="9" tilt="-90"/>
       <min pan="0" fovpixel="2" tilt="-90"/>
       <max fovfisheye="360" scaletofit="1" pan="360" fovstereographic="330" fov="140" tilt="90"/>
@@ -18,7 +18,7 @@
     <hotspots wordwrap="1" smoothmovement="0" width="180" height="20">
       <label backgroundalpha="1" wordwrap="1" enabled="1" borderalpha="1" borderradius="1" textalpha="1" background="1" bordercolor="0x000000" backgroundcolor="0xffffff" border="1" textcolor="0x000000" width="180" height="20"/>
       <polystyle bordercolor="0x0000ff" backgroundalpha="0.25098" mode="0" backgroundcolor="0x0000ff" handcursor="1" borderalpha="1"/>
-      <hotspot pan="-288.73" url="{node3}" distance="3.82152" title="Sokak Girişi" tilt="-83.64" skinid="ht_node" target="159.8/-4.0/124.7" description="" id="Point02"/>
+      <hotspot pan="-309.24" url="{node3}" distance="3.82152" title="Sokak Girişi" tilt="-85.61" skinid="ht_node" target="159.8/-4.0/124.7" description="" id="Point02"/>
       <hotspot tilt="-6.68" target="" description="" pan="-240.36" url="images/orig.jpg" title="Akıncılar Parkı" id="Point03" skinid="ht_image_1"/>
       <hotspot tilt="1.06" target="" description="" pan="-275.31" url="images/caption.jpg" title="Sille" id="Point04" skinid="ht_image_1"/>
       <hotspot tilt="-6.14" target="" description="" pan="-157.39" url="images/orig 1.jpg" title="Dedeman Otel" id="Point01" skinid="ht_image_1"/>
