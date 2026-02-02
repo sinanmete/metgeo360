@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>MetGeo360 | Proje Haritası</title>
+    <title>MetGeo360 | Proje Portföyü</title>
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -11,69 +11,93 @@
     <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Segoe UI', sans-serif; background: #000; }
-        #map { height: 100%; width: 100%; }
+        /* Genel Ayarlar */
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Segoe UI', sans-serif; background: #111; }
+        #map { height: 100%; width: 100%; z-index: 1; }
         
-        /* Marka Logosu (Sol Üst) */
+        /* Sağ Alttaki Bayrak/Linkleri Gizle */
+        .leaflet-control-attribution { display: none !important; }
+
+        /* Sol Üst Marka Logosu */
         .brand-box {
             position: absolute;
             top: 20px; left: 20px; z-index: 1000;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.9);
             color: #f1c40f;
-            padding: 12px 20px;
-            border-radius: 8px;
-            border-left: 4px solid #f1c40f;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            padding: 15px 25px;
+            border-radius: 4px;
+            border-left: 5px solid #f1c40f;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.7);
         }
-        .brand-box h1 { margin: 0; font-size: 22px; letter-spacing: 1px; font-weight: 700; }
-        .brand-box p { margin: 4px 0 0; color: #ccc; font-size: 11px; letter-spacing: 1px; }
+        .brand-box h1 { margin: 0; font-size: 24px; font-weight: 800; letter-spacing: 2px; }
+        .brand-box p { margin: 5px 0 0; color: #fff; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.8; }
 
         /* -------------------------------------------------- */
-        /* YENİ SİYAH-SARI ANİMASYONLU KÜME İKONU TASARIMI */
+        /* SİYAH-SARI "PULSE" İKON TASARIMI (Hem Tekli Hem Küme) */
         /* -------------------------------------------------- */
-        .custom-cluster-icon {
-            background-color: #000; /* Siyah arka plan */
-            color: #f1c40f; /* Sarı yazı */
-            border: 2px solid #f1c40f; /* Sarı çerçeve */
-            border-radius: 50%; /* Tam yuvarlak */
+        .metgeo-icon {
+            background-color: #000;
+            color: #f1c40f;
+            border: 2px solid #f1c40f;
+            border-radius: 50%;
             text-align: center;
-            font-weight: 800;
-            font-size: 16px;
-            line-height: 38px; /* Yazıyı dikey ortala */
-            /* Kalp atışı animasyonunu uygula */
-            animation: pulse 1.8s infinite; 
-            box-shadow: 0 0 0 0 rgba(241, 196, 15, 0.7);
+            font-weight: 900;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px #f1c40f;
+            animation: pulse 2s infinite;
         }
 
-        /* Kalp Atışı (Pulse) Animasyonu Keyframes */
+        /* Tekli İkon İçin İnce Ayar */
+        .single-marker { font-size: 0; } /* Sayı yazmasın */
+        .single-marker::after { content: ''; width: 8px; height: 8px; background: #f1c40f; border-radius: 50%; }
+
         @keyframes pulse {
-            0% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(241, 196, 15, 0.7);
-            }
-            70% {
-                transform: scale(1);
-                box-shadow: 0 0 0 15px rgba(241, 196, 15, 0); /* Gölge genişleyip kayboluyor */
-            }
-            100% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(241, 196, 15, 0);
-            }
+            0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(241, 196, 15, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(241, 196, 15, 0); }
+            100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(241, 196, 15, 0); }
         }
 
-        /* Popup (Baloncuk) Tasarımı */
-        .leaflet-popup-content-wrapper { border-radius: 8px; padding: 0; overflow: hidden; border: 2px solid #f1c40f; }
-        .leaflet-popup-content { margin: 0; width: 280px !important; }
+        /* -------------------------------------------------- */
+        /* LİSTE GÖRÜNÜMÜ VE POPUP TASARIMI */
+        /* -------------------------------------------------- */
+        .leaflet-popup-content-wrapper { border-radius: 0; padding: 0; background: #1a1a1a; border: 1px solid #f1c40f; color: #fff; }
+        .leaflet-popup-content { margin: 0; width: 300px !important; max-height: 400px; overflow-y: auto; }
         .leaflet-popup-tip { background: #f1c40f; }
-        .popup-img { width: 100%; height: 160px; object-fit: cover; display: block; border-bottom: 2px solid #f1c40f; }
-        .popup-info { padding: 15px; text-align: center; background: #111; color: #fff; }
-        .popup-info h3 { margin: 0 0 12px; color: #f1c40f; font-size: 18px; letter-spacing: 1px; }
-        .btn-git {
-            display: block; background: #f1c40f; color: #000; width: 80%; margin: 0 auto;
-            text-decoration: none; padding: 10px 0; font-weight: 800; letter-spacing: 1px;
-            border-radius: 4px; transition: 0.3s; text-transform: uppercase;
+
+        /* Tekli Tur Popup */
+        .popup-header { position: relative; }
+        .popup-img { width: 100%; height: 180px; object-fit: cover; display: block; filter: brightness(0.8); }
+        .popup-title { padding: 15px; text-align: center; border-bottom: 1px solid #333; }
+        .popup-title h3 { margin: 0; color: #f1c40f; font-size: 18px; text-transform: uppercase; }
+        .popup-btn { 
+            display: block; background: #f1c40f; color: #000; text-align: center; 
+            padding: 12px; font-weight: bold; text-decoration: none; transition: 0.3s;
         }
-        .btn-git:hover { background: #d4ac0d; transform: translateY(-2px); }
+        .popup-btn:hover { background: #fff; }
+
+        /* Küme Listesi (Cluster List) */
+        .cluster-list { list-style: none; padding: 0; margin: 0; }
+        .cluster-list li { border-bottom: 1px solid #333; }
+        .cluster-list li:last-child { border-bottom: none; }
+        .cluster-item { 
+            display: flex; align-items: center; padding: 10px; text-decoration: none; color: #fff; transition: 0.2s; 
+        }
+        .cluster-item:hover { background: #333; }
+        .cluster-thumb { width: 50px; height: 50px; border-radius: 4px; object-fit: cover; margin-right: 15px; border: 1px solid #555; }
+        .cluster-info h4 { margin: 0; color: #f1c40f; font-size: 14px; }
+        .cluster-info span { font-size: 11px; color: #999; }
+        
+        /* Liste Başlığı */
+        .list-header { background: #000; color: #f1c40f; padding: 10px; text-align: center; font-weight: bold; border-bottom: 2px solid #f1c40f; }
+        
+        /* 3D Buton Stili (Custom Control) */
+        .leaflet-control-layers { 
+            background: #000 !important; border: 2px solid #f1c40f !important; color: #fff !important; border-radius: 4px !important; 
+        }
+        .leaflet-control-layers-toggle { filter: invert(1); }
     </style>
 </head>
 <body>
@@ -86,70 +110,122 @@
     <div id="map"></div>
 
     <script>
-        // Haritayı Başlat (Türkiye Geneli Bakış)
-        var map = L.map('map', {zoomControl: false}).setView([39.0, 35.5], 6);
-        L.control.zoom({ position: 'bottomright' }).addTo(map);
+        // 1. TABAKALAR (LAYERS) TANIMLAMA
+        
+        // A) SADE GÖRÜNÜM (CartoDB Dark - İşletme isimleri yok, sadece yollar ve il/ilçe)
+        var sadeHarita = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            subdomains: 'abcd',
+            maxZoom: 20
+        });
 
-        // Google Hibrit Harita Katmanı
-        L.tileLayer('http://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+        // B) UYDU GÖRÜNÜMÜ (Google Hybrid - 3D Hissi Veren)
+        var uyduHarita = L.tileLayer('http://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
             maxZoom: 21,
             subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-        }).addTo(map);
+        });
 
-        // --------------------------------------------------
-        // KÜMELEME AYARLARI (İstediğin Davranış İçin)
-        // --------------------------------------------------
+        // Haritayı Başlat (Varsayılan olarak SADE harita ile açılır)
+        var map = L.map('map', {
+            center: [39.0, 35.5],
+            zoom: 6,
+            layers: [sadeHarita], // İlk açılış tabakası
+            zoomControl: false // Zoom butonunu sağ alta alacağız
+        });
+
+        // Zoom butonunu sağ alta taşı
+        L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+        // TABAKA KONTROL PANELİ (Sağ Üstteki Buton)
+        var baseMaps = {
+            "Sade Harita (Cadde/Sokak)": sadeHarita,
+            "Uydu Görüntüsü (3D/Gerçek)": uyduHarita
+        };
+        L.control.layers(baseMaps, null, { position: 'topright' }).addTo(map);
+
+
+        // 2. KÜMELEME VE İKON AYARLARI
         var markers = L.markerClusterGroup({
-            spiderfyOnMaxZoom: false, // ÖNEMLİ: 1. resimdeki dağılma efektini KAPATIR.
-            showCoverageOnHover: false, // Fareyle üzerine gelince mavi sınır çıkmasın.
-            zoomToBoundsOnClick: true, // Tıklayınca o bölgeye yaklaşsın.
-            
-            // Kendi Siyah-Sarı Animasyonlu İkonumuzu Tanımlıyoruz
+            showCoverageOnHover: false, // Mavi alan sınırını gizle
+            zoomToBoundsOnClick: false, // TIKLAYINCA YAKLAŞMAYI İPTAL ET (Listeyi açacağız)
+            spiderfyOnMaxZoom: false,   // Örümcek ağı efektini kapat
+            maxClusterRadius: 50,       // Kümelerin birbirine mesafesi
+
+            // KÜME İKONU (İçinde sayı yazan Siyah-Sarı)
             iconCreateFunction: function(cluster) {
-                var count = cluster.getChildCount(); // Kümedeki sayı
                 return L.divIcon({
-                    html: count, // Sayıyı içine yaz
-                    className: 'custom-cluster-icon', // Yukarıdaki CSS sınıfını kullan
-                    iconSize: L.point(40, 40) // Boyut
+                    html: cluster.getChildCount(),
+                    className: 'metgeo-icon',
+                    iconSize: L.point(45, 45)
                 });
             }
         });
 
-        // Verileri Çek ve İşle
-        fetch('tours.json?v=' + new Date().getTime()) // Önbellek sorununu çözmek için
+        // 3. VERİLERİ ÇEK VE İŞLE
+        fetch('tours.json?v=' + new Date().getTime())
             .then(response => response.json())
             .then(data => {
                 data.forEach(tur => {
-                    // Özel Konum İkonu (Sarı Pin)
-                    var myIcon = L.icon({
-                        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png',
-                        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                        iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41]
+                    // TEKLİ NOKTA İKONU (Sayı yazmayan, sadece nokta olan Siyah-Sarı)
+                    var singleIcon = L.divIcon({
+                        className: 'metgeo-icon single-marker',
+                        iconSize: [30, 30],
+                        iconAnchor: [15, 15],
+                        popupAnchor: [0, -10]
                     });
 
-                    var marker = L.marker([tur.lat, tur.lng], {icon: myIcon});
+                    var marker = L.marker([tur.lat, tur.lng], {icon: singleIcon});
                     
-                    var popupIcerik = `
-                        <div>
+                    // Marker içine tur verilerini gizle (Listeleme için lazım olacak)
+                    marker.turVerisi = tur;
+
+                    // TEKİL TIKLAMA POPUP'I
+                    var tekilPopup = `
+                        <div class="popup-header">
                             <img src="${tur.resim}" class="popup-img">
-                            <div class="popup-info">
+                            <div class="popup-title">
                                 <h3>${tur.isim}</h3>
-                                <a href="${tur.url}" class="btn-git" target="_blank">TURU BAŞLAT</a>
                             </div>
+                            <a href="${tur.url}" class="popup-btn" target="_blank">SANAL TURU BAŞLAT ►</a>
                         </div>
                     `;
-                    
-                    marker.bindPopup(popupIcerik);
+                    marker.bindPopup(tekilPopup);
                     markers.addLayer(marker);
                 });
+
+                // 4. KÜMEYE TIKLAYINCA LİSTE AÇMA MANTIĞI
+                markers.on('clusterclick', function (a) {
+                    var childMarkers = a.layer.getAllChildMarkers();
+                    
+                    var listeHTML = '<div class="list-header">BU BÖLGEDEKİ PROJELER (' + childMarkers.length + ')</div><ul class="cluster-list">';
+                    
+                    childMarkers.forEach(function(m) {
+                        var t = m.turVerisi; // Yukarıda kaydettiğimiz veriyi geri çağırıyoruz
+                        listeHTML += `
+                            <li>
+                                <a href="${t.url}" target="_blank" class="cluster-item">
+                                    <img src="${t.resim}" class="cluster-thumb">
+                                    <div class="cluster-info">
+                                        <h4>${t.isim}</h4>
+                                        <span>Projeyi Görüntüle ►</span>
+                                    </div>
+                                </a>
+                            </li>
+                        `;
+                    });
+                    
+                    listeHTML += '</ul>';
+
+                    // Listeyi haritada göster
+                    L.popup()
+                        .setLatLng(a.latlng)
+                        .setContent(listeHTML)
+                        .openOn(map);
+                });
+
                 map.addLayer(markers);
-                
-                // Tüm noktalar yüklendikten sonra hepsini görecek şekilde haritayı ortala
-                if (data.length > 0) {
-                    map.fitBounds(markers.getBounds(), {padding: [50, 50]});
-                }
             })
-            .catch(err => console.error("Veri okunamadı:", err));
+            .catch(err => console.error("Hata:", err));
+            
     </script>
 </body>
 </html>
