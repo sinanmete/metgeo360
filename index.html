@@ -1,116 +1,101 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetGeo360 | Metehan Harita Mühendislik</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico"> 
+    <title>MetGeo360 | Proje Haritası</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 
     <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .bg {
-            background-image: url('arkaplan.jpg'); /* Arka plan resminiz */
-            height: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-        }
-        .overlay {
-            background-color: rgba(0,0,0, 0.75); /* Yazılar net okunsun diye karartma */
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* İçeriği dikeyde ortalar */
-            align-items: center;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box; /* Padding taşmasın diye */
-        }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: sans-serif; }
+        #map { height: 100%; width: 100%; }
         
-        /* Ana Kapsayıcı (Ortadaki MetGeo ve Slogan Grubu) */
-        .center-content {
-            flex-grow: 1; /* Boşluğu kaplayıp en alttaki yazıyı aşağı iter */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        /* Marka Logosu (Sol Üst) */
+        .brand-box {
+            position: absolute;
+            top: 20px; left: 60px; z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            color: #f1c40f;
+            padding: 15px 25px;
+            border-radius: 8px;
+            border: 2px solid #f1c40f;
+            text-align: center;
         }
+        .brand-box h1 { margin: 0; font-size: 24px; letter-spacing: 2px; }
+        .brand-box p { margin: 5px 0 0; color: #fff; font-size: 12px; }
 
-        /* METGEO360 - Marka (En Büyük, Altın) */
-        h1 {
-            font-size: 4.5rem;
-            color: #f1c40f; /* Altın Sarısı */
-            margin: 0;
-            letter-spacing: 5px;
-            font-weight: 700;
-            line-height: 1.2;
+        /* Popup (Baloncuk) Tasarımı */
+        .leaflet-popup-content-wrapper { border-radius: 0px; padding: 0; overflow: hidden; }
+        .leaflet-popup-content { margin: 0; width: 260px !important; }
+        .popup-img { width: 100%; height: 150px; object-fit: cover; display: block; }
+        .popup-info { padding: 15px; text-align: center; }
+        .popup-info h3 { margin: 0 0 10px; color: #333; font-size: 18px; }
+        .btn-git {
+            display: inline-block; background: #f1c40f; color: #000; 
+            text-decoration: none; padding: 8px 20px; font-weight: bold;
+            border-radius: 4px; transition: 0.3s;
         }
-
-        /* Durum Mesajı (Orta Boy) */
-        h2 {
-            font-size: 2rem;
-            font-weight: 300;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            color: #ffffff;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        /* Slogan (Küçük Gri) */
-        p {
-            font-size: 1.2rem;
-            color: #ccc;
-            margin-top: 5px;
-            font-weight: 400;
-        }
-
-        /* Şirket Adı (En Altta) */
-        .footer-company {
-            margin-top: auto; /* En alta yapıştırır */
-            font-size: 2rem; /* "Çok Yakında" (h2) ile aynı boyut */
-            font-weight: 600;
-            letter-spacing: 3px;
-            color: #ffffff;
-            text-transform: uppercase;
-            padding-bottom: 40px; /* En alttan biraz yukarıda dursun */
-            opacity: 0.9;
-        }
-
-        /* Mobilde Görünüm Ayarları */
-        @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
-            h2 { font-size: 1.5rem; }
-            p { font-size: 1rem; }
-            .footer-company { font-size: 1.5rem; } /* Mobilde de h2 ile eşit küçülür */
-        }
+        .btn-git:hover { background: #d4ac0d; }
     </style>
 </head>
 <body>
 
-<div class="bg">
-    <div class="overlay">
-        
-        <div class="center-content">
-            <h1>METGEO360</h1>
-            
-            <h2>ÇOK YAKINDA..</h2>
-            
-            <p>Sanal Gerçeklik ve Dijital İkizleriniz Burada.</p>
-        </div>
-
-        <div class="footer-company">METEHAN HARİTA MÜHENDİSLİK</div>
-
+    <div class="brand-box">
+        <h1>METGEO360</h1>
+        <p>METEHAN HARİTA MÜHENDİSLİK</p>
     </div>
-</div>
 
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3bad85a2ba0a4d0ab30f726cd28c80f7"}'></script>
+    <div id="map"></div>
 
-<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3bad85a2ba0a4d0ab30f726cd28c80f7"}'></script><!-- Cloudflare Pages Analytics --></body>
+    <script>
+        // Haritayı Başlat (Konya Odaklı)
+        var map = L.map('map').setView([37.8716, 32.4853], 10);
+
+        // Google Hibrit Harita Katmanı (Uydu + Sokak İsimleri)
+        L.tileLayer('http://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+        }).addTo(map);
+
+        // Kümeleme (Çoklu noktaları birleştirme)
+        var markers = L.markerClusterGroup();
+
+        // Verileri Çek
+        fetch('tours.json')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(tur => {
+                    // Özel İkon (İstersen sonra değiştiririz)
+                    var myIcon = L.icon({
+                        iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png', // Basit bir konum ikonu
+                        iconSize: [32, 32],
+                        iconAnchor: [16, 32],
+                        popupAnchor: [0, -30]
+                    });
+
+                    var marker = L.marker([tur.lat, tur.lng], {icon: myIcon});
+                    
+                    var popupIcerik = `
+                        <div>
+                            <img src="${tur.resim}" class="popup-img">
+                            <div class="popup-info">
+                                <h3>${tur.isim}</h3>
+                                <a href="${tur.url}" class="btn-git" target="_blank">SANAL TURU BAŞLAT</a>
+                            </div>
+                        </div>
+                    `;
+                    
+                    marker.bindPopup(popupIcerik);
+                    markers.addLayer(marker);
+                });
+                map.addLayer(markers);
+            })
+            .catch(err => console.error("Veri okunamadı:", err));
+    </script>
+</body>
 </html>
