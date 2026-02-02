@@ -11,121 +11,212 @@
     <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Segoe UI', sans-serif; background: #000; }
+        /* Genel Ayarlar */
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Segoe UI', sans-serif; background: #222; }
         #map { height: 100%; width: 100%; z-index: 1; }
+        
+        /* Gereksiz Leaflet yazılarını gizle */
         .leaflet-control-attribution { display: none !important; }
 
-        /* Sol Üst Logo */
+        /* --- MARKA LOGOSU (SOL ÜST) --- */
         .brand-box {
             position: absolute; top: 20px; left: 20px; z-index: 1000;
-            background: rgba(0, 0, 0, 0.9); color: #f1c40f; padding: 12px 20px;
-            border-radius: 4px; border-left: 5px solid #f1c40f;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+            background: rgba(0, 0, 0, 0.85); color: #f1c40f; padding: 15px 25px;
+            border-radius: 8px; border-left: 5px solid #f1c40f;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
-        .brand-box h1 { margin: 0; font-size: 20px; font-weight: 800; }
-        .brand-box p { margin: 3px 0 0; color: #fff; font-size: 10px; opacity: 0.8; }
+        .brand-box h1 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: 1px; }
+        .brand-box p { margin: 5px 0 0; color: #fff; font-size: 11px; opacity: 0.9; letter-spacing: 2px; }
 
-        /* SİYAH-SARI İKONLAR */
+        /* --- ÖZEL KONTROL PANELİ (SAĞ ÜST) --- */
+        .custom-controls {
+            position: absolute; top: 20px; right: 20px; z-index: 1000;
+            background: rgba(0, 0, 0, 0.9); padding: 10px; border-radius: 8px;
+            border: 2px solid #f1c40f; box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            display: flex; flex-direction: column; gap: 10px; width: 160px;
+        }
+        .control-btn {
+            background: #333; color: #fff; border: 1px solid #555; padding: 10px;
+            cursor: pointer; font-weight: bold; border-radius: 4px; transition: 0.3s;
+            text-align: center; font-size: 13px;
+        }
+        .control-btn:hover { background: #444; }
+        .control-btn.active {
+            background: #f1c40f; color: #000; border-color: #f1c40f;
+        }
+        
+        /* Tik Kutusu (Checkbox) Tasarımı */
+        .toggle-container {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 5px; color: #fff; font-size: 12px; border-top: 1px solid #444; margin-top: 5px;
+        }
+        .toggle-switch {
+            position: relative; display: inline-block; width: 34px; height: 20px;
+        }
+        .toggle-switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #ccc; transition: .4s; border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px;
+            background-color: white; transition: .4s; border-radius: 50%;
+        }
+        input:checked + .slider { background-color: #f1c40f; }
+        input:checked + .slider:before { transform: translateX(14px); }
+
+        /* --- SİMGE VE İKONLAR --- */
         .metgeo-icon {
             background-color: #000; color: #f1c40f; border: 2px solid #f1c40f;
             border-radius: 50%; display: flex; justify-content: center; align-items: center;
-            font-weight: 900; box-shadow: 0 0 15px rgba(241, 196, 15, 0.4);
+            font-weight: 900; box-shadow: 0 0 10px #f1c40f;
             animation: pulse 2s infinite;
         }
+        /* Tekli ikonun ortasındaki nokta */
         .single-marker { font-size: 0; }
         .single-marker::after { content: ''; width: 8px; height: 8px; background: #f1c40f; border-radius: 50%; }
 
         @keyframes pulse {
-            0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(241, 196, 15, 0.7); }
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(241, 196, 15, 0.7); }
             70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(241, 196, 15, 0); }
-            100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(241, 196, 15, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(241, 196, 15, 0); }
         }
 
-        /* Liste Popup Tasarımı */
-        .leaflet-popup-content-wrapper { background: #1a1a1a; border: 1px solid #f1c40f; color: #fff; border-radius: 4px; }
-        .leaflet-popup-content { margin: 0; width: 280px !important; max-height: 350px; overflow-y: auto; }
+        /* --- POPUP VE LİSTE --- */
+        .leaflet-popup-content-wrapper { background: #1a1a1a; border: 1px solid #f1c40f; color: #fff; border-radius: 0; }
+        .leaflet-popup-content { margin: 0; width: 260px !important; }
         .leaflet-popup-tip { background: #f1c40f; }
-
-        /* Butonlar */
-        .popup-btn { display: block; background: #f1c40f; color: #000; padding: 10px; text-align: center; text-decoration: none; font-weight: bold; }
-        .cluster-list { list-style: none; padding: 0; margin: 0; }
-        .cluster-item { display: flex; align-items: center; padding: 10px; text-decoration: none; color: #fff; border-bottom: 1px solid #333; }
-        .cluster-thumb { width: 40px; height: 40px; margin-right: 10px; object-fit: cover; border-radius: 3px; }
         
-        /* Layer Control (3D Buton) */
-        .leaflet-control-layers { background: #000 !important; border: 2px solid #f1c40f !important; color: #fff !important; }
+        .popup-img { width: 100%; height: 140px; object-fit: cover; display: block; }
+        .popup-btn { display: block; background: #f1c40f; color: #000; padding: 12px; text-align: center; text-decoration: none; font-weight: bold; font-size: 14px; }
+        
+        .cluster-list { list-style: none; padding: 0; margin: 0; max-height: 250px; overflow-y: auto; }
+        .cluster-item { display: flex; align-items: center; padding: 10px; text-decoration: none; color: #fff; border-bottom: 1px solid #333; }
+        .cluster-item:hover { background: #333; }
+        .cluster-thumb { width: 40px; height: 40px; object-fit: cover; margin-right: 10px; border: 1px solid #555; }
     </style>
 </head>
 <body>
+
     <div class="brand-box">
         <h1>METGEO360</h1>
         <p>METEHAN HARİTA MÜHENDİSLİK</p>
     </div>
+
+    <div class="custom-controls">
+        <div id="btn3D" class="control-btn active" onclick="haritaDegistir('uydu')">UYDU (3D)</div>
+        <div id="btn2D" class="control-btn" onclick="haritaDegistir('sokak')">HARİTA (2D)</div>
+        
+        <div class="toggle-container">
+            <span>İsimleri Göster</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="etiketToggle" checked onchange="etiketGuncelle()">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
     <div id="map"></div>
 
     <script>
-        // 1. HARİTA KATMANLARI (HTTPS DÜZELTMESİ YAPILDI)
-        var sadeHarita = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-            subdomains: 'abcd', maxZoom: 20
-        });
+        // --- HARİTA KATMANLARI (Google) ---
+        // Uydu (Sadece Görüntü)
+        var satLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', { maxZoom: 21 });
+        // Hibrit (Görüntü + İsimler)
+        var hybridLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', { maxZoom: 21 });
+        // Sokak (Normal Harita)
+        var streetLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', { maxZoom: 21 });
 
-        // Google Hybrid (HTTPS Linki - Sorunu Çözen Kısım)
-        var uyduHarita = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
-            maxZoom: 21
-        });
-
+        // Haritayı Başlat (Başlangıç: HİBRİT - İsimli Uydu)
         var map = L.map('map', {
             center: [39.0, 35.5], zoom: 6,
-            layers: [sadeHarita], zoomControl: false
+            layers: [hybridLayer], // AÇILIŞ UYDU İLE OLACAK
+            zoomControl: false
         });
         L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-        var baseMaps = { "Sade Harita": sadeHarita, "Uydu (3D)": uyduHarita };
-        L.control.layers(baseMaps, null, { position: 'topright' }).addTo(map);
+        // --- KONTROL PANELİ MANTIĞI ---
+        var currentMode = 'uydu'; // uydu veya sokak
 
-        // 2. KÜMELEME
+        function haritaDegistir(mod) {
+            currentMode = mod;
+            document.getElementById('btn3D').className = mod === 'uydu' ? 'control-btn active' : 'control-btn';
+            document.getElementById('btn2D').className = mod === 'sokak' ? 'control-btn active' : 'control-btn';
+            etiketGuncelle();
+        }
+
+        function etiketGuncelle() {
+            var etiketAcik = document.getElementById('etiketToggle').checked;
+            
+            // Mevcut katmanları temizle
+            map.removeLayer(satLayer);
+            map.removeLayer(hybridLayer);
+            map.removeLayer(streetLayer);
+
+            if (currentMode === 'uydu') {
+                if (etiketAcik) {
+                    map.addLayer(hybridLayer); // Uydu + İsimler
+                } else {
+                    map.addLayer(satLayer); // Sadece Uydu (Temiz)
+                }
+            } else {
+                map.addLayer(streetLayer); // Sokak modu (İsimler standarttır)
+            }
+        }
+
+        // --- SİMGELER VE KÜMELEME ---
         var markers = L.markerClusterGroup({
-            showCoverageOnHover: false, zoomToBoundsOnClick: false, spiderfyOnMaxZoom: false, maxClusterRadius: 40,
+            showCoverageOnHover: false,
+            zoomToBoundsOnClick: false, // Tıklayınca yaklaşma, listeyi aç
+            spiderfyOnMaxZoom: false,
+            maxClusterRadius: 40,
             iconCreateFunction: function(cluster) {
-                return L.divIcon({ html: cluster.getChildCount(), className: 'metgeo-icon', iconSize: L.point(40, 40) });
+                return L.divIcon({
+                    html: cluster.getChildCount(),
+                    className: 'metgeo-icon',
+                    iconSize: [40, 40],   // Simge Boyutu
+                    iconAnchor: [20, 20]  // !!! ÖNEMLİ: Simgenin tam ortası (40/2 = 20)
+                });
             }
         });
 
-        // 3. VERİ ÇEKME
+        // Verileri Çek
         fetch('tours.json?v=' + new Date().getTime())
             .then(response => response.json())
             .then(data => {
                 data.forEach(tur => {
-                    // Varsayılan koordinat kontrolü (Hata ayıklama için)
-                    if(tur.lat == 37.8716 && tur.lng == 32.4853) {
-                        console.log(tur.isim + " projesinin koordinat.txt dosyası EKSİK! Varsayılan yere atıldı.");
-                    }
+                    var singleIcon = L.divIcon({
+                        className: 'metgeo-icon single-marker',
+                        iconSize: [24, 24],   // Simge Boyutu
+                        iconAnchor: [12, 12], // !!! ÖNEMLİ: Simgenin tam ortası
+                        popupAnchor: [0, -12] // Baloncuk biraz yukarıdan çıksın
+                    });
 
-                    var singleIcon = L.divIcon({ className: 'metgeo-icon single-marker', iconSize: [20, 20] });
                     var marker = L.marker([tur.lat, tur.lng], {icon: singleIcon});
-                    marker.turVerisi = tur;
+                    marker.turVerisi = tur; // Veriyi sakla
 
-                    var tekilPopup = `<div><img src="${tur.resim}" style="width:100%;height:150px;object-fit:cover;">
-                        <h3 style="text-align:center;color:#f1c40f;margin:10px 0;">${tur.isim}</h3>
-                        <a href="${tur.url}" class="popup-btn">TURU AÇ ►</a></div>`;
-                    marker.bindPopup(tekilPopup);
+                    // Tekli Tıklama
+                    var popupHtml = `<div>
+                        <img src="${tur.resim}" class="popup-img">
+                        <div style="padding:10px;text-align:center;">
+                            <h3 style="color:#f1c40f;margin:0 0 10px;text-transform:uppercase;">${tur.isim}</h3>
+                            <a href="${tur.url}" class="popup-btn" target="_blank">SANAL TURU AÇ ►</a>
+                        </div>
+                    </div>`;
+                    
+                    marker.bindPopup(popupHtml);
                     markers.addLayer(marker);
                 });
 
+                // Küme Tıklama (Liste Açma)
                 markers.on('clusterclick', function (a) {
                     var childMarkers = a.layer.getAllChildMarkers();
-                    var html = '<div style="padding:10px;text-align:center;background:#000;border-bottom:2px solid #f1c40f;font-weight:bold;">BÖLGEDEKİ PROJELER</div><ul class="cluster-list">';
+                    var listHtml = '<div style="background:#000;color:#f1c40f;padding:10px;text-align:center;font-weight:bold;border-bottom:1px solid #f1c40f;">PROJELER (' + childMarkers.length + ')</div><ul class="cluster-list">';
+                    
                     childMarkers.forEach(function(m) {
                         var t = m.turVerisi;
-                        html += `<li><a href="${t.url}" class="cluster-item"><img src="${t.resim}" class="cluster-thumb">
-                            <div><div style="color:#f1c40f;font-weight:bold;">${t.isim}</div><div style="font-size:11px;color:#ccc;">Turu Görüntüle ►</div></div></a></li>`;
-                    });
-                    html += '</ul>';
-                    L.popup().setLatLng(a.latlng).setContent(html).openOn(map);
-                });
-
-                map.addLayer(markers);
-            });
-    </script>
-</body>
-</html>
+                        listHtml += `<li>
+                            <a href="${t.url}" target="_blank" class="cluster-item">
+                                <img src="${t.resim}" class="cluster-thumb">
+                                <div>
+                                    <div style="color:#fff;font-weight:bold;font-size:
