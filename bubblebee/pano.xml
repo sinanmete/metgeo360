@@ -1,352 +1,352 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tour hassounds="0" start="node12" apprev="21010" appversion="7.1.11">
-  <panorama id="node12" hideabout="1">
-    <input levelingpitch="0" overlap="1" levelbias="0.400" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node12/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="2048" width="2048">
-      <level preload="0" height="2048" width="2048" predecode="0"/>
-      <level preload="0" height="1024" width="1024" predecode="0"/>
-      <level preload="0" height="512" width="512" predecode="0"/>
-      <level preload="1" height="256" width="256" predecode="1"/>
-      <preview strip="1" color="0x808080"/>
+<tour appversion="7.1.11" apprev="21010" hassounds="0" start="node12">
+  <panorama hideabout="1" id="node12">
+    <input leveltilesize="510" levelbias="0.400" overlap="1" levelingpitch="0" height="2048" width="2048" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node12/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level predecode="0" preload="0" height="2048" width="2048"/>
+      <level predecode="0" preload="0" height="1024" width="1024"/>
+      <level predecode="0" preload="0" height="512" width="512"/>
+      <level predecode="1" preload="1" height="256" width="256"/>
+      <preview color="0x808080" strip="1"/>
     </input>
     <view fovmode="2" pannorth="0">
-      <start pan="-14.1626" tilt="-36.7226" fov="100" projection="4"/>
-      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
-      <min pan="0" fovpixel="2" tilt="-90"/>
-      <max fovfisheye="360" pan="360" fovstereographic="330" tilt="90" fov="140" scaletofit="1"/>
+      <start projection="4" fov="100" tilt="-36.7226" pan="-14.1626"/>
+      <flyin projection="9" fov="170" tilt="-90" pan="0"/>
+      <min tilt="-90" fovpixel="2" pan="0"/>
+      <max scaletofit="1" fov="140" fovfisheye="360" tilt="90" fovstereographic="330" pan="360"/>
     </view>
-    <userdata longitude="32.462325" description="" copyright="" source="" altitude="135.90" info="" nodeid="node12" customnodeid="" streetviewlink="https://www.google.com/maps/@37.867758,32.462325,3a,75y,11.96h,90t/data=!3m4!1e1!3m2!1sCIABIhB9ldPHZj7bMPRdS0C6R2t7!2e10" title="TepeGöz" comment="" tags="grntler" heading="0" author="" datetime="28.01.2026 11:05" latitude="37.867758"/>
-    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
-      <label wordwrap="1" border="1" borderalpha="1" textalpha="1" enabled="1" backgroundalpha="1" borderradius="1" bordercolor="0x000000" textcolor="0x000000" backgroundcolor="0xffffff" height="20" background="1" width="180"/>
-      <polystyle bordercolor="0x0000ff" borderalpha="1" backgroundcolor="0x0000ff" handcursor="1" mode="0" backgroundalpha="0.25098"/>
-      <hotspot id="Point01" description="" pan="-354.78" title="Sokak" distance="81.6118" target="-168.8/4.6/108.5" skinid="ht_node" tilt="-59.74" url="{node13}"/>
-      <hotspot id="Point02" skinid="ht_image_1" description="" pan="-171.55" tilt="-8.51" url="images/kampus2.jpg" title="KONYA ŞEKER FABRİKASI" target=""/>
-      <hotspot id="Point03" skinid="ht_image_1" description="" pan="-66.9" tilt="-30.78" url="images/meliksah_bit_pazari.jpg" title="Melihşah Çarşamba Pazarı" target=""/>
-      <hotspot id="Point04" skinid="ht_image_1" description="" pan="-37.27" tilt="-6.49" url="images/akef-giris.jpg" title="Necmettin Erbakan Üniversitesi Eğitim Fakültesi" target=""/>
-      <hotspot id="Point05" skinid="ht_image_1" description="" pan="-226.67" tilt="-12.57" url="images/images 1.jpg" title="Cadde Meram AVM" target=""/>
-      <hotspot id="Point06" skinid="ht_image_1" description="" pan="-216.51" tilt="-25.38" url="images/Screenshot_2.jpg" title="Melihşah Kafeler Sokağı" target=""/>
-      <hotspot id="Point07" skinid="ht_image_1" description="" pan="-238.78" tilt="-22.55" url="images/3911734279_d3b93d39b7_b.jpg" title="Meram Yeniyol Caddesi" target=""/>
-      <hotspot id="Point08" skinid="ht_image_1" description="" pan="-0.28" tilt="-54.81" url="images/images 2.jpg" title="Bubble Bee - Tea &amp; Coffee" target=""/>
+    <userdata title="TepeGöz" info="" customnodeid="" heading="0" nodeid="node12" tags="grntler" latitude="37.867758" longitude="32.462325" description="" author="" copyright="" datetime="28.01.2026 11:05" streetviewlink="https://www.google.com/maps/@37.867758,32.462325,3a,75y,11.96h,90t/data=!3m4!1e1!3m2!1sCIABIhB9ldPHZj7bMPRdS0C6R2t7!2e10" comment="" source="" altitude="135.90"/>
+    <hotspots height="20" width="180" smoothmovement="0" wordwrap="1">
+      <label wordwrap="1" textalpha="1" border="1" backgroundalpha="1" textcolor="0x000000" background="1" backgroundcolor="0xffffff" borderradius="1" height="20" width="180" bordercolor="0x000000" enabled="1" borderalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" handcursor="1" bordercolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1"/>
+      <hotspot title="Sokak" tilt="-59.74" url="{node13}" target="-168.8/4.6/108.5" skinid="ht_node" pan="-354.78" id="Point01" distance="81.6118" description=""/>
+      <hotspot description="" title="KONYA ŞEKER FABRİKASI" tilt="-8.51" url="images/kampus2.jpg" target="" skinid="ht_image_1" pan="-171.55" id="Point02"/>
+      <hotspot description="" title="Melihşah Çarşamba Pazarı" tilt="-30.78" url="images/meliksah_bit_pazari.jpg" target="" skinid="ht_image_1" pan="-66.9" id="Point03"/>
+      <hotspot description="" title="Necmettin Erbakan Üniversitesi Eğitim Fakültesi" tilt="-6.49" url="images/akef-giris.jpg" target="" skinid="ht_image_1" pan="-37.27" id="Point04"/>
+      <hotspot description="" title="Cadde Meram AVM" tilt="-12.57" url="images/images 1.jpg" target="" skinid="ht_image_1" pan="-226.67" id="Point05"/>
+      <hotspot description="" title="Melihşah Kafeler Sokağı" tilt="-25.38" url="images/Screenshot_2.jpg" target="" skinid="ht_image_1" pan="-216.51" id="Point06"/>
+      <hotspot description="" title="Meram Yeniyol Caddesi" tilt="-22.55" url="images/3911734279_d3b93d39b7_b.jpg" target="" skinid="ht_image_1" pan="-238.78" id="Point07"/>
+      <hotspot description="" title="Bubble Bee - Tea &amp; Coffee" tilt="-54.81" url="images/BubbleBee Logo RGB.png" target="" skinid="ht_image_1" pan="-0.28" id="Point08"/>
     </hotspots>
     <media/>
-    <transition zoomspeed="2" zoomin="0" enabled="1" blendtime="1" delay="none" type="crossdissolve" zoomafterinfov="140" softedge="0" zoomout="0" zoomoutpause="1" zoomafteroutfov="40" zoomfov="40" blendcolor="0x000000"/>
-    <autorotate nodedelay="0.00" returntohorizon="3.000" useanimation="0" startloaded="0" enabled="1" speed="0.200" delay="3.00" nodefilter="" horizonfromdefview="1" noderandom="1"/>
-    <flyintransition enabled="1" speed="0.50"/>
-    <animation animsequence="Animation01" syncanimationwithvideo="0" useinautorotation="0" clipsrandom="0"/>
-    <control zoomcentercursor="1" sensitivity="11" hideabout="1" lockedwheel="0" rubberband="0" lockedkeyboard="0" dblclickfullscreen="0" contextvr="1" simulatemass="1" speedwheel="1" invertcontrol="1" lockedmouse="0" lockedkeyboardzoom="0" contextfullscreen="1" contextprojections="0" invertwheel="0"/>
+    <transition softedge="0" zoomout="0" delay="none" zoomafteroutfov="40" zoomspeed="2" type="crossdissolve" zoomfov="40" blendtime="1" zoomin="0" zoomafterinfov="140" enabled="1" zoomoutpause="1" blendcolor="0x000000"/>
+    <autorotate noderandom="1" speed="0.200" startloaded="0" delay="3.00" nodedelay="0.00" nodefilter="" returntohorizon="3.000" horizonfromdefview="1" enabled="1" useanimation="0"/>
+    <flyintransition speed="0.50" enabled="1"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control lockedkeyboardzoom="0" lockedwheel="0" speedwheel="1" lockedmouse="0" zoomcentercursor="1" rubberband="0" sensitivity="11" dblclickfullscreen="0" invertwheel="0" contextprojections="0" lockedkeyboard="0" invertcontrol="1" hideabout="1" contextvr="1" contextfullscreen="1" simulatemass="1"/>
   </panorama>
-  <panorama id="node13" hideabout="1">
-    <input levelingpitch="0" overlap="1" levelbias="0.400" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node13/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="2992" width="2992">
-      <level preload="0" height="2992" width="2992" predecode="0"/>
-      <level preload="0" height="1496" width="1496" predecode="0"/>
-      <level preload="0" height="748" width="748" predecode="0"/>
-      <level preload="1" height="374" width="374" predecode="1"/>
-      <preview strip="1" color="0x808080"/>
+  <panorama hideabout="1" id="node13">
+    <input leveltilesize="510" levelbias="0.400" overlap="1" levelingpitch="0" height="2992" width="2992" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node13/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level predecode="0" preload="0" height="2992" width="2992"/>
+      <level predecode="0" preload="0" height="1496" width="1496"/>
+      <level predecode="0" preload="0" height="748" width="748"/>
+      <level predecode="1" preload="1" height="374" width="374"/>
+      <preview color="0x808080" strip="1"/>
     </input>
     <view fovmode="2" pannorth="61.7755">
-      <start pan="-168.939" tilt="6.9994" fov="100" projection="4"/>
-      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
-      <min pan="0" fovpixel="2" tilt="-90"/>
-      <max fovfisheye="360" pan="360" fovstereographic="330" tilt="90" fov="140" scaletofit="1"/>
+      <start projection="4" fov="100" tilt="6.9994" pan="-168.939"/>
+      <flyin projection="9" fov="170" tilt="-90" pan="0"/>
+      <min tilt="-90" fovpixel="2" pan="0"/>
+      <max scaletofit="1" fov="140" fovfisheye="360" tilt="90" fovstereographic="330" pan="360"/>
     </view>
-    <userdata longitude="32.46194208" description="" copyright="" source="" altitude="0.00" info="" nodeid="node13" customnodeid="" streetviewlink="https://www.google.com/maps/@37.8670892,32.4619421,3a,75y,230.71h,90t/data=!3m4!1e1!3m2!1sCIABIhAbGQ0hS8qrNflbqpnA-PVa!2e10" title="Sokak" comment="" tags="grntler" heading="61.7755" author="" datetime="28.01.2026 11:36" latitude="37.86708919"/>
-    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
-      <label wordwrap="1" border="1" borderalpha="1" textalpha="1" enabled="1" backgroundalpha="1" borderradius="1" bordercolor="0x000000" textcolor="0x000000" backgroundcolor="0xffffff" height="20" background="1" width="180"/>
-      <polystyle bordercolor="0x0000ff" borderalpha="1" backgroundcolor="0x0000ff" handcursor="1" mode="0" backgroundalpha="0.25098"/>
-      <hotspot id="Point01" description="" pan="-166.82" title="Kış Bahçesi" distance="2.73219" target="-5.9/-6.0/108.2" skinid="ht_node" tilt="-12.42" url="{node6}"/>
-      <hotspot id="Point02" description="" pan="-2.01" title="TepeGöz" distance="81.6118" target="-3.5/-38.2/94.6" skinid="ht_node" tilt="-2.09" url="{node12}"/>
+    <userdata title="Sokak" info="" customnodeid="" heading="61.7755" nodeid="node13" tags="grntler" latitude="37.86708919" longitude="32.46194208" description="" author="" copyright="" datetime="28.01.2026 11:36" streetviewlink="https://www.google.com/maps/@37.8670892,32.4619421,3a,75y,230.71h,90t/data=!3m4!1e1!3m2!1sCIABIhAbGQ0hS8qrNflbqpnA-PVa!2e10" comment="" source="" altitude="0.00"/>
+    <hotspots height="20" width="180" smoothmovement="0" wordwrap="1">
+      <label wordwrap="1" textalpha="1" border="1" backgroundalpha="1" textcolor="0x000000" background="1" backgroundcolor="0xffffff" borderradius="1" height="20" width="180" bordercolor="0x000000" enabled="1" borderalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" handcursor="1" bordercolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1"/>
+      <hotspot title="Kış Bahçesi" tilt="-12.42" url="{node6}" target="-5.9/-6.0/108.2" skinid="ht_node" pan="-166.82" id="Point01" distance="2.73219" description=""/>
+      <hotspot title="TepeGöz" tilt="-2.09" url="{node12}" target="-3.5/-38.2/94.6" skinid="ht_node" pan="-2.01" id="Point02" distance="81.6118" description=""/>
     </hotspots>
     <media/>
-    <transition zoomspeed="2" zoomin="0" enabled="1" blendtime="1" delay="none" type="crossdissolve" zoomafterinfov="140" softedge="0" zoomout="0" zoomoutpause="1" zoomafteroutfov="40" zoomfov="40" blendcolor="0x000000"/>
-    <autorotate nodedelay="0.00" returntohorizon="3.000" useanimation="0" startloaded="0" enabled="1" speed="0.200" delay="3.00" nodefilter="" horizonfromdefview="1" noderandom="1"/>
-    <flyintransition enabled="1" speed="0.50"/>
-    <animation animsequence="Animation01" syncanimationwithvideo="0" useinautorotation="0" clipsrandom="0"/>
-    <control zoomcentercursor="1" sensitivity="11" hideabout="1" lockedwheel="0" rubberband="0" lockedkeyboard="0" dblclickfullscreen="0" contextvr="1" simulatemass="1" speedwheel="1" invertcontrol="1" lockedmouse="0" lockedkeyboardzoom="0" contextfullscreen="1" contextprojections="0" invertwheel="0"/>
+    <transition softedge="0" zoomout="0" delay="none" zoomafteroutfov="40" zoomspeed="2" type="crossdissolve" zoomfov="40" blendtime="1" zoomin="0" zoomafterinfov="140" enabled="1" zoomoutpause="1" blendcolor="0x000000"/>
+    <autorotate noderandom="1" speed="0.200" startloaded="0" delay="3.00" nodedelay="0.00" nodefilter="" returntohorizon="3.000" horizonfromdefview="1" enabled="1" useanimation="0"/>
+    <flyintransition speed="0.50" enabled="1"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control lockedkeyboardzoom="0" lockedwheel="0" speedwheel="1" lockedmouse="0" zoomcentercursor="1" rubberband="0" sensitivity="11" dblclickfullscreen="0" invertwheel="0" contextprojections="0" lockedkeyboard="0" invertcontrol="1" hideabout="1" contextvr="1" contextfullscreen="1" simulatemass="1"/>
   </panorama>
-  <panorama id="node6" hideabout="1">
-    <input levelingpitch="0" overlap="1" levelbias="0.400" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node6/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="2992" width="2992">
-      <level preload="0" height="2992" width="2992" predecode="0"/>
-      <level preload="0" height="1496" width="1496" predecode="0"/>
-      <level preload="0" height="748" width="748" predecode="0"/>
-      <level preload="1" height="374" width="374" predecode="1"/>
-      <preview strip="1" color="0x808080"/>
+  <panorama hideabout="1" id="node6">
+    <input leveltilesize="510" levelbias="0.400" overlap="1" levelingpitch="0" height="2992" width="2992" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node6/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level predecode="0" preload="0" height="2992" width="2992"/>
+      <level predecode="0" preload="0" height="1496" width="1496"/>
+      <level predecode="0" preload="0" height="748" width="748"/>
+      <level predecode="1" preload="1" height="374" width="374"/>
+      <preview color="0x808080" strip="1"/>
     </input>
     <view fovmode="2" pannorth="-125.677">
-      <start pan="-6.99497" tilt="-2.702" fov="126.58" projection="4"/>
-      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
-      <min pan="0" fovpixel="2" tilt="-90"/>
-      <max fovfisheye="360" pan="360" fovstereographic="330" tilt="90" fov="140" scaletofit="1"/>
+      <start projection="4" fov="126.58" tilt="-2.702" pan="-6.99497"/>
+      <flyin projection="9" fov="170" tilt="-90" pan="0"/>
+      <min tilt="-90" fovpixel="2" pan="0"/>
+      <max scaletofit="1" fov="140" fovfisheye="360" tilt="90" fovstereographic="330" pan="360"/>
     </view>
-    <userdata longitude="32.46192293" description="" copyright="" source="" altitude="0.00" info="" nodeid="node6" customnodeid="" streetviewlink="https://www.google.com/maps/@37.8670698,32.4619229,3a,75y,241.32h,90t/data=!3m4!1e1!3m2!1sCIABIhB2PuF72K5xjenJrdoHcS1j!2e10" title="Kış Bahçesi" comment="" tags="grntler" heading="-125.677" author="" datetime="28.01.2026 11:39" latitude="37.86706982"/>
-    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
-      <label wordwrap="1" border="1" borderalpha="1" textalpha="1" enabled="1" backgroundalpha="1" borderradius="1" bordercolor="0x000000" textcolor="0x000000" backgroundcolor="0xffffff" height="20" background="1" width="180"/>
-      <polystyle bordercolor="0x0000ff" borderalpha="1" backgroundcolor="0x0000ff" handcursor="1" mode="0" backgroundalpha="0.25098"/>
-      <hotspot id="Point01" description="" pan="-4.53" title="İç mekan" distance="3.58244" target="-9.9/-4.3/108.5" skinid="ht_node" tilt="-26.68" url="{node2}"/>
-      <hotspot id="Point02" description="" pan="-277.58" title="Kış Bahçesi" distance="1.63156" target="-49.8/-8.0/108.2" skinid="ht_node" tilt="-23" url="{node7}"/>
-      <hotspot id="Point03" description="" pan="-187.03" title="Sokak" distance="2.73219" target="-169.7/2.5/108.5" skinid="ht_node" tilt="-34.43" url="{node13}"/>
+    <userdata title="Kış Bahçesi" info="" customnodeid="" heading="-125.677" nodeid="node6" tags="grntler" latitude="37.86706982" longitude="32.46192293" description="" author="" copyright="" datetime="28.01.2026 11:39" streetviewlink="https://www.google.com/maps/@37.8670698,32.4619229,3a,75y,241.32h,90t/data=!3m4!1e1!3m2!1sCIABIhB2PuF72K5xjenJrdoHcS1j!2e10" comment="" source="" altitude="0.00"/>
+    <hotspots height="20" width="180" smoothmovement="0" wordwrap="1">
+      <label wordwrap="1" textalpha="1" border="1" backgroundalpha="1" textcolor="0x000000" background="1" backgroundcolor="0xffffff" borderradius="1" height="20" width="180" bordercolor="0x000000" enabled="1" borderalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" handcursor="1" bordercolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1"/>
+      <hotspot title="İç mekan" tilt="-26.68" url="{node2}" target="-9.9/-4.3/108.5" skinid="ht_node" pan="-4.53" id="Point01" distance="3.58244" description=""/>
+      <hotspot title="Kış Bahçesi" tilt="-23" url="{node7}" target="-49.8/-8.0/108.2" skinid="ht_node" pan="-277.58" id="Point02" distance="1.63156" description=""/>
+      <hotspot title="Sokak" tilt="-34.43" url="{node13}" target="-169.7/2.5/108.5" skinid="ht_node" pan="-187.03" id="Point03" distance="2.73219" description=""/>
     </hotspots>
     <media/>
-    <transition zoomspeed="2" zoomin="0" enabled="1" blendtime="1" delay="none" type="crossdissolve" zoomafterinfov="140" softedge="0" zoomout="0" zoomoutpause="1" zoomafteroutfov="40" zoomfov="40" blendcolor="0x000000"/>
-    <autorotate nodedelay="0.00" returntohorizon="3.000" useanimation="0" startloaded="0" enabled="1" speed="0.200" delay="3.00" nodefilter="" horizonfromdefview="1" noderandom="1"/>
-    <flyintransition enabled="1" speed="0.50"/>
-    <animation animsequence="Animation01" syncanimationwithvideo="0" useinautorotation="0" clipsrandom="0"/>
-    <control zoomcentercursor="1" sensitivity="11" hideabout="1" lockedwheel="0" rubberband="0" lockedkeyboard="0" dblclickfullscreen="0" contextvr="1" simulatemass="1" speedwheel="1" invertcontrol="1" lockedmouse="0" lockedkeyboardzoom="0" contextfullscreen="1" contextprojections="0" invertwheel="0"/>
+    <transition softedge="0" zoomout="0" delay="none" zoomafteroutfov="40" zoomspeed="2" type="crossdissolve" zoomfov="40" blendtime="1" zoomin="0" zoomafterinfov="140" enabled="1" zoomoutpause="1" blendcolor="0x000000"/>
+    <autorotate noderandom="1" speed="0.200" startloaded="0" delay="3.00" nodedelay="0.00" nodefilter="" returntohorizon="3.000" horizonfromdefview="1" enabled="1" useanimation="0"/>
+    <flyintransition speed="0.50" enabled="1"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control lockedkeyboardzoom="0" lockedwheel="0" speedwheel="1" lockedmouse="0" zoomcentercursor="1" rubberband="0" sensitivity="11" dblclickfullscreen="0" invertwheel="0" contextprojections="0" lockedkeyboard="0" invertcontrol="1" hideabout="1" contextvr="1" contextfullscreen="1" simulatemass="1"/>
   </panorama>
-  <panorama id="node7" hideabout="1">
-    <input levelingpitch="0" overlap="1" levelbias="0.400" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node7/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="2992" width="2992">
-      <level preload="0" height="2992" width="2992" predecode="0"/>
-      <level preload="0" height="1496" width="1496" predecode="0"/>
-      <level preload="0" height="748" width="748" predecode="0"/>
-      <level preload="1" height="374" width="374" predecode="1"/>
-      <preview strip="1" color="0x808080"/>
+  <panorama hideabout="1" id="node7">
+    <input leveltilesize="510" levelbias="0.400" overlap="1" levelingpitch="0" height="2992" width="2992" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node7/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level predecode="0" preload="0" height="2992" width="2992"/>
+      <level predecode="0" preload="0" height="1496" width="1496"/>
+      <level predecode="0" preload="0" height="748" width="748"/>
+      <level predecode="1" preload="1" height="374" width="374"/>
+      <preview color="0x808080" strip="1"/>
     </input>
     <view fovmode="2" pannorth="-111.99">
-      <start pan="-59.7776" tilt="-11.037" fov="100" projection="4"/>
-      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
-      <min pan="0" fovpixel="2" tilt="-90"/>
-      <max fovfisheye="360" pan="360" fovstereographic="330" tilt="90" fov="140" scaletofit="1"/>
+      <start projection="4" fov="100" tilt="-11.037" pan="-59.7776"/>
+      <flyin projection="9" fov="170" tilt="-90" pan="0"/>
+      <min tilt="-90" fovpixel="2" pan="0"/>
+      <max scaletofit="1" fov="140" fovfisheye="360" tilt="90" fovstereographic="330" pan="360"/>
     </view>
-    <userdata longitude="32.46193618" description="" copyright="" source="" altitude="0.00" info="" nodeid="node7" customnodeid="" streetviewlink="https://www.google.com/maps/@37.8670595,32.4619362,3a,75y,307.79h,90t/data=!3m4!1e1!3m2!1sCIABIhBxnPnK6ofosdp1TaTC35vx!2e10" title="Kış Bahçesi" comment="" tags="grntler" heading="-111.99" author="" datetime="28.01.2026 11:39" latitude="37.86705953"/>
-    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
-      <label wordwrap="1" border="1" borderalpha="1" textalpha="1" enabled="1" backgroundalpha="1" borderradius="1" bordercolor="0x000000" textcolor="0x000000" backgroundcolor="0xffffff" height="20" background="1" width="180"/>
-      <polystyle bordercolor="0x0000ff" borderalpha="1" backgroundcolor="0x0000ff" handcursor="1" mode="0" backgroundalpha="0.25098"/>
-      <hotspot id="Point01" description="" pan="-67.62" title="Kış Bahçesi" distance="1.63156" target="-6.2/-1.2/117.0" skinid="ht_node" tilt="-19.59" url="{node6}"/>
-      <hotspot id="Point02" description="" pan="-240.04" title="Kış Bahçesi" distance="1.62444" target="-21.4/-10.0/108.2" skinid="ht_node" tilt="-19.72" url="{node8}"/>
-      <hotspot id="Point03" description="" pan="-328.68" title="Kış Bahçesi" distance="2.25571" target="162.6/-7.7/108.8" skinid="ht_node" tilt="-22.3" url="{node9}"/>
+    <userdata title="Kış Bahçesi" info="" customnodeid="" heading="-111.99" nodeid="node7" tags="grntler" latitude="37.86705953" longitude="32.46193618" description="" author="" copyright="" datetime="28.01.2026 11:39" streetviewlink="https://www.google.com/maps/@37.8670595,32.4619362,3a,75y,307.79h,90t/data=!3m4!1e1!3m2!1sCIABIhBxnPnK6ofosdp1TaTC35vx!2e10" comment="" source="" altitude="0.00"/>
+    <hotspots height="20" width="180" smoothmovement="0" wordwrap="1">
+      <label wordwrap="1" textalpha="1" border="1" backgroundalpha="1" textcolor="0x000000" background="1" backgroundcolor="0xffffff" borderradius="1" height="20" width="180" bordercolor="0x000000" enabled="1" borderalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" handcursor="1" bordercolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1"/>
+      <hotspot title="Kış Bahçesi" tilt="-19.59" url="{node6}" target="-6.2/-1.2/117.0" skinid="ht_node" pan="-67.62" id="Point01" distance="1.63156" description=""/>
+      <hotspot title="Kış Bahçesi" tilt="-19.72" url="{node8}" target="-21.4/-10.0/108.2" skinid="ht_node" pan="-240.04" id="Point02" distance="1.62444" description=""/>
+      <hotspot title="Kış Bahçesi" tilt="-22.3" url="{node9}" target="162.6/-7.7/108.8" skinid="ht_node" pan="-328.68" id="Point03" distance="2.25571" description=""/>
     </hotspots>
     <media/>
-    <transition zoomspeed="2" zoomin="0" enabled="1" blendtime="1" delay="none" type="crossdissolve" zoomafterinfov="140" softedge="0" zoomout="0" zoomoutpause="1" zoomafteroutfov="40" zoomfov="40" blendcolor="0x000000"/>
-    <autorotate nodedelay="0.00" returntohorizon="3.000" useanimation="0" startloaded="0" enabled="1" speed="0.200" delay="3.00" nodefilter="" horizonfromdefview="1" noderandom="1"/>
-    <flyintransition enabled="1" speed="0.50"/>
-    <animation animsequence="Animation01" syncanimationwithvideo="0" useinautorotation="0" clipsrandom="0"/>
-    <control zoomcentercursor="1" sensitivity="11" hideabout="1" lockedwheel="0" rubberband="0" lockedkeyboard="0" dblclickfullscreen="0" contextvr="1" simulatemass="1" speedwheel="1" invertcontrol="1" lockedmouse="0" lockedkeyboardzoom="0" contextfullscreen="1" contextprojections="0" invertwheel="0"/>
+    <transition softedge="0" zoomout="0" delay="none" zoomafteroutfov="40" zoomspeed="2" type="crossdissolve" zoomfov="40" blendtime="1" zoomin="0" zoomafterinfov="140" enabled="1" zoomoutpause="1" blendcolor="0x000000"/>
+    <autorotate noderandom="1" speed="0.200" startloaded="0" delay="3.00" nodedelay="0.00" nodefilter="" returntohorizon="3.000" horizonfromdefview="1" enabled="1" useanimation="0"/>
+    <flyintransition speed="0.50" enabled="1"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control lockedkeyboardzoom="0" lockedwheel="0" speedwheel="1" lockedmouse="0" zoomcentercursor="1" rubberband="0" sensitivity="11" dblclickfullscreen="0" invertwheel="0" contextprojections="0" lockedkeyboard="0" invertcontrol="1" hideabout="1" contextvr="1" contextfullscreen="1" simulatemass="1"/>
   </panorama>
-  <panorama id="node8" hideabout="1">
-    <input levelingpitch="0" overlap="1" levelbias="0.400" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node8/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="2992" width="2992">
-      <level preload="0" height="2992" width="2992" predecode="0"/>
-      <level preload="0" height="1496" width="1496" predecode="0"/>
-      <level preload="0" height="748" width="748" predecode="0"/>
-      <level preload="1" height="374" width="374" predecode="1"/>
-      <preview strip="1" color="0x808080"/>
+  <panorama hideabout="1" id="node8">
+    <input leveltilesize="510" levelbias="0.400" overlap="1" levelingpitch="0" height="2992" width="2992" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node8/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level predecode="0" preload="0" height="2992" width="2992"/>
+      <level predecode="0" preload="0" height="1496" width="1496"/>
+      <level predecode="0" preload="0" height="748" width="748"/>
+      <level predecode="1" preload="1" height="374" width="374"/>
+      <preview color="0x808080" strip="1"/>
     </input>
     <view fovmode="2" pannorth="-90.4995">
-      <start pan="-24.3107" tilt="0.349655" fov="100" projection="4"/>
-      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
-      <min pan="0" fovpixel="2" tilt="-90"/>
-      <max fovfisheye="360" pan="360" fovstereographic="330" tilt="90" fov="140" scaletofit="1"/>
+      <start projection="4" fov="100" tilt="0.349655" pan="-24.3107"/>
+      <flyin projection="9" fov="170" tilt="-90" pan="0"/>
+      <min tilt="-90" fovpixel="2" pan="0"/>
+      <max scaletofit="1" fov="140" fovfisheye="360" tilt="90" fovstereographic="330" pan="360"/>
     </view>
-    <userdata longitude="32.46195340" description="" copyright="" source="" altitude="0.00" info="" nodeid="node8" customnodeid="" streetviewlink="https://www.google.com/maps/@37.8670542,32.4619534,3a,75y,293.81h,90t/data=!3m4!1e1!3m2!1sCIABIhAg9OYlDRPoY4-2O7Czpqv0!2e10" title="Kış Bahçesi" comment="" tags="grntler" heading="-90.4995" author="" datetime="28.01.2026 11:40" latitude="37.86705418"/>
-    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
-      <label wordwrap="1" border="1" borderalpha="1" textalpha="1" enabled="1" backgroundalpha="1" borderradius="1" bordercolor="0x000000" textcolor="0x000000" backgroundcolor="0xffffff" height="20" background="1" width="180"/>
-      <polystyle bordercolor="0x0000ff" borderalpha="1" backgroundcolor="0x0000ff" handcursor="1" mode="0" backgroundalpha="0.25098"/>
-      <hotspot id="Point01" description="" pan="-50" title="Kış Bahçesi" distance="1.62444" target="-51.9/-7.5/108.2" skinid="ht_node" tilt="-17.18" url="{node7}"/>
-      <hotspot id="Point02" description="" pan="-348.94" title="Kış Bahçesi" distance="2.64341" target="157.1/-14.1/108.5" skinid="ht_node" tilt="-15.86" url="{node9}"/>
+    <userdata title="Kış Bahçesi" info="" customnodeid="" heading="-90.4995" nodeid="node8" tags="grntler" latitude="37.86705418" longitude="32.46195340" description="" author="" copyright="" datetime="28.01.2026 11:40" streetviewlink="https://www.google.com/maps/@37.8670542,32.4619534,3a,75y,293.81h,90t/data=!3m4!1e1!3m2!1sCIABIhAg9OYlDRPoY4-2O7Czpqv0!2e10" comment="" source="" altitude="0.00"/>
+    <hotspots height="20" width="180" smoothmovement="0" wordwrap="1">
+      <label wordwrap="1" textalpha="1" border="1" backgroundalpha="1" textcolor="0x000000" background="1" backgroundcolor="0xffffff" borderradius="1" height="20" width="180" bordercolor="0x000000" enabled="1" borderalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" handcursor="1" bordercolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1"/>
+      <hotspot title="Kış Bahçesi" tilt="-17.18" url="{node7}" target="-51.9/-7.5/108.2" skinid="ht_node" pan="-50" id="Point01" distance="1.62444" description=""/>
+      <hotspot title="Kış Bahçesi" tilt="-15.86" url="{node9}" target="157.1/-14.1/108.5" skinid="ht_node" pan="-348.94" id="Point02" distance="2.64341" description=""/>
     </hotspots>
     <media/>
-    <transition zoomspeed="2" zoomin="0" enabled="1" blendtime="1" delay="none" type="crossdissolve" zoomafterinfov="140" softedge="0" zoomout="0" zoomoutpause="1" zoomafteroutfov="40" zoomfov="40" blendcolor="0x000000"/>
-    <autorotate nodedelay="0.00" returntohorizon="3.000" useanimation="0" startloaded="0" enabled="1" speed="0.200" delay="3.00" nodefilter="" horizonfromdefview="1" noderandom="1"/>
-    <flyintransition enabled="1" speed="0.50"/>
-    <animation animsequence="Animation01" syncanimationwithvideo="0" useinautorotation="0" clipsrandom="0"/>
-    <control zoomcentercursor="1" sensitivity="11" hideabout="1" lockedwheel="0" rubberband="0" lockedkeyboard="0" dblclickfullscreen="0" contextvr="1" simulatemass="1" speedwheel="1" invertcontrol="1" lockedmouse="0" lockedkeyboardzoom="0" contextfullscreen="1" contextprojections="0" invertwheel="0"/>
+    <transition softedge="0" zoomout="0" delay="none" zoomafteroutfov="40" zoomspeed="2" type="crossdissolve" zoomfov="40" blendtime="1" zoomin="0" zoomafterinfov="140" enabled="1" zoomoutpause="1" blendcolor="0x000000"/>
+    <autorotate noderandom="1" speed="0.200" startloaded="0" delay="3.00" nodedelay="0.00" nodefilter="" returntohorizon="3.000" horizonfromdefview="1" enabled="1" useanimation="0"/>
+    <flyintransition speed="0.50" enabled="1"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control lockedkeyboardzoom="0" lockedwheel="0" speedwheel="1" lockedmouse="0" zoomcentercursor="1" rubberband="0" sensitivity="11" dblclickfullscreen="0" invertwheel="0" contextprojections="0" lockedkeyboard="0" invertcontrol="1" hideabout="1" contextvr="1" contextfullscreen="1" simulatemass="1"/>
   </panorama>
-  <panorama id="node9" hideabout="1">
-    <input levelingpitch="0" overlap="1" levelbias="0.400" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node9/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="2992" width="2992">
-      <level preload="0" height="2992" width="2992" predecode="0"/>
-      <level preload="0" height="1496" width="1496" predecode="0"/>
-      <level preload="0" height="748" width="748" predecode="0"/>
-      <level preload="1" height="374" width="374" predecode="1"/>
-      <preview strip="1" color="0x808080"/>
+  <panorama hideabout="1" id="node9">
+    <input leveltilesize="510" levelbias="0.400" overlap="1" levelingpitch="0" height="2992" width="2992" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node9/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level predecode="0" preload="0" height="2992" width="2992"/>
+      <level predecode="0" preload="0" height="1496" width="1496"/>
+      <level predecode="0" preload="0" height="748" width="748"/>
+      <level predecode="1" preload="1" height="374" width="374"/>
+      <preview color="0x808080" strip="1"/>
     </input>
     <view fovmode="2" pannorth="69.5518">
-      <start pan="17.7244" tilt="-9.70916" fov="100" projection="4"/>
-      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
-      <min pan="0" fovpixel="2" tilt="-90"/>
-      <max fovfisheye="360" pan="360" fovstereographic="330" tilt="90" fov="140" scaletofit="1"/>
+      <start projection="4" fov="100" tilt="-9.70916" pan="17.7244"/>
+      <flyin projection="9" fov="170" tilt="-90" pan="0"/>
+      <min tilt="-90" fovpixel="2" pan="0"/>
+      <max scaletofit="1" fov="140" fovfisheye="360" tilt="90" fovstereographic="330" pan="360"/>
     </view>
-    <userdata longitude="32.46192923" description="" copyright="" source="" altitude="0.00" info="" nodeid="node9" customnodeid="" streetviewlink="https://www.google.com/maps/@37.86704,32.4619292,3a,75y,51.83h,90t/data=!3m4!1e1!3m2!1sCIABIhAAh4xoy35iqsdS6SgnqbSw!2e10" title="Kış Bahçesi" comment="" tags="grntler" heading="69.5518" author="" datetime="28.01.2026 11:41" latitude="37.86704000"/>
-    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
-      <label wordwrap="1" border="1" borderalpha="1" textalpha="1" enabled="1" backgroundalpha="1" borderradius="1" bordercolor="0x000000" textcolor="0x000000" backgroundcolor="0xffffff" height="20" background="1" width="180"/>
-      <polystyle bordercolor="0x0000ff" borderalpha="1" backgroundcolor="0x0000ff" handcursor="1" mode="0" backgroundalpha="0.25098"/>
-      <hotspot id="Point01" description="" pan="-20.07" title="Kış Bahçesi" distance="2.64341" target="-22.0/-6.6/108.2" skinid="ht_node" tilt="-17.56" url="{node8}"/>
-      <hotspot id="Point02" description="" pan="-307.88" title="Kış Bahçesi" distance="2.25571" target="-50.1/-9.8/108.2" skinid="ht_node" tilt="-24.45" url="{node7}"/>
-      <hotspot id="Point03" description="" pan="-196.81" title="Kış Bahçesi" distance="3.82477" target="178.6/-11.7/117.0" skinid="ht_node" tilt="-15.2" url="{node10}"/>
+    <userdata title="Kış Bahçesi" info="" customnodeid="" heading="69.5518" nodeid="node9" tags="grntler" latitude="37.86704000" longitude="32.46192923" description="" author="" copyright="" datetime="28.01.2026 11:41" streetviewlink="https://www.google.com/maps/@37.86704,32.4619292,3a,75y,51.83h,90t/data=!3m4!1e1!3m2!1sCIABIhAAh4xoy35iqsdS6SgnqbSw!2e10" comment="" source="" altitude="0.00"/>
+    <hotspots height="20" width="180" smoothmovement="0" wordwrap="1">
+      <label wordwrap="1" textalpha="1" border="1" backgroundalpha="1" textcolor="0x000000" background="1" backgroundcolor="0xffffff" borderradius="1" height="20" width="180" bordercolor="0x000000" enabled="1" borderalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" handcursor="1" bordercolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1"/>
+      <hotspot title="Kış Bahçesi" tilt="-17.56" url="{node8}" target="-22.0/-6.6/108.2" skinid="ht_node" pan="-20.07" id="Point01" distance="2.64341" description=""/>
+      <hotspot title="Kış Bahçesi" tilt="-24.45" url="{node7}" target="-50.1/-9.8/108.2" skinid="ht_node" pan="-307.88" id="Point02" distance="2.25571" description=""/>
+      <hotspot title="Kış Bahçesi" tilt="-15.2" url="{node10}" target="178.6/-11.7/117.0" skinid="ht_node" pan="-196.81" id="Point03" distance="3.82477" description=""/>
     </hotspots>
     <media/>
-    <transition zoomspeed="2" zoomin="0" enabled="1" blendtime="1" delay="none" type="crossdissolve" zoomafterinfov="140" softedge="0" zoomout="0" zoomoutpause="1" zoomafteroutfov="40" zoomfov="40" blendcolor="0x000000"/>
-    <autorotate nodedelay="0.00" returntohorizon="3.000" useanimation="0" startloaded="0" enabled="1" speed="0.200" delay="3.00" nodefilter="" horizonfromdefview="1" noderandom="1"/>
-    <flyintransition enabled="1" speed="0.50"/>
-    <animation animsequence="Animation01" syncanimationwithvideo="0" useinautorotation="0" clipsrandom="0"/>
-    <control zoomcentercursor="1" sensitivity="11" hideabout="1" lockedwheel="0" rubberband="0" lockedkeyboard="0" dblclickfullscreen="0" contextvr="1" simulatemass="1" speedwheel="1" invertcontrol="1" lockedmouse="0" lockedkeyboardzoom="0" contextfullscreen="1" contextprojections="0" invertwheel="0"/>
+    <transition softedge="0" zoomout="0" delay="none" zoomafteroutfov="40" zoomspeed="2" type="crossdissolve" zoomfov="40" blendtime="1" zoomin="0" zoomafterinfov="140" enabled="1" zoomoutpause="1" blendcolor="0x000000"/>
+    <autorotate noderandom="1" speed="0.200" startloaded="0" delay="3.00" nodedelay="0.00" nodefilter="" returntohorizon="3.000" horizonfromdefview="1" enabled="1" useanimation="0"/>
+    <flyintransition speed="0.50" enabled="1"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control lockedkeyboardzoom="0" lockedwheel="0" speedwheel="1" lockedmouse="0" zoomcentercursor="1" rubberband="0" sensitivity="11" dblclickfullscreen="0" invertwheel="0" contextprojections="0" lockedkeyboard="0" invertcontrol="1" hideabout="1" contextvr="1" contextfullscreen="1" simulatemass="1"/>
   </panorama>
-  <panorama id="node10" hideabout="1">
-    <input levelingpitch="0" overlap="1" levelbias="0.400" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node10/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="2992" width="2992">
-      <level preload="0" height="2992" width="2992" predecode="0"/>
-      <level preload="0" height="1496" width="1496" predecode="0"/>
-      <level preload="0" height="748" width="748" predecode="0"/>
-      <level preload="1" height="374" width="374" predecode="1"/>
-      <preview strip="1" color="0x808080"/>
+  <panorama hideabout="1" id="node10">
+    <input leveltilesize="510" levelbias="0.400" overlap="1" levelingpitch="0" height="2992" width="2992" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node10/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level predecode="0" preload="0" height="2992" width="2992"/>
+      <level predecode="0" preload="0" height="1496" width="1496"/>
+      <level predecode="0" preload="0" height="748" width="748"/>
+      <level predecode="1" preload="1" height="374" width="374"/>
+      <preview color="0x808080" strip="1"/>
     </input>
     <view fovmode="2" pannorth="97.6881">
-      <start pan="16.2553" tilt="-10.5788" fov="100" projection="4"/>
-      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
-      <min pan="0" fovpixel="2" tilt="-90"/>
-      <max fovfisheye="360" pan="360" fovstereographic="330" tilt="90" fov="140" scaletofit="1"/>
+      <start projection="4" fov="100" tilt="-10.5788" pan="16.2553"/>
+      <flyin projection="9" fov="170" tilt="-90" pan="0"/>
+      <min tilt="-90" fovpixel="2" pan="0"/>
+      <max scaletofit="1" fov="140" fovfisheye="360" tilt="90" fovstereographic="330" pan="360"/>
     </view>
-    <userdata longitude="32.46190187" description="" copyright="" source="" altitude="0.00" info="" nodeid="node10" customnodeid="" streetviewlink="https://www.google.com/maps/@37.8670132,32.4619019,3a,75y,81.43h,90t/data=!3m4!1e1!3m2!1sCIABIhACuPkppnyguysOXX_vJbvm!2e10" title="Kış Bahçesi" comment="" tags="grntler" heading="97.6881" author="" datetime="28.01.2026 11:41" latitude="37.86701323"/>
-    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
-      <label wordwrap="1" border="1" borderalpha="1" textalpha="1" enabled="1" backgroundalpha="1" borderradius="1" bordercolor="0x000000" textcolor="0x000000" backgroundcolor="0xffffff" height="20" background="1" width="180"/>
-      <polystyle bordercolor="0x0000ff" borderalpha="1" backgroundcolor="0x0000ff" handcursor="1" mode="0" backgroundalpha="0.25098"/>
-      <hotspot id="Point01" description="" pan="-170.63" title="Kış Bahçesi" distance="7.99287" target="35.7/-26.8/108.2" skinid="ht_node" tilt="-21.14" url="{node11}"/>
-      <hotspot id="Point02" description="" pan="-351.96" title="Kış Bahçesi" distance="3.82477" target="-1.5/-13.6/100.3" skinid="ht_node" tilt="-23.57" url="{node9}"/>
+    <userdata title="Kış Bahçesi" info="" customnodeid="" heading="97.6881" nodeid="node10" tags="grntler" latitude="37.86701323" longitude="32.46190187" description="" author="" copyright="" datetime="28.01.2026 11:41" streetviewlink="https://www.google.com/maps/@37.8670132,32.4619019,3a,75y,81.43h,90t/data=!3m4!1e1!3m2!1sCIABIhACuPkppnyguysOXX_vJbvm!2e10" comment="" source="" altitude="0.00"/>
+    <hotspots height="20" width="180" smoothmovement="0" wordwrap="1">
+      <label wordwrap="1" textalpha="1" border="1" backgroundalpha="1" textcolor="0x000000" background="1" backgroundcolor="0xffffff" borderradius="1" height="20" width="180" bordercolor="0x000000" enabled="1" borderalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" handcursor="1" bordercolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1"/>
+      <hotspot title="Kış Bahçesi" tilt="-21.14" url="{node11}" target="35.7/-26.8/108.2" skinid="ht_node" pan="-170.63" id="Point01" distance="7.99287" description=""/>
+      <hotspot title="Kış Bahçesi" tilt="-23.57" url="{node9}" target="-1.5/-13.6/100.3" skinid="ht_node" pan="-351.96" id="Point02" distance="3.82477" description=""/>
     </hotspots>
     <media/>
-    <transition zoomspeed="2" zoomin="0" enabled="1" blendtime="1" delay="none" type="crossdissolve" zoomafterinfov="140" softedge="0" zoomout="0" zoomoutpause="1" zoomafteroutfov="40" zoomfov="40" blendcolor="0x000000"/>
-    <autorotate nodedelay="0.00" returntohorizon="3.000" useanimation="0" startloaded="0" enabled="1" speed="0.200" delay="3.00" nodefilter="" horizonfromdefview="1" noderandom="1"/>
-    <flyintransition enabled="1" speed="0.50"/>
-    <animation animsequence="Animation01" syncanimationwithvideo="0" useinautorotation="0" clipsrandom="0"/>
-    <control zoomcentercursor="1" sensitivity="11" hideabout="1" lockedwheel="0" rubberband="0" lockedkeyboard="0" dblclickfullscreen="0" contextvr="1" simulatemass="1" speedwheel="1" invertcontrol="1" lockedmouse="0" lockedkeyboardzoom="0" contextfullscreen="1" contextprojections="0" invertwheel="0"/>
+    <transition softedge="0" zoomout="0" delay="none" zoomafteroutfov="40" zoomspeed="2" type="crossdissolve" zoomfov="40" blendtime="1" zoomin="0" zoomafterinfov="140" enabled="1" zoomoutpause="1" blendcolor="0x000000"/>
+    <autorotate noderandom="1" speed="0.200" startloaded="0" delay="3.00" nodedelay="0.00" nodefilter="" returntohorizon="3.000" horizonfromdefview="1" enabled="1" useanimation="0"/>
+    <flyintransition speed="0.50" enabled="1"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control lockedkeyboardzoom="0" lockedwheel="0" speedwheel="1" lockedmouse="0" zoomcentercursor="1" rubberband="0" sensitivity="11" dblclickfullscreen="0" invertwheel="0" contextprojections="0" lockedkeyboard="0" invertcontrol="1" hideabout="1" contextvr="1" contextfullscreen="1" simulatemass="1"/>
   </panorama>
-  <panorama id="node11" hideabout="1">
-    <input levelingpitch="0" overlap="1" levelbias="0.400" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node11/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="2992" width="2992">
-      <level preload="0" height="2992" width="2992" predecode="0"/>
-      <level preload="0" height="1496" width="1496" predecode="0"/>
-      <level preload="0" height="748" width="748" predecode="0"/>
-      <level preload="1" height="374" width="374" predecode="1"/>
-      <preview strip="1" color="0x808080"/>
+  <panorama hideabout="1" id="node11">
+    <input leveltilesize="510" levelbias="0.400" overlap="1" levelingpitch="0" height="2992" width="2992" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node11/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level predecode="0" preload="0" height="2992" width="2992"/>
+      <level predecode="0" preload="0" height="1496" width="1496"/>
+      <level predecode="0" preload="0" height="748" width="748"/>
+      <level predecode="1" preload="1" height="374" width="374"/>
+      <preview color="0x808080" strip="1"/>
     </input>
     <view fovmode="2" pannorth="72.9816">
-      <start pan="-173.343" tilt="-14.7115" fov="100" projection="4"/>
-      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
-      <min pan="0" fovpixel="2" tilt="-90"/>
-      <max fovfisheye="360" pan="360" fovstereographic="330" tilt="90" fov="140" scaletofit="1"/>
+      <start projection="4" fov="100" tilt="-14.7115" pan="-173.343"/>
+      <flyin projection="9" fov="170" tilt="-90" pan="0"/>
+      <min tilt="-90" fovpixel="2" pan="0"/>
+      <max scaletofit="1" fov="140" fovfisheye="360" tilt="90" fovstereographic="330" pan="360"/>
     </view>
-    <userdata longitude="32.46182667" description="" copyright="" source="" altitude="0.00" info="" nodeid="node11" customnodeid="" streetviewlink="https://www.google.com/maps/@37.8669727,32.4618267,3a,75y,246.32h,90t/data=!3m4!1e1!3m2!1sCIABIhDfBBivXzdgB-jm5Kp3Hu2k!2e10" title="Kış Bahçesi" comment="" tags="grntler" heading="72.9816" author="" datetime="28.01.2026 11:42" latitude="37.86697270"/>
-    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
-      <label wordwrap="1" border="1" borderalpha="1" textalpha="1" enabled="1" backgroundalpha="1" borderradius="1" bordercolor="0x000000" textcolor="0x000000" backgroundcolor="0xffffff" height="20" background="1" width="180"/>
-      <polystyle bordercolor="0x0000ff" borderalpha="1" backgroundcolor="0x0000ff" handcursor="1" mode="0" backgroundalpha="0.25098"/>
-      <hotspot id="Point01" description="" pan="-352.31" title="Kış Bahçesi" distance="7.99287" target="26.2/-5.1/117.0" skinid="ht_node" tilt="-19.47" url="{node10}"/>
-      <hotspot id="Point02" description="" pan="-268.87" title="İç mekan" distance="6.69928" target="-166.5/-12.1/108.2" skinid="ht_node" tilt="-28.93" url="{node3}"/>
+    <userdata title="Kış Bahçesi" info="" customnodeid="" heading="72.9816" nodeid="node11" tags="grntler" latitude="37.86697270" longitude="32.46182667" description="" author="" copyright="" datetime="28.01.2026 11:42" streetviewlink="https://www.google.com/maps/@37.8669727,32.4618267,3a,75y,246.32h,90t/data=!3m4!1e1!3m2!1sCIABIhDfBBivXzdgB-jm5Kp3Hu2k!2e10" comment="" source="" altitude="0.00"/>
+    <hotspots height="20" width="180" smoothmovement="0" wordwrap="1">
+      <label wordwrap="1" textalpha="1" border="1" backgroundalpha="1" textcolor="0x000000" background="1" backgroundcolor="0xffffff" borderradius="1" height="20" width="180" bordercolor="0x000000" enabled="1" borderalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" handcursor="1" bordercolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1"/>
+      <hotspot title="Kış Bahçesi" tilt="-19.47" url="{node10}" target="26.2/-5.1/117.0" skinid="ht_node" pan="-352.31" id="Point01" distance="7.99287" description=""/>
+      <hotspot title="İç mekan" tilt="-28.93" url="{node3}" target="-166.5/-12.1/108.2" skinid="ht_node" pan="-268.87" id="Point02" distance="6.69928" description=""/>
     </hotspots>
     <media/>
-    <transition zoomspeed="2" zoomin="0" enabled="1" blendtime="1" delay="none" type="crossdissolve" zoomafterinfov="140" softedge="0" zoomout="0" zoomoutpause="1" zoomafteroutfov="40" zoomfov="40" blendcolor="0x000000"/>
-    <autorotate nodedelay="0.00" returntohorizon="3.000" useanimation="0" startloaded="0" enabled="1" speed="0.200" delay="3.00" nodefilter="" horizonfromdefview="1" noderandom="1"/>
-    <flyintransition enabled="1" speed="0.50"/>
-    <animation animsequence="Animation01" syncanimationwithvideo="0" useinautorotation="0" clipsrandom="0"/>
-    <control zoomcentercursor="1" sensitivity="11" hideabout="1" lockedwheel="0" rubberband="0" lockedkeyboard="0" dblclickfullscreen="0" contextvr="1" simulatemass="1" speedwheel="1" invertcontrol="1" lockedmouse="0" lockedkeyboardzoom="0" contextfullscreen="1" contextprojections="0" invertwheel="0"/>
+    <transition softedge="0" zoomout="0" delay="none" zoomafteroutfov="40" zoomspeed="2" type="crossdissolve" zoomfov="40" blendtime="1" zoomin="0" zoomafterinfov="140" enabled="1" zoomoutpause="1" blendcolor="0x000000"/>
+    <autorotate noderandom="1" speed="0.200" startloaded="0" delay="3.00" nodedelay="0.00" nodefilter="" returntohorizon="3.000" horizonfromdefview="1" enabled="1" useanimation="0"/>
+    <flyintransition speed="0.50" enabled="1"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control lockedkeyboardzoom="0" lockedwheel="0" speedwheel="1" lockedmouse="0" zoomcentercursor="1" rubberband="0" sensitivity="11" dblclickfullscreen="0" invertwheel="0" contextprojections="0" lockedkeyboard="0" invertcontrol="1" hideabout="1" contextvr="1" contextfullscreen="1" simulatemass="1"/>
   </panorama>
-  <panorama id="node2" hideabout="1">
-    <input levelingpitch="0" overlap="1" levelbias="0.400" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node2/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="2992" width="2992">
-      <level preload="0" height="2992" width="2992" predecode="0"/>
-      <level preload="0" height="1496" width="1496" predecode="0"/>
-      <level preload="0" height="748" width="748" predecode="0"/>
-      <level preload="1" height="374" width="374" predecode="1"/>
-      <preview strip="1" color="0x808080"/>
+  <panorama hideabout="1" id="node2">
+    <input leveltilesize="510" levelbias="0.400" overlap="1" levelingpitch="0" height="2992" width="2992" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node2/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level predecode="0" preload="0" height="2992" width="2992"/>
+      <level predecode="0" preload="0" height="1496" width="1496"/>
+      <level predecode="0" preload="0" height="748" width="748"/>
+      <level predecode="1" preload="1" height="374" width="374"/>
+      <preview color="0x808080" strip="1"/>
     </input>
     <view fovmode="2" pannorth="-94.855">
-      <start pan="-21.8665" tilt="-6.24422" fov="100" projection="4"/>
-      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
-      <min pan="0" fovpixel="2" tilt="-90"/>
-      <max fovfisheye="360" pan="360" fovstereographic="330" tilt="90" fov="140" scaletofit="1"/>
+      <start projection="4" fov="100" tilt="-6.24422" pan="-21.8665"/>
+      <flyin projection="9" fov="170" tilt="-90" pan="0"/>
+      <min tilt="-90" fovpixel="2" pan="0"/>
+      <max scaletofit="1" fov="140" fovfisheye="360" tilt="90" fovstereographic="330" pan="360"/>
     </view>
-    <userdata longitude="32.46188864" description="" copyright="" source="" altitude="0.00" info="" nodeid="node2" customnodeid="" streetviewlink="https://www.google.com/maps/@37.8670524,32.4618886,3a,75y,287.01h,90t/data=!3m4!1e1!3m2!1sCIABIhC9xUHRHoHdH-L_lC0_VMZm!2e10" title="İç mekan" comment="" tags="grntler" heading="-94.855" author="" datetime="28.01.2026 11:20" latitude="37.86705235"/>
-    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
-      <label wordwrap="1" border="1" borderalpha="1" textalpha="1" enabled="1" backgroundalpha="1" borderradius="1" bordercolor="0x000000" textcolor="0x000000" backgroundcolor="0xffffff" height="20" background="1" width="180"/>
-      <polystyle bordercolor="0x0000ff" borderalpha="1" backgroundcolor="0x0000ff" handcursor="1" mode="0" backgroundalpha="0.25098"/>
-      <hotspot id="Point01" description="" pan="-342.62" title="İç mekan" distance="4.27694" target="-34.6/-9.4/108.2" skinid="ht_node" tilt="-20.38" url="{node3}"/>
-      <hotspot id="Point02" description="" pan="-162.19" title="Kış Bahçesi" distance="3.58244" target="170.7/-11.9/108.2" skinid="ht_node" tilt="-26.13" url="{node6}"/>
+    <userdata title="İç mekan" info="" customnodeid="" heading="-94.855" nodeid="node2" tags="grntler" latitude="37.86705235" longitude="32.46188864" description="" author="" copyright="" datetime="28.01.2026 11:20" streetviewlink="https://www.google.com/maps/@37.8670524,32.4618886,3a,75y,287.01h,90t/data=!3m4!1e1!3m2!1sCIABIhC9xUHRHoHdH-L_lC0_VMZm!2e10" comment="" source="" altitude="0.00"/>
+    <hotspots height="20" width="180" smoothmovement="0" wordwrap="1">
+      <label wordwrap="1" textalpha="1" border="1" backgroundalpha="1" textcolor="0x000000" background="1" backgroundcolor="0xffffff" borderradius="1" height="20" width="180" bordercolor="0x000000" enabled="1" borderalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" handcursor="1" bordercolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1"/>
+      <hotspot title="İç mekan" tilt="-20.38" url="{node3}" target="-34.6/-9.4/108.2" skinid="ht_node" pan="-342.62" id="Point01" distance="4.27694" description=""/>
+      <hotspot title="Kış Bahçesi" tilt="-26.13" url="{node6}" target="170.7/-11.9/108.2" skinid="ht_node" pan="-162.19" id="Point02" distance="3.58244" description=""/>
     </hotspots>
     <media/>
-    <transition zoomspeed="2" zoomin="0" enabled="1" blendtime="1" delay="none" type="crossdissolve" zoomafterinfov="140" softedge="0" zoomout="0" zoomoutpause="1" zoomafteroutfov="40" zoomfov="40" blendcolor="0x000000"/>
-    <autorotate nodedelay="0.00" returntohorizon="3.000" useanimation="0" startloaded="0" enabled="1" speed="0.200" delay="3.00" nodefilter="" horizonfromdefview="1" noderandom="1"/>
-    <flyintransition enabled="1" speed="0.50"/>
-    <animation animsequence="Animation01" syncanimationwithvideo="0" useinautorotation="0" clipsrandom="0"/>
-    <control zoomcentercursor="1" sensitivity="11" hideabout="1" lockedwheel="0" rubberband="0" lockedkeyboard="0" dblclickfullscreen="0" contextvr="1" simulatemass="1" speedwheel="1" invertcontrol="1" lockedmouse="0" lockedkeyboardzoom="0" contextfullscreen="1" contextprojections="0" invertwheel="0"/>
+    <transition softedge="0" zoomout="0" delay="none" zoomafteroutfov="40" zoomspeed="2" type="crossdissolve" zoomfov="40" blendtime="1" zoomin="0" zoomafterinfov="140" enabled="1" zoomoutpause="1" blendcolor="0x000000"/>
+    <autorotate noderandom="1" speed="0.200" startloaded="0" delay="3.00" nodedelay="0.00" nodefilter="" returntohorizon="3.000" horizonfromdefview="1" enabled="1" useanimation="0"/>
+    <flyintransition speed="0.50" enabled="1"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control lockedkeyboardzoom="0" lockedwheel="0" speedwheel="1" lockedmouse="0" zoomcentercursor="1" rubberband="0" sensitivity="11" dblclickfullscreen="0" invertwheel="0" contextprojections="0" lockedkeyboard="0" invertcontrol="1" hideabout="1" contextvr="1" contextfullscreen="1" simulatemass="1"/>
   </panorama>
-  <panorama id="node3" hideabout="1">
-    <input levelingpitch="0" overlap="1" levelbias="0.400" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node3/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="2992" width="2992">
-      <level preload="0" height="2992" width="2992" predecode="0"/>
-      <level preload="0" height="1496" width="1496" predecode="0"/>
-      <level preload="0" height="748" width="748" predecode="0"/>
-      <level preload="1" height="374" width="374" predecode="1"/>
-      <preview strip="1" color="0x808080"/>
+  <panorama hideabout="1" id="node3">
+    <input leveltilesize="510" levelbias="0.400" overlap="1" levelingpitch="0" height="2992" width="2992" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node3/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level predecode="0" preload="0" height="2992" width="2992"/>
+      <level predecode="0" preload="0" height="1496" width="1496"/>
+      <level predecode="0" preload="0" height="748" width="748"/>
+      <level predecode="1" preload="1" height="374" width="374"/>
+      <preview color="0x808080" strip="1"/>
     </input>
     <view fovmode="2" pannorth="247.204">
-      <start pan="-33.026" tilt="-5.61679" fov="100" projection="4"/>
-      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
-      <min pan="0" fovpixel="2" tilt="-90"/>
-      <max fovfisheye="360" pan="360" fovstereographic="330" tilt="90" fov="140" scaletofit="1"/>
+      <start projection="4" fov="100" tilt="-5.61679" pan="-33.026"/>
+      <flyin projection="9" fov="170" tilt="-90" pan="0"/>
+      <min tilt="-90" fovpixel="2" pan="0"/>
+      <max scaletofit="1" fov="140" fovfisheye="360" tilt="90" fovstereographic="330" pan="360"/>
     </view>
-    <userdata longitude="32.46184863" description="" copyright="" source="" altitude="0.00" info="" nodeid="node3" customnodeid="" streetviewlink="https://www.google.com/maps/@37.8670304,32.4618486,3a,75y,280.23h,90t/data=!3m4!1e1!3m2!1sCIABIhDopp4Fxdy7w7MRjOnAp3u1!2e10" title="İç mekan" comment="" tags="grntler" heading="247.204" author="" datetime="28.01.2026 11:20" latitude="37.86703040"/>
-    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
-      <label wordwrap="1" border="1" borderalpha="1" textalpha="1" enabled="1" backgroundalpha="1" borderradius="1" bordercolor="0x000000" textcolor="0x000000" backgroundcolor="0xffffff" height="20" background="1" width="180"/>
-      <polystyle bordercolor="0x0000ff" borderalpha="1" backgroundcolor="0x0000ff" handcursor="1" mode="0" backgroundalpha="0.25098"/>
-      <hotspot id="Point01" description="" pan="-41.65" title="İç mekan" distance="3.72785" target="139.4/-23.4/127.0" skinid="ht_node" tilt="-23.58" url="{node4}"/>
-      <hotspot id="Point02" description="" pan="-310.85" title="Kış Bahçesi" distance="6.69928" target="14.4/-10.3/100.0" skinid="ht_node" tilt="-33.48" url="{node11}"/>
-      <hotspot id="Point03" description="" pan="-195.32" title="İç mekan" distance="4.27694" target="-179.7/-3.9/117.4" skinid="ht_node" tilt="-19.74" url="{node2}"/>
+    <userdata title="İç mekan" info="" customnodeid="" heading="247.204" nodeid="node3" tags="grntler" latitude="37.86703040" longitude="32.46184863" description="" author="" copyright="" datetime="28.01.2026 11:20" streetviewlink="https://www.google.com/maps/@37.8670304,32.4618486,3a,75y,280.23h,90t/data=!3m4!1e1!3m2!1sCIABIhDopp4Fxdy7w7MRjOnAp3u1!2e10" comment="" source="" altitude="0.00"/>
+    <hotspots height="20" width="180" smoothmovement="0" wordwrap="1">
+      <label wordwrap="1" textalpha="1" border="1" backgroundalpha="1" textcolor="0x000000" background="1" backgroundcolor="0xffffff" borderradius="1" height="20" width="180" bordercolor="0x000000" enabled="1" borderalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" handcursor="1" bordercolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1"/>
+      <hotspot title="İç mekan" tilt="-23.58" url="{node4}" target="139.4/-23.4/127.0" skinid="ht_node" pan="-41.65" id="Point01" distance="3.72785" description=""/>
+      <hotspot title="Kış Bahçesi" tilt="-33.48" url="{node11}" target="14.4/-10.3/100.0" skinid="ht_node" pan="-310.85" id="Point02" distance="6.69928" description=""/>
+      <hotspot title="İç mekan" tilt="-19.74" url="{node2}" target="-179.7/-3.9/117.4" skinid="ht_node" pan="-195.32" id="Point03" distance="4.27694" description=""/>
     </hotspots>
     <media/>
-    <transition zoomspeed="2" zoomin="0" enabled="1" blendtime="1" delay="none" type="crossdissolve" zoomafterinfov="140" softedge="0" zoomout="0" zoomoutpause="1" zoomafteroutfov="40" zoomfov="40" blendcolor="0x000000"/>
-    <autorotate nodedelay="0.00" returntohorizon="3.000" useanimation="0" startloaded="0" enabled="1" speed="0.200" delay="3.00" nodefilter="" horizonfromdefview="1" noderandom="1"/>
-    <flyintransition enabled="1" speed="0.50"/>
-    <animation animsequence="Animation01" syncanimationwithvideo="0" useinautorotation="0" clipsrandom="0"/>
-    <control zoomcentercursor="1" sensitivity="11" hideabout="1" lockedwheel="0" rubberband="0" lockedkeyboard="0" dblclickfullscreen="0" contextvr="1" simulatemass="1" speedwheel="1" invertcontrol="1" lockedmouse="0" lockedkeyboardzoom="0" contextfullscreen="1" contextprojections="0" invertwheel="0"/>
+    <transition softedge="0" zoomout="0" delay="none" zoomafteroutfov="40" zoomspeed="2" type="crossdissolve" zoomfov="40" blendtime="1" zoomin="0" zoomafterinfov="140" enabled="1" zoomoutpause="1" blendcolor="0x000000"/>
+    <autorotate noderandom="1" speed="0.200" startloaded="0" delay="3.00" nodedelay="0.00" nodefilter="" returntohorizon="3.000" horizonfromdefview="1" enabled="1" useanimation="0"/>
+    <flyintransition speed="0.50" enabled="1"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control lockedkeyboardzoom="0" lockedwheel="0" speedwheel="1" lockedmouse="0" zoomcentercursor="1" rubberband="0" sensitivity="11" dblclickfullscreen="0" invertwheel="0" contextprojections="0" lockedkeyboard="0" invertcontrol="1" hideabout="1" contextvr="1" contextfullscreen="1" simulatemass="1"/>
   </panorama>
-  <panorama id="node4" hideabout="1">
-    <input levelingpitch="0" overlap="1" levelbias="0.400" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node4/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="2992" width="2992">
-      <level preload="0" height="2992" width="2992" predecode="0"/>
-      <level preload="0" height="1496" width="1496" predecode="0"/>
-      <level preload="0" height="748" width="748" predecode="0"/>
-      <level preload="1" height="374" width="374" predecode="1"/>
-      <preview strip="1" color="0x808080"/>
+  <panorama hideabout="1" id="node4">
+    <input leveltilesize="510" levelbias="0.400" overlap="1" levelingpitch="0" height="2992" width="2992" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node4/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level predecode="0" preload="0" height="2992" width="2992"/>
+      <level predecode="0" preload="0" height="1496" width="1496"/>
+      <level predecode="0" preload="0" height="748" width="748"/>
+      <level predecode="1" preload="1" height="374" width="374"/>
+      <preview color="0x808080" strip="1"/>
     </input>
     <view fovmode="2" pannorth="260.612">
-      <start pan="120.51" tilt="-33.7538" fov="100" projection="4"/>
-      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
-      <min pan="0" fovpixel="2" tilt="-90"/>
-      <max fovfisheye="360" pan="360" fovstereographic="330" tilt="90" fov="140" scaletofit="1"/>
+      <start projection="4" fov="100" tilt="-33.7538" pan="120.51"/>
+      <flyin projection="9" fov="170" tilt="-90" pan="0"/>
+      <min tilt="-90" fovpixel="2" pan="0"/>
+      <max scaletofit="1" fov="140" fovfisheye="360" tilt="90" fovstereographic="330" pan="360"/>
     </view>
-    <userdata longitude="32.46180728" description="" copyright="" source="" altitude="0.00" info="" nodeid="node4" customnodeid="" streetviewlink="https://www.google.com/maps/@37.8670228,32.4618073,3a,75y,140.1h,90t/data=!3m4!1e1!3m2!1sCIABIhB840u0t38YQO1lw3CCuU7M!2e10" title="İç mekan" comment="" tags="grntler" heading="260.612" author="" datetime="28.01.2026 11:21" latitude="37.86702276"/>
-    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
-      <label wordwrap="1" border="1" borderalpha="1" textalpha="1" enabled="1" backgroundalpha="1" borderradius="1" bordercolor="0x000000" textcolor="0x000000" backgroundcolor="0xffffff" height="20" background="1" width="180"/>
-      <polystyle bordercolor="0x0000ff" borderalpha="1" backgroundcolor="0x0000ff" handcursor="1" mode="0" backgroundalpha="0.25098"/>
-      <hotspot id="Point01" description="" pan="-197.04" title="İç mekan" distance="3.72785" target="142.2/-11.6/100.0" skinid="ht_node" tilt="-24.78" url="{node3}"/>
-      <hotspot id="Point02" description="" pan="-264.31" title="WC" distance="2.30577" target="2.1/-5.6/127.0" skinid="ht_node" tilt="-54.42" url="{node5}"/>
+    <userdata title="İç mekan" info="" customnodeid="" heading="260.612" nodeid="node4" tags="grntler" latitude="37.86702276" longitude="32.46180728" description="" author="" copyright="" datetime="28.01.2026 11:21" streetviewlink="https://www.google.com/maps/@37.8670228,32.4618073,3a,75y,140.1h,90t/data=!3m4!1e1!3m2!1sCIABIhB840u0t38YQO1lw3CCuU7M!2e10" comment="" source="" altitude="0.00"/>
+    <hotspots height="20" width="180" smoothmovement="0" wordwrap="1">
+      <label wordwrap="1" textalpha="1" border="1" backgroundalpha="1" textcolor="0x000000" background="1" backgroundcolor="0xffffff" borderradius="1" height="20" width="180" bordercolor="0x000000" enabled="1" borderalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" handcursor="1" bordercolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1"/>
+      <hotspot title="İç mekan" tilt="-24.78" url="{node3}" target="142.2/-11.6/100.0" skinid="ht_node" pan="-197.04" id="Point01" distance="3.72785" description=""/>
+      <hotspot title="WC" tilt="-54.42" url="{node5}" target="2.1/-5.6/127.0" skinid="ht_node" pan="-264.31" id="Point02" distance="2.30577" description=""/>
     </hotspots>
     <media/>
-    <transition zoomspeed="2" zoomin="0" enabled="1" blendtime="1" delay="none" type="crossdissolve" zoomafterinfov="140" softedge="0" zoomout="0" zoomoutpause="1" zoomafteroutfov="40" zoomfov="40" blendcolor="0x000000"/>
-    <autorotate nodedelay="0.00" returntohorizon="3.000" useanimation="0" startloaded="0" enabled="1" speed="0.200" delay="3.00" nodefilter="" horizonfromdefview="1" noderandom="1"/>
-    <flyintransition enabled="1" speed="0.50"/>
-    <animation animsequence="Animation01" syncanimationwithvideo="0" useinautorotation="0" clipsrandom="0"/>
-    <control zoomcentercursor="1" sensitivity="11" hideabout="1" lockedwheel="0" rubberband="0" lockedkeyboard="0" dblclickfullscreen="0" contextvr="1" simulatemass="1" speedwheel="1" invertcontrol="1" lockedmouse="0" lockedkeyboardzoom="0" contextfullscreen="1" contextprojections="0" invertwheel="0"/>
+    <transition softedge="0" zoomout="0" delay="none" zoomafteroutfov="40" zoomspeed="2" type="crossdissolve" zoomfov="40" blendtime="1" zoomin="0" zoomafterinfov="140" enabled="1" zoomoutpause="1" blendcolor="0x000000"/>
+    <autorotate noderandom="1" speed="0.200" startloaded="0" delay="3.00" nodedelay="0.00" nodefilter="" returntohorizon="3.000" horizonfromdefview="1" enabled="1" useanimation="0"/>
+    <flyintransition speed="0.50" enabled="1"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control lockedkeyboardzoom="0" lockedwheel="0" speedwheel="1" lockedmouse="0" zoomcentercursor="1" rubberband="0" sensitivity="11" dblclickfullscreen="0" invertwheel="0" contextprojections="0" lockedkeyboard="0" invertcontrol="1" hideabout="1" contextvr="1" contextfullscreen="1" simulatemass="1"/>
   </panorama>
-  <panorama id="node5" hideabout="1">
-    <input levelingpitch="0" overlap="1" levelbias="0.400" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node5/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="2992" width="2992">
-      <level preload="0" height="2992" width="2992" predecode="0"/>
-      <level preload="0" height="1496" width="1496" predecode="0"/>
-      <level preload="0" height="748" width="748" predecode="0"/>
-      <level preload="1" height="374" width="374" predecode="1"/>
-      <preview strip="1" color="0x808080"/>
+  <panorama hideabout="1" id="node5">
+    <input leveltilesize="510" levelbias="0.400" overlap="1" levelingpitch="0" height="2992" width="2992" levelbiashidpi="1.000" levelingroll="0" leveltileurl="tiles/node5/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level predecode="0" preload="0" height="2992" width="2992"/>
+      <level predecode="0" preload="0" height="1496" width="1496"/>
+      <level predecode="0" preload="0" height="748" width="748"/>
+      <level predecode="1" preload="1" height="374" width="374"/>
+      <preview color="0x808080" strip="1"/>
     </input>
     <view fovmode="2" pannorth="242.34">
-      <start pan="1.16828" tilt="-9.49657" fov="100" projection="4"/>
-      <flyin pan="0" tilt="-90" fov="170" projection="9"/>
-      <min pan="0" fovpixel="2" tilt="-90"/>
-      <max fovfisheye="360" pan="360" fovstereographic="330" tilt="90" fov="140" scaletofit="1"/>
+      <start projection="4" fov="100" tilt="-9.49657" pan="1.16828"/>
+      <flyin projection="9" fov="170" tilt="-90" pan="0"/>
+      <min tilt="-90" fovpixel="2" pan="0"/>
+      <max scaletofit="1" fov="140" fovfisheye="360" tilt="90" fovstereographic="330" pan="360"/>
     </view>
-    <userdata longitude="32.46181185" description="" copyright="" source="" altitude="0.00" info="" nodeid="node5" customnodeid="" streetviewlink="https://www.google.com/maps/@37.8670023,32.4618118,3a,75y,241.17h,90t/data=!3m4!1e1!3m2!1sCIABIhC26udCVBMp-E-uHM8Gxikj!2e10" title="WC" comment="" tags="grntler" heading="242.34" author="" datetime="28.01.2026 11:22" latitude="37.86700234"/>
-    <hotspots wordwrap="1" smoothmovement="0" height="20" width="180">
-      <label wordwrap="1" border="1" borderalpha="1" textalpha="1" enabled="1" backgroundalpha="1" borderradius="1" bordercolor="0x000000" textcolor="0x000000" backgroundcolor="0xffffff" height="20" background="1" width="180"/>
-      <polystyle bordercolor="0x0000ff" borderalpha="1" backgroundcolor="0x0000ff" handcursor="1" mode="0" backgroundalpha="0.25098"/>
-      <hotspot id="Point01" description="" pan="-33.51" title="İç mekan" distance="2.30577" target="143.6/-30.4/117.4" skinid="ht_node" tilt="-20.63" url="{node4}"/>
+    <userdata title="WC" info="" customnodeid="" heading="242.34" nodeid="node5" tags="grntler" latitude="37.86700234" longitude="32.46181185" description="" author="" copyright="" datetime="28.01.2026 11:22" streetviewlink="https://www.google.com/maps/@37.8670023,32.4618118,3a,75y,241.17h,90t/data=!3m4!1e1!3m2!1sCIABIhC26udCVBMp-E-uHM8Gxikj!2e10" comment="" source="" altitude="0.00"/>
+    <hotspots height="20" width="180" smoothmovement="0" wordwrap="1">
+      <label wordwrap="1" textalpha="1" border="1" backgroundalpha="1" textcolor="0x000000" background="1" backgroundcolor="0xffffff" borderradius="1" height="20" width="180" bordercolor="0x000000" enabled="1" borderalpha="1"/>
+      <polystyle backgroundcolor="0x0000ff" handcursor="1" bordercolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1"/>
+      <hotspot title="İç mekan" tilt="-20.63" url="{node4}" target="143.6/-30.4/117.4" skinid="ht_node" pan="-33.51" id="Point01" distance="2.30577" description=""/>
     </hotspots>
     <media/>
-    <transition zoomspeed="2" zoomin="0" enabled="1" blendtime="1" delay="none" type="crossdissolve" zoomafterinfov="140" softedge="0" zoomout="0" zoomoutpause="1" zoomafteroutfov="40" zoomfov="40" blendcolor="0x000000"/>
-    <autorotate nodedelay="0.00" returntohorizon="3.000" useanimation="0" startloaded="0" enabled="1" speed="0.200" delay="3.00" nodefilter="" horizonfromdefview="1" noderandom="1"/>
-    <flyintransition enabled="1" speed="0.50"/>
-    <animation animsequence="Animation01" syncanimationwithvideo="0" useinautorotation="0" clipsrandom="0"/>
-    <control zoomcentercursor="1" sensitivity="11" hideabout="1" lockedwheel="0" rubberband="0" lockedkeyboard="0" dblclickfullscreen="0" contextvr="1" simulatemass="1" speedwheel="1" invertcontrol="1" lockedmouse="0" lockedkeyboardzoom="0" contextfullscreen="1" contextprojections="0" invertwheel="0"/>
+    <transition softedge="0" zoomout="0" delay="none" zoomafteroutfov="40" zoomspeed="2" type="crossdissolve" zoomfov="40" blendtime="1" zoomin="0" zoomafterinfov="140" enabled="1" zoomoutpause="1" blendcolor="0x000000"/>
+    <autorotate noderandom="1" speed="0.200" startloaded="0" delay="3.00" nodedelay="0.00" nodefilter="" returntohorizon="3.000" horizonfromdefview="1" enabled="1" useanimation="0"/>
+    <flyintransition speed="0.50" enabled="1"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0" clipsrandom="0"/>
+    <control lockedkeyboardzoom="0" lockedwheel="0" speedwheel="1" lockedmouse="0" zoomcentercursor="1" rubberband="0" sensitivity="11" dblclickfullscreen="0" invertwheel="0" contextprojections="0" lockedkeyboard="0" invertcontrol="1" hideabout="1" contextvr="1" contextfullscreen="1" simulatemass="1"/>
   </panorama>
   <masternode>
-    <userdata tags="" description="" author="" copyright="" title="" comment=""/>
+    <userdata description="" title="" author="" copyright="" tags="" comment=""/>
     <animationsequences>
       <sequence title="Animation01"/>
     </animationsequences>

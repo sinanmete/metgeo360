@@ -3,179 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>MetGeo360 | Proje Portföyü</title>
+    <title>MetGeo360 | Mapbox Profesyonel</title>
     
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
-    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
 
     <style>
-        /* GENEL AYARLAR */
-        body, html { margin: 0; padding: 0; height: 100%; background: #000; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
-        #map { height: 100%; width: 100%; z-index: 1; }
-        .leaflet-control-attribution { display: none !important; }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; font-family: 'Segoe UI', sans-serif; }
+        #map { height: 100%; width: 100%; }
 
-        /* SOL ÜST LOGO */
+        /* LOGO */
         .brand-box {
-            position: absolute; top: 20px; left: 20px; z-index: 1000;
+            position: absolute; top: 20px; left: 20px; z-index: 10;
             background: rgba(0, 0, 0, 0.9); color: #f1c40f; padding: 15px;
             border-left: 5px solid #f1c40f; border-radius: 5px;
             box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            pointer-events: none;
         }
-        .brand-box h1 { margin: 0; font-size: 20px; font-weight: 800; }
-        .brand-box p { margin: 2px 0 0; color: #fff; font-size: 11px; letter-spacing: 1px; }
+        .brand-box h1 { margin: 0; font-size: 20px; font-weight: 800; letter-spacing: 1px; }
+        .brand-box p { margin: 2px 0 0; color: #fff; font-size: 10px; letter-spacing: 2px; }
 
-        /* BİLGİ KUTUSU (DEBUG) */
-        .status-box {
-            position: absolute; bottom: 20px; left: 20px; z-index: 1000;
-            background: rgba(0,0,0,0.8); color: lime; padding: 10px; 
-            font-size: 12px; font-family: monospace; border: 1px solid lime;
-            display: none;
+        /* SİYAH-SARI İĞNE TASARIMI */
+        .mapbox-marker {
+            width: 24px; height: 24px;
+            background: #000; border: 2px solid #f1c40f; border-radius: 50%;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 10px #f1c40f;
+            animation: pulse 2s infinite;
+        }
+        .mapbox-marker::after {
+            content: ''; width: 8px; height: 8px; background: #f1c40f; border-radius: 50%;
         }
 
-        /* SAĞ KONTROL PANELİ */
-        .custom-controls {
-            position: absolute; top: 20px; right: 20px; z-index: 1000;
-            background: rgba(0, 0, 0, 0.9); padding: 10px; border-radius: 5px; 
-            border: 1px solid #f1c40f; width: 140px;
-        }
-        .control-btn {
-            background: #333; color: #fff; padding: 8px 15px; margin-bottom: 8px;
-            cursor: pointer; text-align: center; font-size: 12px; font-weight: bold;
-            border: 1px solid #555; display: block; border-radius: 4px;
-        }
-        .control-btn.active { background: #f1c40f; color: #000; border-color: #f1c40f; }
-
-        /* TİK (CHECKBOX) */
-        .toggle-row {
-            display: flex; justify-content: space-between; align-items: center;
-            color: #fff; font-size: 11px; padding-top: 8px; border-top: 1px solid #444;
-        }
-        .switch { position: relative; display: inline-block; width: 34px; height: 18px; }
-        .switch input { opacity: 0; width: 0; height: 0; }
-        .slider {
-            position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
-            background-color: #555; transition: .4s; border-radius: 34px;
-        }
-        .slider:before {
-            position: absolute; content: ""; height: 14px; width: 14px; left: 2px; bottom: 2px;
-            background-color: white; transition: .4s; border-radius: 50%;
-        }
-        input:checked + .slider { background-color: #f1c40f; }
-        input:checked + .slider:before { transform: translateX(16px); }
-
-        /* İĞNE TASARIMI */
-        .leaflet-div-icon { background: transparent !important; border: none !important; }
-        .pin-design {
-            width: 100%; height: 100%; background: #000; color: #f1c40f;
-            border: 2px solid #f1c40f; border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            font-weight: 900; font-size: 14px; box-sizing: border-box; 
-            box-shadow: 0 0 10px #f1c40f; animation: pulse 2s infinite;
-        }
-        .pin-dot {
-            width: 100%; height: 100%; background: #000; border: 2px solid #f1c40f; 
-            border-radius: 50%; box-sizing: border-box; box-shadow: 0 0 5px #f1c40f;
-            animation: pulse 2s infinite; position: relative;
-        }
-        .pin-dot::after {
-            content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 6px; height: 6px; background: #f1c40f; border-radius: 50%;
-        }
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(241, 196, 15, 0.7); transform: scale(0.95); }
-            70% { box-shadow: 0 0 0 10px rgba(241, 196, 15, 0); transform: scale(1.05); }
+            70% { box-shadow: 0 0 0 12px rgba(241, 196, 15, 0); transform: scale(1.1); }
             100% { box-shadow: 0 0 0 0 rgba(241, 196, 15, 0); transform: scale(0.95); }
         }
 
-        /* POPUP ve LİSTE */
-        .leaflet-popup-content-wrapper { background: #111; color: #fff; border: 1px solid #f1c40f; padding: 0; border-radius: 0; }
-        .leaflet-popup-content { margin: 0; width: 260px !important; }
-        .leaflet-popup-tip { background: #f1c40f; }
-        .popup-img { width: 100%; height: 150px; object-fit: cover; border-bottom: 1px solid #333; }
-        .popup-btn { display: block; background: #f1c40f; color: #000; text-align: center; padding: 12px; text-decoration: none; font-weight: bold; }
-        .cluster-list { list-style: none; padding: 0; margin: 0; max-height: 200px; overflow-y: auto; }
-        .cluster-item { display: flex; align-items: center; padding: 10px; border-bottom: 1px solid #333; text-decoration: none; color: white; }
-        .cluster-item:hover { background: #222; }
-        .cluster-thumb { width: 40px; height: 40px; margin-right: 10px; object-fit: cover; border: 1px solid #555; }
-    </style>
-</head>
-<body>
-
-    <div class="brand-box">
-        <h1>METGEO360</h1>
-        <p>METEHAN HARİTA MÜHENDİSLİK</p>
-    </div>
-    
-    <div id="statusInfo" class="status-box">Veriler aranıyor...</div>
-
-    <div class="custom-controls">
-        <div id="btn3D" class="control-btn active" onclick="setMap('3d')">UYDU (3D)</div>
-        <div id="btn2D" class="control-btn" onclick="setMap('2d')">HARİTA (2D)</div>
-        
-        <div class="toggle-row">
-            <span>Sokak İsimleri</span>
-            <label class="switch">
-                <input type="checkbox" id="labelToggle" onchange="toggleLabels()" checked>
-                <span class="slider"></span>
-            </label>
-        </div>
-    </div>
-
-    <div id="map"></div>
-
-    <script>
-        // --- 1. GARANTİLİ KATMANLAR ---
-        
-        // A) Google Uydu (Sadece Görüntü) - %100 Çalışır
-        var googleSat = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', { 
-            maxZoom: 21,
-            attribution: 'Google'
-        });
-        
-        // B) CartoDB Light Labels (Sadece Yazılar) - Temiz, Reklamsız
-        var cartoLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
-            maxZoom: 20,
-            subdomains: 'abcd',
-            attribution: 'CartoDB'
-        });
-        
-        // C) 2D Harita (Alternatif)
-        var cartoMap = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-            maxZoom: 20,
-            subdomains: 'abcd'
-        });
-
-        // Haritayı Başlat
-        var map = L.map('map', {
-            center: [39.0, 35.5], zoom: 6,
-            layers: [googleSat, cartoLabels], // Açılışta bu ikisini birleştir
-            zoomControl: false
-        });
-        L.control.zoom({ position: 'bottomright' }).addTo(map);
-
-        // --- 2. MOD KONTROLÜ ---
-        var currentMode = '3d'; 
-
-        function setMap(mode) {
-            currentMode = mode;
-            map.eachLayer(function (layer) { map.removeLayer(layer); }); // Temizlik
-
-            if(mode === '3d') {
-                document.getElementById('btn3D').classList.add('active');
-                document.getElementById('btn2D').classList.remove('active');
-                document.querySelector('.toggle-row').style.opacity = '1';
-                document.querySelector('.toggle-row').style.pointerEvents = 'auto';
-                
-                // Uyduyu Ekle
-                map.addLayer(googleSat);
-                
-                // Eğer tik işaretliyse Yazıları Ekle
-                if (document.getElementById('labelToggle').checked) {
-                    map.addLayer(cartoLabels);
-                }
-            } else {
-                document.getElementById('btn2D').classList.add('active');
-                document.getElementById('btn3D').classList.remove('active');
-                document.querySelector('.toggle-row').style.opacity = '0.3';
+        /* POPUP TASARIMI */
+        .mapboxgl-popup-content { background: #111 !important; color: #fff !important; border: 1px solid #f1c40f !important; padding: 0 !important; border-radius: 4px !important; overflow: hidden;
