@@ -3,72 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>MetGeo360 | 3D Profesyonel Harita</title>
+    <title>MetGeo360 | Profesyonel Sistem</title>
     
-    <script src='https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
 
     <style>
-        /* GENEL AYARLAR */
+        /* TEMEL AYARLAR */
         body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; font-family: 'Segoe UI', sans-serif; }
         #map { height: 100%; width: 100%; }
 
-        /* LOGO */
+        /* --- GİRİŞ EKRANI (MODAL) --- */
+        #intro-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85); /* Koyu Arkaplan */
+            backdrop-filter: blur(8px); /* Buzlu Cam */
+            z-index: 9999;
+            display: flex; justify-content: center; align-items: center;
+            opacity: 1; transition: opacity 0.8s ease;
+            cursor: pointer;
+        }
+
+        .intro-box {
+            background: #050505;
+            border: 2px solid #f1c40f;
+            padding: 40px;
+            max-width: 650px;
+            width: 90%;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            box-shadow: 0 0 40px rgba(241, 196, 15, 0.15);
+            border-radius: 8px;
+            cursor: default;
+        }
+
+        .intro-close {
+            position: absolute; top: 10px; right: 20px;
+            font-size: 32px; color: #f1c40f; cursor: pointer;
+            line-height: 1; transition: 0.2s;
+        }
+        .intro-close:hover { color: #fff; }
+
+        .intro-title { 
+            color: #f1c40f; font-size: 22px; margin-bottom: 20px; 
+            text-transform: uppercase; letter-spacing: 2px; font-weight: 800;
+            border-bottom: 1px solid #333; padding-bottom: 15px; 
+        }
+
+        .intro-text { font-size: 15px; line-height: 1.6; color: #ccc; margin-bottom: 25px; }
+        .highlight { color: #f1c40f; font-weight: bold; }
+
+        .intro-footer {
+            font-size: 11px; color: #666; border-top: 1px solid #333; padding-top: 15px; margin-top: 20px;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .intro-contact { 
+            color: #f1c40f; font-weight: bold; font-size: 15px; margin-top: 5px; 
+            display: block; text-decoration: none; letter-spacing: 1px;
+        }
+
+        /* DİĞER BİLEŞENLER */
         .brand-box {
             position: absolute; top: 20px; left: 20px; z-index: 10;
             background: rgba(0, 0, 0, 0.9); color: #f1c40f; padding: 15px;
             border-left: 5px solid #f1c40f; border-radius: 5px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.8);
-            pointer-events: none; /* Haritaya tıklamayı engellemesin */
+            box-shadow: 0 0 20px rgba(0,0,0,0.8); pointer-events: none;
         }
         .brand-box h1 { margin: 0; font-size: 20px; font-weight: 800; letter-spacing: 1px; }
         .brand-box p { margin: 2px 0 0; color: #fff; font-size: 10px; letter-spacing: 2px; }
 
-        /* KATMAN KONTROL PANELİ (TABAKA) */
         .layer-control {
             position: absolute; top: 20px; right: 20px; z-index: 10;
             background: rgba(0, 0, 0, 0.9); padding: 10px; border-radius: 5px;
             border: 1px solid #f1c40f; width: 160px;
         }
         .layer-title { color: #f1c40f; font-size: 12px; font-weight: bold; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 5px; }
-        
         .layer-option { display: flex; align-items: center; margin-bottom: 8px; cursor: pointer; color: #fff; font-size: 12px; }
         .layer-option input { margin-right: 8px; accent-color: #f1c40f; cursor: pointer; }
         .layer-option:hover { color: #f1c40f; }
 
-        /* SİYAH-SARI İĞNE TASARIMI */
-        .mapbox-marker {
-            width: 30px; height: 30px;
-            background: #000; border: 2px solid #f1c40f; border-radius: 50%;
-            cursor: pointer; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 0 15px #f1c40f;
-            transition: transform 0.3s;
-        }
-        .mapbox-marker:hover { transform: scale(1.2); }
-        .mapbox-marker::after {
-            content: ''; width: 10px; height: 10px; background: #f1c40f; border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(241, 196, 15, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(241, 196, 15, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(241, 196, 15, 0); }
-        }
-
-        /* POPUP TASARIMI */
         .mapboxgl-popup-content { background: #111 !important; color: #fff !important; border: 1px solid #f1c40f !important; padding: 0 !important; border-radius: 4px !important; }
         .mapboxgl-popup-tip { border-top-color: #f1c40f !important; }
-        .mapboxgl-popup-close-button { color: #f1c40f; font-size: 20px; padding: 5px; }
-        
         .popup-img { width: 100%; height: 160px; object-fit: cover; display: block; border-bottom: 1px solid #333; }
         .popup-info { padding: 15px; text-align: center; }
-        .popup-info h3 { margin: 0 0 10px; color: #f1c40f; font-size: 16px; font-weight: bold; }
-        .popup-btn { display: block; background: #f1c40f; color: #000; text-align: center; padding: 10px; text-decoration: none; font-weight: bold; border-radius: 3px; }
-        .popup-btn:hover { background: #fff; }
+        .popup-btn { display: block; background: #f1c40f; color: #000; text-align: center; padding: 10px; font-weight: bold; text-decoration: none; border-radius: 3px; margin-top: 10px; }
     </style>
 </head>
 <body>
+
+    <div id="intro-overlay" onclick="closeIntro()">
+        <div class="intro-box" onclick="event.stopPropagation()">
+            <span class="intro-close" onclick="closeIntro()">&times;</span>
+            <h2 class="intro-title">METGEO360 PROJE VİZYONU</h2>
+            <div class="intro-text">
+                Web platformumuz şu anda <span class="highlight">geliştirme</span> sürecindedir. İncelemekte olduğunuz bu sürüm, projelerimizi önizlemeniz amacıyla hazırlanmış bir <strong style="color:#f1c40f">DEMO</strong> versiyondur.
+                <br><br>
+                İşletmeleriniz, projeleriniz ve bize özel çalışmalar yakında burada yayınlanacaktır.
+                <br><br>
+                Hem sosyal etkileşim kurabileceğiniz, hem de öncelikle <strong>Sanal Konya Turu</strong> ve ilerleyen süreçte tüm Türkiye'yi kapsayan dijital deneyimler yaşayabileceğiniz devasa bir platforma hazırlanıyoruz.
+                <br><br>
+                Yenilikler için beklemede kalın.
+            </div>
+            <div class="intro-footer">
+                <p>BU BİR <strong>METEHAN HARİTA MÜHENDİSLİK</strong> KURULUŞUDUR.</p>
+                <p style="margin-top:8px; color:#888;">Hamzaoğlu Mah. Büyük Kumköprü Cad. No:127/E Karatay/KONYA</p>
+                <a href="tel:05324666383" class="intro-contact">0 532 466 63 83</a>
+            </div>
+        </div>
+    </div>
 
     <div class="brand-box">
         <h1>METGEO360</h1>
@@ -77,24 +120,19 @@
 
     <div class="layer-control">
         <div class="layer-title">GÖRÜNÜM AYARLARI</div>
-        
         <label class="layer-option">
             <input type="radio" name="style" value="satellite-streets-v12" checked onclick="changeStyle(this.value)">
             Uydu (Hibrit)
         </label>
-        
         <label class="layer-option">
             <input type="radio" name="style" value="light-v11" onclick="changeStyle(this.value)">
             Sade Harita (2D)
         </label>
-        
         <label class="layer-option">
             <input type="radio" name="style" value="dark-v11" onclick="changeStyle(this.value)">
             Gece Modu
         </label>
-
         <div style="border-top:1px solid #333; margin:5px 0;"></div>
-
         <label class="layer-option">
             <input type="checkbox" id="buildingToggle" checked onclick="toggleBuildings()">
             3D Binaları Göster
@@ -107,138 +145,160 @@
         // TOKEN
         mapboxgl.accessToken = 'pk.eyJ1IjoibWFwZ2VvMzYwIiwiYSI6ImNtbDVzcWw0azA0aWIza3NjMTZoZ21rOWwifQ.agrbCVkuqhdshT8Yy6HuSw';
 
-        // Haritayı Başlat
-        const map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/satellite-streets-v12', // Varsayılan: Uydu
-            center: [35.5, 39.0], 
-            zoom: 5,
-            pitch: 45, // Başlangıçta hafif eğik (3D hissi için)
-            bearing: 0,
-            projection: 'globe' // Küre Modu
-        });
+        // --- GİRİŞ EKRANI (40 SANİYE) ---
+        setTimeout(() => { closeIntro(); }, 30000);
 
-        // Yükleme Sonrası Ayarlar
-        map.on('style.load', () => {
-            // 1. Atmosfer (Uzay görüntüsü)
-            map.setFog({
-                'range': [1, 10],
-                'color': '#000',
-                'horizon-blend': 0.05,
-                'star-intensity': 0.5
-            });
-
-            // 2. 3D Arazi (Dağlar/Tepeler)
-            map.addSource('mapbox-dem', {
-                'type': 'raster-dem',
-                'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
-                'tileSize': 512,
-                'maxzoom': 14
-            });
-            map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 }); // 1.5 kat kabartma
-
-            // 3. 3D Binalar Katmanı
-            add3DBuildings();
-        });
-
-        function add3DBuildings() {
-            // Eğer katman zaten varsa tekrar ekleme
-            if (map.getLayer('3d-buildings')) return;
-
-            const layers = map.getStyle().layers;
-            const labelLayerId = layers.find(
-                (layer) => layer.type === 'symbol' && layer.layout['text-field']
-            ).id;
-
-            map.addLayer(
-                {
-                    'id': '3d-buildings',
-                    'source': 'composite',
-                    'source-layer': 'building',
-                    'filter': ['==', 'extrude', 'true'],
-                    'type': 'fill-extrusion',
-                    'minzoom': 13, // Şehre yaklaşınca binalar çıkar
-                    'paint': {
-                        'fill-extrusion-color': '#aaa',
-                        'fill-extrusion-height': ['get', 'height'],
-                        'fill-extrusion-base': ['get', 'min_height'],
-                        'fill-extrusion-opacity': 0.8
-                    }
-                },
-                labelLayerId
-            );
+        function closeIntro() {
+            const overlay = document.getElementById('intro-overlay');
+            overlay.style.opacity = '0';
+            setTimeout(() => { overlay.style.display = 'none'; }, 800);
         }
 
-        // --- VERİ ÇEKME ---
-        fetch('tours.json?v=' + Math.random())
-            .then(res => res.json())
-            .then(data => {
-                const bounds = new mapboxgl.LngLatBounds();
+        // --- HARİTA BAŞLAT ---
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/satellite-streets-v12',
+            center: [35.5, 39.0], 
+            zoom: 5,
+            pitch: 45,
+            bearing: 0,
+            antialias: true 
+        });
 
-                data.forEach(tur => {
-                    const el = document.createElement('div');
-                    el.className = 'mapbox-marker';
+        // SABİT SARI İKON (Siyah Ekran Yapmaz, Kaymaz)
+        const width = 64; 
+        const height = 64; 
+        const staticPin = {
+            width: width, height: height,
+            data: new Uint8Array(width * height * 4),
+            onAdd: function() {
+                const canvas = document.createElement('canvas');
+                canvas.width = this.width; canvas.height = this.height;
+                const ctx = canvas.getContext('2d');
 
-                    // Popup
-                    const popup = new mapboxgl.Popup({ offset: 25, maxWidth: '300px' })
-                        .setHTML(`
-                            <img src="${tur.resim}" class="popup-img">
-                            <div class="popup-info">
-                                <h3>${tur.isim}</h3>
-                                <a href="${tur.url}" class="popup-btn" target="_blank">SANAL TURU AÇ ►</a>
-                            </div>
-                        `);
+                // Dış Parlama
+                ctx.beginPath();
+                ctx.arc(32, 32, 28, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(241, 196, 15, 0.4)';
+                ctx.fill();
 
-                    // Marker Ekle
-                    new mapboxgl.Marker(el)
-                        .setLngLat([tur.lng, tur.lat])
-                        .setPopup(popup)
-                        .addTo(map);
+                // Sarı Daire
+                ctx.beginPath();
+                ctx.arc(32, 32, 16, 0, Math.PI * 2);
+                ctx.fillStyle = '#f1c40f';
+                ctx.fill();
+                
+                // Siyah Nokta
+                ctx.beginPath();
+                ctx.arc(32, 32, 8, 0, Math.PI * 2);
+                ctx.fillStyle = '#000000';
+                ctx.fill();
 
-                    bounds.extend([tur.lng, tur.lat]);
+                this.data = ctx.getImageData(0, 0, this.width, this.height).data;
+            },
+            render: function() { return true; }
+        };
+
+        map.on('style.load', () => {
+            map.setFog({ 'range': [1, 10], 'color': '#000', 'horizon-blend': 0.1 });
+            map.addSource('mapbox-dem', { 'type': 'raster-dem', 'url': 'mapbox://mapbox.mapbox-terrain-dem-v1', 'tileSize': 512, 'maxzoom': 14 });
+            map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
+
+            // Sabit İkonu Ekle
+            map.addImage('static-pin', staticPin);
+            
+            add3DBuildings();
+            loadProjectData();
+        });
+
+        function loadProjectData() {
+            fetch('tours.json?v=' + Math.random())
+                .then(res => res.json())
+                .then(data => {
+                    const bounds = new mapboxgl.LngLatBounds();
+                    const features = data.map(tur => {
+                        let lat = parseFloat(tur.lat);
+                        let lng = parseFloat(tur.lng);
+                        if(!(lat >= 35 && lat <= 43)) { let temp = lat; lat = lng; lng = temp; }
+                        bounds.extend([lng, lat]);
+                        return {
+                            'type': 'Feature',
+                            'geometry': { 'type': 'Point', 'coordinates': [lng, lat] },
+                            'properties': { 'title': tur.isim, 'image': tur.resim, 'url': tur.url }
+                        };
+                    });
+
+                    map.addSource('project-points', {
+                        'type': 'geojson',
+                        'data': { 'type': 'FeatureCollection', 'features': features }
+                    });
+
+                    // KATMAN (Çivileme)
+                    map.addLayer({
+                        'id': 'project-layer',
+                        'type': 'symbol',
+                        'source': 'project-points',
+                        'layout': {
+                            'icon-image': 'static-pin',
+                            'icon-size': 0.7,
+                            'icon-allow-overlap': true,
+                            'icon-ignore-placement': true
+                        }
+                    });
+
+                    map.on('click', 'project-layer', (e) => {
+                        const coords = e.features[0].geometry.coordinates.slice();
+                        const props = e.features[0].properties;
+                        map.flyTo({ center: coords, zoom: 16, pitch: 50 });
+                        new mapboxgl.Popup({ offset: 25, maxWidth: '300px' })
+                            .setLngLat(coords)
+                            .setHTML(`
+                                <img src="${props.image}" class="popup-img">
+                                <div class="popup-info">
+                                    <h3>${props.title}</h3>
+                                    <a href="${props.url}" class="popup-btn" target="_blank">SANAL TURU AÇ ►</a>
+                                </div>
+                            `).addTo(map);
+                    });
+                    
+                    map.on('mouseenter', 'project-layer', () => { map.getCanvas().style.cursor = 'pointer'; });
+                    map.on('mouseleave', 'project-layer', () => { map.getCanvas().style.cursor = ''; });
+
+                    if(data.length > 0) map.fitBounds(bounds, { padding: 100, pitch: 50 });
                 });
+        }
 
-                // Veri varsa oraya uç
-                if(data.length > 0) {
-                    map.fitBounds(bounds, { padding: 100, pitch: 50 }); // 3D açıyla yaklaş
+        function add3DBuildings() {
+            if (map.getLayer('3d-buildings')) return;
+            const layers = map.getStyle().layers;
+            const labelLayerId = layers.find((l) => l.type === 'symbol' && l.layout['text-field']).id;
+            map.addLayer({
+                'id': '3d-buildings', 'source': 'composite', 'source-layer': 'building',
+                'filter': ['==', 'extrude', 'true'], 'type': 'fill-extrusion', 'minzoom': 13,
+                'paint': {
+                    'fill-extrusion-color': '#aaa', 'fill-extrusion-height': ['get', 'height'],
+                    'fill-extrusion-base': ['get', 'min_height'], 'fill-extrusion-opacity': 0.8
                 }
-            })
-            .catch(e => console.error("Veri hatası:", e));
+            }, labelLayerId);
+        }
 
-        // --- KONTROL FONKSİYONLARI ---
         function changeStyle(styleID) {
             map.setStyle('mapbox://styles/mapbox/' + styleID);
-            // Stil değişince 3D binalar ve arazi kaybolur, tekrar eklemek gerekir
             map.once('style.load', () => {
-                map.addSource('mapbox-dem', {
-                    'type': 'raster-dem',
-                    'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
-                    'tileSize': 512,
-                    'maxzoom': 14
-                });
+                map.addSource('mapbox-dem', { 'type': 'raster-dem', 'url': 'mapbox://mapbox.mapbox-terrain-dem-v1', 'tileSize': 512, 'maxzoom': 14 });
                 map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
-                
-                if(document.getElementById('buildingToggle').checked) {
-                    add3DBuildings();
-                }
+                if (!map.hasImage('static-pin')) map.addImage('static-pin', staticPin);
+                if(document.getElementById('buildingToggle').checked) add3DBuildings();
             });
         }
 
         function toggleBuildings() {
             const isChecked = document.getElementById('buildingToggle').checked;
-            if (isChecked) {
-                add3DBuildings();
-                map.setLayoutProperty('3d-buildings', 'visibility', 'visible');
-            } else {
-                if(map.getLayer('3d-buildings')) {
-                    map.setLayoutProperty('3d-buildings', 'visibility', 'none');
-                }
-            }
+            if (isChecked) { add3DBuildings(); map.setLayoutProperty('3d-buildings', 'visibility', 'visible'); }
+            else { if(map.getLayer('3d-buildings')) map.setLayoutProperty('3d-buildings', 'visibility', 'none'); }
         }
 
-        // Navigasyon (Sağ Alt)
         map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
-
     </script>
 </body>
 </html>
