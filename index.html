@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>MetGeo360 | Mapbox Profesyonel</title>
+    <title>MetGeo360 | 3D Profesyonel Harita</title>
     
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css' rel='stylesheet' />
 
     <style>
+        /* GENEL AYARLAR */
         body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; font-family: 'Segoe UI', sans-serif; }
         #map { height: 100%; width: 100%; }
 
@@ -18,28 +19,226 @@
             background: rgba(0, 0, 0, 0.9); color: #f1c40f; padding: 15px;
             border-left: 5px solid #f1c40f; border-radius: 5px;
             box-shadow: 0 0 20px rgba(0,0,0,0.8);
-            pointer-events: none;
+            pointer-events: none; /* Haritaya tıklamayı engellemesin */
         }
         .brand-box h1 { margin: 0; font-size: 20px; font-weight: 800; letter-spacing: 1px; }
         .brand-box p { margin: 2px 0 0; color: #fff; font-size: 10px; letter-spacing: 2px; }
 
+        /* KATMAN KONTROL PANELİ (TABAKA) */
+        .layer-control {
+            position: absolute; top: 20px; right: 20px; z-index: 10;
+            background: rgba(0, 0, 0, 0.9); padding: 10px; border-radius: 5px;
+            border: 1px solid #f1c40f; width: 160px;
+        }
+        .layer-title { color: #f1c40f; font-size: 12px; font-weight: bold; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        
+        .layer-option { display: flex; align-items: center; margin-bottom: 8px; cursor: pointer; color: #fff; font-size: 12px; }
+        .layer-option input { margin-right: 8px; accent-color: #f1c40f; cursor: pointer; }
+        .layer-option:hover { color: #f1c40f; }
+
         /* SİYAH-SARI İĞNE TASARIMI */
         .mapbox-marker {
-            width: 24px; height: 24px;
+            width: 30px; height: 30px;
             background: #000; border: 2px solid #f1c40f; border-radius: 50%;
             cursor: pointer; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 0 10px #f1c40f;
-            animation: pulse 2s infinite;
+            box-shadow: 0 0 15px #f1c40f;
+            transition: transform 0.3s;
         }
+        .mapbox-marker:hover { transform: scale(1.2); }
         .mapbox-marker::after {
-            content: ''; width: 8px; height: 8px; background: #f1c40f; border-radius: 50%;
+            content: ''; width: 10px; height: 10px; background: #f1c40f; border-radius: 50%;
+            animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(241, 196, 15, 0.7); transform: scale(0.95); }
-            70% { box-shadow: 0 0 0 12px rgba(241, 196, 15, 0); transform: scale(1.1); }
-            100% { box-shadow: 0 0 0 0 rgba(241, 196, 15, 0); transform: scale(0.95); }
+            0% { box-shadow: 0 0 0 0 rgba(241, 196, 15, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(241, 196, 15, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(241, 196, 15, 0); }
         }
 
         /* POPUP TASARIMI */
-        .mapboxgl-popup-content { background: #111 !important; color: #fff !important; border: 1px solid #f1c40f !important; padding: 0 !important; border-radius: 4px !important; overflow: hidden;
+        .mapboxgl-popup-content { background: #111 !important; color: #fff !important; border: 1px solid #f1c40f !important; padding: 0 !important; border-radius: 4px !important; }
+        .mapboxgl-popup-tip { border-top-color: #f1c40f !important; }
+        .mapboxgl-popup-close-button { color: #f1c40f; font-size: 20px; padding: 5px; }
+        
+        .popup-img { width: 100%; height: 160px; object-fit: cover; display: block; border-bottom: 1px solid #333; }
+        .popup-info { padding: 15px; text-align: center; }
+        .popup-info h3 { margin: 0 0 10px; color: #f1c40f; font-size: 16px; font-weight: bold; }
+        .popup-btn { display: block; background: #f1c40f; color: #000; text-align: center; padding: 10px; text-decoration: none; font-weight: bold; border-radius: 3px; }
+        .popup-btn:hover { background: #fff; }
+    </style>
+</head>
+<body>
+
+    <div class="brand-box">
+        <h1>METGEO360</h1>
+        <p>METEHAN HARİTA MÜHENDİSLİK</p>
+    </div>
+
+    <div class="layer-control">
+        <div class="layer-title">GÖRÜNÜM AYARLARI</div>
+        
+        <label class="layer-option">
+            <input type="radio" name="style" value="satellite-streets-v12" checked onclick="changeStyle(this.value)">
+            Uydu (Hibrit)
+        </label>
+        
+        <label class="layer-option">
+            <input type="radio" name="style" value="light-v11" onclick="changeStyle(this.value)">
+            Sade Harita (2D)
+        </label>
+        
+        <label class="layer-option">
+            <input type="radio" name="style" value="dark-v11" onclick="changeStyle(this.value)">
+            Gece Modu
+        </label>
+
+        <div style="border-top:1px solid #333; margin:5px 0;"></div>
+
+        <label class="layer-option">
+            <input type="checkbox" id="buildingToggle" checked onclick="toggleBuildings()">
+            3D Binaları Göster
+        </label>
+    </div>
+
+    <div id="map"></div>
+
+    <script>
+        // TOKEN
+        mapboxgl.accessToken = 'pk.eyJ1IjoibWFwZ2VvMzYwIiwiYSI6ImNtbDVzcWw0azA0aWIza3NjMTZoZ21rOWwifQ.agrbCVkuqhdshT8Yy6HuSw';
+
+        // Haritayı Başlat
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/satellite-streets-v12', // Varsayılan: Uydu
+            center: [35.5, 39.0], 
+            zoom: 5,
+            pitch: 45, // Başlangıçta hafif eğik (3D hissi için)
+            bearing: 0,
+            projection: 'globe' // Küre Modu
+        });
+
+        // Yükleme Sonrası Ayarlar
+        map.on('style.load', () => {
+            // 1. Atmosfer (Uzay görüntüsü)
+            map.setFog({
+                'range': [1, 10],
+                'color': '#000',
+                'horizon-blend': 0.05,
+                'star-intensity': 0.5
+            });
+
+            // 2. 3D Arazi (Dağlar/Tepeler)
+            map.addSource('mapbox-dem', {
+                'type': 'raster-dem',
+                'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
+                'tileSize': 512,
+                'maxzoom': 14
+            });
+            map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 }); // 1.5 kat kabartma
+
+            // 3. 3D Binalar Katmanı
+            add3DBuildings();
+        });
+
+        function add3DBuildings() {
+            // Eğer katman zaten varsa tekrar ekleme
+            if (map.getLayer('3d-buildings')) return;
+
+            const layers = map.getStyle().layers;
+            const labelLayerId = layers.find(
+                (layer) => layer.type === 'symbol' && layer.layout['text-field']
+            ).id;
+
+            map.addLayer(
+                {
+                    'id': '3d-buildings',
+                    'source': 'composite',
+                    'source-layer': 'building',
+                    'filter': ['==', 'extrude', 'true'],
+                    'type': 'fill-extrusion',
+                    'minzoom': 13, // Şehre yaklaşınca binalar çıkar
+                    'paint': {
+                        'fill-extrusion-color': '#aaa',
+                        'fill-extrusion-height': ['get', 'height'],
+                        'fill-extrusion-base': ['get', 'min_height'],
+                        'fill-extrusion-opacity': 0.8
+                    }
+                },
+                labelLayerId
+            );
+        }
+
+        // --- VERİ ÇEKME ---
+        fetch('tours.json?v=' + Math.random())
+            .then(res => res.json())
+            .then(data => {
+                const bounds = new mapboxgl.LngLatBounds();
+
+                data.forEach(tur => {
+                    const el = document.createElement('div');
+                    el.className = 'mapbox-marker';
+
+                    // Popup
+                    const popup = new mapboxgl.Popup({ offset: 25, maxWidth: '300px' })
+                        .setHTML(`
+                            <img src="${tur.resim}" class="popup-img">
+                            <div class="popup-info">
+                                <h3>${tur.isim}</h3>
+                                <a href="${tur.url}" class="popup-btn" target="_blank">SANAL TURU AÇ ►</a>
+                            </div>
+                        `);
+
+                    // Marker Ekle
+                    new mapboxgl.Marker(el)
+                        .setLngLat([tur.lng, tur.lat])
+                        .setPopup(popup)
+                        .addTo(map);
+
+                    bounds.extend([tur.lng, tur.lat]);
+                });
+
+                // Veri varsa oraya uç
+                if(data.length > 0) {
+                    map.fitBounds(bounds, { padding: 100, pitch: 50 }); // 3D açıyla yaklaş
+                }
+            })
+            .catch(e => console.error("Veri hatası:", e));
+
+        // --- KONTROL FONKSİYONLARI ---
+        function changeStyle(styleID) {
+            map.setStyle('mapbox://styles/mapbox/' + styleID);
+            // Stil değişince 3D binalar ve arazi kaybolur, tekrar eklemek gerekir
+            map.once('style.load', () => {
+                map.addSource('mapbox-dem', {
+                    'type': 'raster-dem',
+                    'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
+                    'tileSize': 512,
+                    'maxzoom': 14
+                });
+                map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
+                
+                if(document.getElementById('buildingToggle').checked) {
+                    add3DBuildings();
+                }
+            });
+        }
+
+        function toggleBuildings() {
+            const isChecked = document.getElementById('buildingToggle').checked;
+            if (isChecked) {
+                add3DBuildings();
+                map.setLayoutProperty('3d-buildings', 'visibility', 'visible');
+            } else {
+                if(map.getLayer('3d-buildings')) {
+                    map.setLayoutProperty('3d-buildings', 'visibility', 'none');
+                }
+            }
+        }
+
+        // Navigasyon (Sağ Alt)
+        map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+
+    </script>
+</body>
+</html>
