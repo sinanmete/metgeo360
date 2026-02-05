@@ -4,6 +4,6 @@
         "lat": "37.9021076",
         "lng": "32.4771501",
         "resim": "images/IMG_20260126_171415_00_086_PureShot.jpg",
-        "url": "TURLINKINI_YAZ"
+        "url": "https://metgeo360.com/neselisaatler/"
     }
 ]37.902068, 32.477156

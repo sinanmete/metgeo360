@@ -1,0 +1,7 @@
+    {
+        "isim": "TepeGöz",
+        "lat": "37.867758",
+        "lng": "32.462325",
+        "resim": "images/KAPAK_RESMI_BURAYA.jpg",
+        "url": "turlar/TUR_KLASORU/index.html"
+    },
