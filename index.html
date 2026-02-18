@@ -1,291 +1,674 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>MetGeo360 | Profesyonel Sistem</title>
-    
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>MetGeo360 | Profesyonel Sistem</title>
 
-    <style>
-        /* TEMEL AYARLAR */
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; font-family: 'Segoe UI', sans-serif; }
-        #map { height: 100%; width: 100%; }
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
 
-        /* --- GİRİŞ EKRANI (MODAL) --- */
-        #intro-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px);
-            z-index: 9999; display: flex; justify-content: center; align-items: center;
-            opacity: 1; transition: opacity 0.8s ease; cursor: pointer;
-        }
-        .intro-box {
-            background: #050505; border: 2px solid #f1c40f; padding: 30px;
-            max-width: 650px; width: 90%; text-align: center; color: #fff;
-            position: relative; box-shadow: 0 0 40px rgba(241, 196, 15, 0.15);
-            border-radius: 8px; cursor: default;
-        }
-        .intro-close {
-            position: absolute; top: 10px; right: 20px; font-size: 32px;
-            color: #f1c40f; cursor: pointer; line-height: 1; transition: 0.2s;
-        }
-        .intro-title { 
-            color: #f1c40f; font-size: 20px; margin-bottom: 20px; 
-            text-transform: uppercase; letter-spacing: 2px; font-weight: 800;
-            border-bottom: 1px solid #333; padding-bottom: 15px; 
-        }
-        .intro-text { font-size: 14px; line-height: 1.6; color: #ccc; margin-bottom: 25px; }
-        .highlight { color: #f1c40f; font-weight: bold; }
-        .intro-footer {
-            font-size: 11px; color: #666; border-top: 1px solid #333; padding-top: 15px; margin-top: 20px;
-            text-transform: uppercase; letter-spacing: 1px;
-        }
-        .intro-contact { 
-            color: #f1c40f; font-weight: bold; font-size: 15px; margin-top: 5px; 
-            display: block; text-decoration: none; letter-spacing: 1px;
-        }
+  <style>
+    /* TEMEL AYARLAR */
+    body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; font-family: 'Segoe UI', sans-serif; }
+    #map { height: 100%; width: 100%; }
 
-        /* --- MENÜ (ÇEKMECE) --- */
-        .layer-control-container {
-            position: absolute; top: 20px; right: 20px; z-index: 10;
-            display: flex; flex-direction: column; align-items: flex-end;
-        }
-        .settings-btn {
-            width: 44px; height: 44px; background: #000; border: 2px solid #f1c40f;
-            border-radius: 5px; color: #f1c40f; font-size: 24px;
-            display: flex; justify-content: center; align-items: center; cursor: pointer;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5); transition: 0.3s;
-        }
-        .settings-btn.active { background: #f1c40f; color: #000; }
-        .layer-content {
-            display: none; margin-top: 10px; background: rgba(0, 0, 0, 0.95);
-            padding: 15px; border-radius: 5px; border: 1px solid #f1c40f;
-            width: 160px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); animation: slideDown 0.3s ease;
-        }
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-        .layer-title { color: #f1c40f; font-size: 12px; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; }
-        .layer-option { display: flex; align-items: center; margin-bottom: 10px; cursor: pointer; color: #fff; font-size: 13px; }
-        .layer-option input { margin-right: 10px; accent-color: #f1c40f; cursor: pointer; transform: scale(1.2); }
-        .layer-option:hover { color: #f1c40f; }
+    /* --- GİRİŞ EKRANI (MODAL) --- */
+    #intro-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px);
+      z-index: 9999; display: flex; justify-content: center; align-items: center;
+      opacity: 1; transition: opacity 0.8s ease; cursor: pointer;
+    }
+    .intro-box {
+      background: #050505; border: 2px solid #f1c40f; padding: 30px;
+      max-width: 650px; width: 90%; text-align: center; color: #fff;
+      position: relative; box-shadow: 0 0 40px rgba(241, 196, 15, 0.15);
+      border-radius: 8px; cursor: default;
+    }
+    .intro-close {
+      position: absolute; top: 10px; right: 20px; font-size: 32px;
+      color: #f1c40f; cursor: pointer; line-height: 1; transition: 0.2s;
+    }
+    .intro-title {
+      color: #f1c40f; font-size: 20px; margin-bottom: 20px;
+      text-transform: uppercase; letter-spacing: 2px; font-weight: 800;
+      border-bottom: 1px solid #333; padding-bottom: 15px;
+    }
+    .intro-text { font-size: 14px; line-height: 1.6; color: #ccc; margin-bottom: 25px; }
+    .highlight { color: #f1c40f; font-weight: bold; }
+    .intro-footer {
+      font-size: 11px; color: #666; border-top: 1px solid #333; padding-top: 15px; margin-top: 20px;
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+    .intro-contact {
+      color: #f1c40f; font-weight: bold; font-size: 15px; margin-top: 5px;
+      display: block; text-decoration: none; letter-spacing: 1px;
+    }
 
-        /* POPUP TASARIMI */
-        .mapboxgl-popup-content { background: #111 !important; color: #fff !important; border: 1px solid #f1c40f !important; padding: 0 !important; border-radius: 4px !important; }
-        .mapboxgl-popup-tip { border-top-color: #f1c40f !important; }
-        .popup-img { width: 100%; height: 160px; object-fit: cover; display: block; border-bottom: 1px solid #333; }
-        .popup-info { padding: 15px; text-align: center; }
-        .popup-btn { display: block; background: #f1c40f; color: #000; text-align: center; padding: 10px; font-weight: bold; text-decoration: none; border-radius: 3px; margin-top: 10px; }
-    </style>
+    /* --- MENÜ (ÇEKMECE) --- */
+    .layer-control-container {
+      position: absolute; top: 20px; right: 20px; z-index: 10;
+      display: flex; flex-direction: column; align-items: flex-end;
+    }
+    .settings-btn {
+      width: 44px; height: 44px; background: #000; border: 2px solid #f1c40f;
+      border-radius: 5px; color: #f1c40f; font-size: 24px;
+      display: flex; justify-content: center; align-items: center; cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5); transition: 0.3s;
+    }
+    .settings-btn.active { background: #f1c40f; color: #000; }
+    .layer-content {
+      display: none; margin-top: 10px; background: rgba(0, 0, 0, 0.95);
+      padding: 15px; border-radius: 5px; border: 1px solid #f1c40f;
+      width: 160px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); animation: slideDown 0.3s ease;
+    }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    .layer-title { color: #f1c40f; font-size: 12px; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+    .layer-option { display: flex; align-items: center; margin-bottom: 10px; cursor: pointer; color: #fff; font-size: 13px; }
+    .layer-option input { margin-right: 10px; accent-color: #f1c40f; cursor: pointer; transform: scale(1.2); }
+    .layer-option:hover { color: #f1c40f; }
+
+    /* POPUP TASARIMI */
+    .mapboxgl-popup-content { background: #111 !important; color: #fff !important; border: 1px solid #f1c40f !important; padding: 0 !important; border-radius: 4px !important; }
+    .mapboxgl-popup-tip { border-top-color: #f1c40f !important; }
+    .popup-img { width: 100%; height: 160px; object-fit: cover; display: block; border-bottom: 1px solid #333; }
+    .popup-info { padding: 15px; text-align: center; }
+    .popup-btn { display: block; background: #f1c40f; color: #000; text-align: center; padding: 10px; font-weight: bold; text-decoration: none; border-radius: 3px; margin-top: 10px; }
+
+    /* --- UI PANEL --- */
+    .panel-toggle{
+      position:absolute; left:20px; top:20px; z-index:11;
+      width:44px; height:44px; border-radius:8px;
+      background:#000; border:2px solid #f1c40f; color:#f1c40f;
+      font-size:20px; cursor:pointer;
+      box-shadow:0 0 10px rgba(0,0,0,0.6);
+    }
+
+    .ui-panel{
+      position:absolute; left:20px; top:74px; bottom:20px;
+      width:320px; z-index:11;
+      background:rgba(0,0,0,0.92);
+      border:1px solid rgba(241,196,15,0.65);
+      border-radius:10px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.55);
+      backdrop-filter: blur(10px);
+      display:flex; flex-direction:column;
+      overflow:hidden;
+    }
+
+    .ui-header{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 12px 10px 12px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+    .ui-brand-title{ color:#f1c40f; font-weight:800; letter-spacing:1px; }
+    .ui-brand-sub{ color:#aaa; font-size:11px; margin-top:2px; }
+    .ui-close{
+      width:34px; height:34px; border-radius:8px;
+      background:transparent; border:1px solid rgba(241,196,15,0.5);
+      color:#f1c40f; font-size:22px; cursor:pointer;
+    }
+
+    .ui-input, .ui-select{
+      margin:10px 12px 0 12px;
+      background:#0b0b0b; color:#fff;
+      border:1px solid rgba(241,196,15,0.35);
+      border-radius:8px;
+      padding:10px 10px;
+      outline:none;
+    }
+    .ui-input:focus, .ui-select:focus{ border-color:#f1c40f; }
+
+    .ui-actions{
+      display:flex; gap:8px;
+      padding:10px 12px 0 12px;
+    }
+    .ui-btn{
+      flex:1;
+      padding:10px 10px;
+      border-radius:8px;
+      border:1px solid rgba(241,196,15,0.65);
+      background:#f1c40f;
+      color:#000; font-weight:800; cursor:pointer;
+    }
+    .ui-btn.ghost{
+      background:transparent; color:#f1c40f;
+    }
+
+    .ui-meta{
+      padding:10px 12px;
+      color:#bbb; font-size:12px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .ui-list{
+      padding:10px 12px;
+      overflow:auto;
+    }
+
+    .tour-item{
+      border:1px solid rgba(255,255,255,0.08);
+      background:rgba(17,17,17,0.8);
+      border-radius:10px;
+      overflow:hidden;
+      margin-bottom:10px;
+      cursor:pointer;
+      transition:0.15s;
+    }
+    .tour-item:hover{
+      border-color:rgba(241,196,15,0.5);
+      transform: translateY(-1px);
+    }
+    .tour-thumb{
+      width:100%; height:120px; object-fit:cover; display:block;
+      border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+    .tour-body{ padding:10px; }
+    .tour-title{ color:#fff; font-weight:800; font-size:14px; margin:0 0 6px 0; }
+    .tour-tags{ display:flex; gap:6px; flex-wrap:wrap; }
+    .tag{
+      font-size:11px; padding:4px 8px; border-radius:999px;
+      border:1px solid rgba(241,196,15,0.35);
+      color:#f1c40f;
+    }
+
+    @media (max-width: 520px){
+      .ui-panel{ width: calc(100% - 40px); }
+    }
+    .ui-panel.hidden{ display:none; }
+  </style>
 </head>
 <body>
 
-    <div id="intro-overlay" onclick="closeIntro()">
-        <div class="intro-box" onclick="event.stopPropagation()">
-            <span class="intro-close" onclick="closeIntro()">&times;</span>
-            <h2 class="intro-title">METGEO360 PROJE VİZYONU</h2>
-            <div class="intro-text">
-                Web platformumuz şu anda <span class="highlight">geliştirme</span> sürecindedir. İncelemekte olduğunuz bu sürüm, projelerimizi önizlemeniz amacıyla hazırlanmış bir <strong style="color:#f1c40f">DEMO</strong> versiyondur.
-                <br><br>
-                İşletmeleriniz, projeleriniz ve size özel çalışmalar yakında burada yayınlanacaktır.
-                <br><br>
-                Hem sosyal etkileşim kurabileceğiniz, hem de öncelikle <strong>Sanal Konya Turu</strong> ve ilerleyen süreçte tüm Türkiye'yi kapsayan dijital deneyimler yaşayabileceğiniz devasa bir platforma hazırlanıyoruz.
-                <br><br>
-                Yenilikler için beklemede kalın.
-            </div>
-            <div class="intro-footer">
-                <p>BU BİR <strong>METEHAN HARİTA MÜHENDİSLİK</strong> KURULUŞUDUR.</p>
-                <p style="margin-top:8px; color:#888;">Hamzaoğlu Mah. Büyük Kumköprü Cad. No:127/E Karatay/KONYA</p>
-                <a href="tel:05324666383" class="intro-contact">0 532 466 63 83</a>
-            </div>
-        </div>
+  <div id="intro-overlay" onclick="closeIntro()">
+    <div class="intro-box" onclick="event.stopPropagation()">
+      <span class="intro-close" onclick="closeIntro()">&times;</span>
+      <h2 class="intro-title">METGEO360 PROJE VİZYONU</h2>
+      <div class="intro-text">
+        Web platformumuz şu anda <span class="highlight">geliştirme</span> sürecindedir. İncelemekte olduğunuz bu sürüm, projelerimizi önizlemeniz amacıyla hazırlanmış bir <strong style="color:#f1c40f">DEMO</strong> versiyondur.
+        <br><br>
+        İşletmeleriniz, projeleriniz ve size özel çalışmalar yakında burada yayınlanacaktır.
+        <br><br>
+        Hem sosyal etkileşim kurabileceğiniz, hem de öncelikle <strong>Sanal Konya Turu</strong> ve ilerleyen süreçte tüm Türkiye'yi kapsayan dijital deneyimler yaşayabileceğiniz devasa bir platforma hazırlanıyoruz.
+        <br><br>
+        Yenilikler için beklemede kalın.
+      </div>
+      <div class="intro-footer">
+        <p>BU BİR <strong>METEHAN HARİTA MÜHENDİSLİK</strong> KURULUŞUDUR.</p>
+        <p style="margin-top:8px; color:#888;">Hamzaoğlu Mah. Büyük Kumköprü Cad. No:127/E Karatay/KONYA</p>
+        <a href="tel:05324666383" class="intro-contact">0 532 466 63 83</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- UI PANEL (Arama / Filtre / Liste) -->
+  <button class="panel-toggle" id="panelToggle" title="Listeyi Aç/Kapat">☰</button>
+
+  <div class="ui-panel" id="uiPanel">
+    <div class="ui-header">
+      <div class="ui-brand">
+        <div class="ui-brand-title">MetGeo360</div>
+        <div class="ui-brand-sub">Sanal Tur Haritası</div>
+      </div>
+      <button class="ui-close" id="panelClose" title="Kapat">×</button>
     </div>
 
-    <div class="layer-control-container">
-        <div class="settings-btn" onclick="toggleMenu(this)">⚙️</div>
-        <div class="layer-content" id="layerMenu">
-            <div class="layer-title">GÖRÜNÜM AYARLARI</div>
-            <label class="layer-option"><input type="radio" name="style" value="satellite-streets-v12" checked onclick="changeStyle(this.value)"> Uydu (Hibrit)</label>
-            <label class="layer-option"><input type="radio" name="style" value="light-v11" onclick="changeStyle(this.value)"> Sade Harita (2D)</label>
-            <label class="layer-option"><input type="radio" name="style" value="dark-v11" onclick="changeStyle(this.value)"> Gece Modu</label>
-            <div style="border-top:1px solid #333; margin:5px 0;"></div>
-            <label class="layer-option"><input type="checkbox" id="buildingToggle" checked onclick="toggleBuildings()"> 3D Binalar</label>
-        </div>
+    <input id="searchInput" class="ui-input" type="search"
+           placeholder="Ara: işletme, şehir, kategori..." autocomplete="off" />
+
+    <select id="categorySelect" class="ui-select">
+      <option value="__all__">Tüm Kategoriler</option>
+    </select>
+
+    <div class="ui-actions">
+      <button class="ui-btn" id="btnMyLocation">📍 Konumuma Git</button>
+      <button class="ui-btn ghost" id="btnReset">↺ Sıfırla</button>
     </div>
 
-    <div id="map"></div>
+    <div class="ui-meta">
+      <span id="tourCount">0 sonuç</span>
+    </div>
 
-    <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoibWFwZ2VvMzYwIiwiYSI6ImNtbDVzcWw0azA0aWIza3NjMTZoZ21rOWwifQ.agrbCVkuqhdshT8Yy6HuSw';
+    <div id="tourList" class="ui-list"></div>
+  </div>
 
-        function toggleMenu(btn) {
-            const menu = document.getElementById('layerMenu');
-            if (menu.style.display === 'block') { menu.style.display = 'none'; btn.classList.remove('active'); }
-            else { menu.style.display = 'block'; btn.classList.add('active'); }
+  <div class="layer-control-container">
+    <div class="settings-btn" onclick="toggleMenu(this)">⚙️</div>
+    <div class="layer-content" id="layerMenu">
+      <div class="layer-title">GÖRÜNÜM AYARLARI</div>
+      <label class="layer-option"><input type="radio" name="style" value="satellite-streets-v12" checked onclick="changeStyle(this.value)"> Uydu (Hibrit)</label>
+      <label class="layer-option"><input type="radio" name="style" value="light-v11" onclick="changeStyle(this.value)"> Sade Harita (2D)</label>
+      <label class="layer-option"><input type="radio" name="style" value="dark-v11" onclick="changeStyle(this.value)"> Gece Modu</label>
+      <div style="border-top:1px solid #333; margin:5px 0;"></div>
+      <label class="layer-option"><input type="checkbox" id="buildingToggle" checked onclick="toggleBuildings()"> 3D Binalar</label>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWFwZ2VvMzYwIiwiYSI6ImNtbDVzcWw0azA0aWIza3NjMTZoZ21rOWwifQ.agrbCVkuqhdshT8Yy6HuSw';
+
+    // --- UI/STATE ---
+    let TOURS = [];
+    let FILTERED = [];
+    let popupRef = null;
+    let uiInited = false;
+
+    // --- Menü (sağ üst) ---
+    function toggleMenu(btn) {
+      const menu = document.getElementById('layerMenu');
+      if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+        btn.classList.remove('active');
+      } else {
+        menu.style.display = 'block';
+        btn.classList.add('active');
+      }
+    }
+
+    // --- Intro (localStorage) ---
+    (function(){
+      try{
+        if(localStorage.getItem('metgeo_intro_seen') === '1'){
+          const overlay = document.getElementById('intro-overlay');
+          if(overlay) overlay.style.display = 'none';
         }
+      }catch(e){}
+    })();
 
-        setTimeout(() => { closeIntro(); }, 30000);
-        function closeIntro() {
-            const overlay = document.getElementById('intro-overlay');
-            overlay.style.opacity = '0';
-            setTimeout(() => { overlay.style.display = 'none'; }, 800);
+    setTimeout(() => { closeIntro(); }, 30000);
+
+    function closeIntro() {
+      try { localStorage.setItem('metgeo_intro_seen', '1'); } catch(e) {}
+      const overlay = document.getElementById('intro-overlay');
+      if(!overlay) return;
+      overlay.style.opacity = '0';
+      setTimeout(() => { overlay.style.display = 'none'; }, 800);
+    }
+
+    // --- Harita ---
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/satellite-streets-v12',
+      center: [35.5, 39.0],
+      zoom: 5,
+      pitch: 45,
+      bearing: 0,
+      antialias: true
+    });
+
+    map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+    initUI();
+
+    // --- Nabız ikon (WebGL) ---
+    const size = 150;
+    const pulsingDot = {
+      width: size, height: size,
+      data: new Uint8Array(size * size * 4),
+      onAdd: function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = this.width; canvas.height = this.height;
+        this.context = canvas.getContext('2d');
+      },
+      render: function () {
+        const duration = 2000;
+        const t = (performance.now() % duration) / duration;
+
+        const radius = (size / 2) * 0.3;
+        const outerRadius = (size / 2) * 0.7 * t + radius;
+        const context = this.context;
+
+        context.clearRect(0, 0, this.width, this.height);
+
+        context.beginPath();
+        context.arc(this.width / 2, this.height / 2, outerRadius, 0, Math.PI * 2);
+        context.fillStyle = `rgba(241, 196, 15, ${1 - t})`;
+        context.fill();
+
+        context.beginPath();
+        context.arc(this.width / 2, this.height / 2, radius, 0, Math.PI * 2);
+        context.fillStyle = '#000000';
+        context.strokeStyle = '#f1c40f';
+        context.lineWidth = 4;
+        context.fill();
+        context.stroke();
+
+        this.data = context.getImageData(0, 0, this.width, this.height).data;
+        map.triggerRepaint();
+        return true;
+      }
+    };
+
+    // --- Yardımcılar ---
+    function normalizeLatLng(lat, lng){
+      let a = parseFloat(lat), b = parseFloat(lng);
+      if (!Number.isFinite(a) || !Number.isFinite(b)) return null;
+
+      // swap (lat -90..90 olmalı)
+      if (Math.abs(a) > 90 && Math.abs(b) <= 90) { const t=a; a=b; b=t; }
+
+      if (a < -90 || a > 90 || b < -180 || b > 180) return null;
+      return { lat: a, lng: b };
+    }
+
+    function buildFeatures(data){
+      const bounds = new mapboxgl.LngLatBounds();
+      const features = [];
+
+      for(const tur of data){
+        const n = normalizeLatLng(tur.lat, tur.lng);
+        if(!n) continue;
+
+        bounds.extend([n.lng, n.lat]);
+
+        features.push({
+          type: 'Feature',
+          geometry: { type: 'Point', coordinates: [n.lng, n.lat] },
+          properties: {
+            title: String(tur.isim || 'İsimsiz'),
+            image: String(tur.resim || ''),
+            url: String(tur.url || ''),
+            kategori: String(tur.kategori || 'Genel'),
+            sehir: String(tur.sehir || '')
+          }
+        });
+      }
+
+      return { features, bounds };
+    }
+
+    function upsertPoints(features){
+      const fc = { type:'FeatureCollection', features };
+
+      if (map.getSource('points')) {
+        map.getSource('points').setData(fc);
+      } else {
+        map.addSource('points', { type:'geojson', data: fc });
+      }
+
+      if (!map.getLayer('points')) {
+        map.addLayer({
+          id: 'points',
+          type: 'symbol',
+          source: 'points',
+          layout: { 'icon-image': 'pulsing-dot', 'icon-allow-overlap': true }
+        });
+      }
+    }
+
+    function onPointClick(e){
+      const coords = e.features[0].geometry.coordinates.slice();
+      const props = e.features[0].properties;
+
+      map.flyTo({ center: coords, zoom: 16, pitch: 50 });
+
+      if (!popupRef) popupRef = new mapboxgl.Popup({ offset: 25, maxWidth: '300px' });
+      popupRef
+        .setLngLat(coords)
+        .setHTML(`
+          <img src="${props.image}" class="popup-img">
+          <div class="popup-info">
+            <h3>${props.title}</h3>
+            <a href="${props.url}" class="popup-btn" target="_blank" rel="noopener">SANAL TURU AÇ ►</a>
+          </div>
+        `)
+        .addTo(map);
+    }
+
+    function onEnterPoints(){ map.getCanvas().style.cursor = 'pointer'; }
+    function onLeavePoints(){ map.getCanvas().style.cursor = ''; }
+
+    function bindPointEvents(){
+      map.off('click', 'points', onPointClick);
+      map.off('mouseenter', 'points', onEnterPoints);
+      map.off('mouseleave', 'points', onLeavePoints);
+
+      map.on('click', 'points', onPointClick);
+      map.on('mouseenter', 'points', onEnterPoints);
+      map.on('mouseleave', 'points', onLeavePoints);
+    }
+
+    function openFirstResult(){
+      if(!FILTERED || FILTERED.length === 0) return;
+      const t = FILTERED[0];
+      const n = normalizeLatLng(t.lat, t.lng);
+      if(!n) return;
+
+      const coords = [n.lng, n.lat];
+      map.flyTo({ center: coords, zoom: 16, pitch: 50 });
+
+      if (!popupRef) popupRef = new mapboxgl.Popup({ offset: 25, maxWidth: '300px' });
+      popupRef
+        .setLngLat(coords)
+        .setHTML(`
+          <img src="${t.resim || ''}" class="popup-img">
+          <div class="popup-info">
+            <h3>${t.isim || ''}</h3>
+            <a href="${t.url || '#'}" class="popup-btn" target="_blank" rel="noopener">SANAL TURU AÇ ►</a>
+          </div>
+        `)
+        .addTo(map);
+    }
+
+    // --- UI Panel ---
+    function initUI(){
+      if (uiInited) return;
+      uiInited = true;
+
+      const uiPanel = document.getElementById('uiPanel');
+      const panelToggle = document.getElementById('panelToggle');
+      const panelClose = document.getElementById('panelClose');
+      if(!uiPanel || !panelToggle || !panelClose) return;
+
+      panelToggle.addEventListener('click', () => uiPanel.classList.toggle('hidden'));
+      panelClose.addEventListener('click', () => uiPanel.classList.add('hidden'));
+
+      const searchEl = document.getElementById('searchInput');
+      const catEl = document.getElementById('categorySelect');
+
+      searchEl.addEventListener('input', applyFilters);
+      catEl.addEventListener('change', applyFilters);
+
+      // Enter = ilk sonucu aç (satış hissi: hızlı demo)
+      searchEl.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter') openFirstResult();
+      });
+
+      document.getElementById('btnReset').addEventListener('click', () => {
+        searchEl.value = '';
+        catEl.value = '__all__';
+        applyFilters();
+      });
+
+      document.getElementById('btnMyLocation').addEventListener('click', () => {
+        if(!navigator.geolocation){
+          alert('Tarayıcı konum özelliğini desteklemiyor.');
+          return;
         }
+        navigator.geolocation.getCurrentPosition(
+          (pos) => map.flyTo({ center: [pos.coords.longitude, pos.coords.latitude], zoom: 16, pitch: 45 }),
+          () => alert('Konum alınamadı. Tarayıcıdan izin verildi mi?'),
+          { enableHighAccuracy: true, timeout: 8000 }
+        );
+      });
+    }
 
-        const map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/satellite-streets-v12',
-            center: [35.5, 39.0], zoom: 5, pitch: 45, bearing: 0, antialias: true 
+    function fillCategories(){
+      const sel = document.getElementById('categorySelect');
+      if(!sel) return;
+
+      const cats = Array.from(new Set(TOURS.map(t => String(t.kategori || 'Genel'))))
+        .sort((a,b)=>a.localeCompare(b,'tr'));
+
+      sel.innerHTML =
+        `<option value="__all__">Tüm Kategoriler</option>` +
+        cats.map(c => `<option value="${c}">${c}</option>`).join('');
+    }
+
+    function renderList(){
+      const list = document.getElementById('tourList');
+      const count = document.getElementById('tourCount');
+      if(!list || !count) return;
+
+      count.textContent = `${FILTERED.length} sonuç`;
+      list.innerHTML = '';
+
+      for(const t of FILTERED){
+        const item = document.createElement('div');
+        item.className = 'tour-item';
+        item.innerHTML = `
+          ${t.resim ? `<img class="tour-thumb" src="${t.resim}" alt="">` : ``}
+          <div class="tour-body">
+            <div class="tour-title">${t.isim || 'İsimsiz'}</div>
+            <div class="tour-tags">
+              <span class="tag">${t.kategori || 'Genel'}</span>
+              ${t.sehir ? `<span class="tag">${t.sehir}</span>` : ``}
+            </div>
+          </div>
+        `;
+
+        item.addEventListener('click', () => {
+          const n = normalizeLatLng(t.lat, t.lng);
+          if(!n) return;
+          const coords = [n.lng, n.lat];
+          map.flyTo({ center: coords, zoom: 16, pitch: 50 });
+
+          if (!popupRef) popupRef = new mapboxgl.Popup({ offset: 25, maxWidth: '300px' });
+          popupRef
+            .setLngLat(coords)
+            .setHTML(`
+              <img src="${t.resim || ''}" class="popup-img">
+              <div class="popup-info">
+                <h3>${t.isim || ''}</h3>
+                <a href="${t.url || '#'}" class="popup-btn" target="_blank" rel="noopener">SANAL TURU AÇ ►</a>
+              </div>
+            `)
+            .addTo(map);
         });
 
-        // --- MOBİL İÇİN ÖZEL NABIZ İKONU (WEBGL CANVAS) ---
-        // CSS Yerine bu yöntemi kullanıyoruz ki mobilde kaymasın.
-        const size = 150;
-        const pulsingDot = {
-            width: size, height: size,
-            data: new Uint8Array(size * size * 4),
-            onAdd: function () {
-                const canvas = document.createElement('canvas');
-                canvas.width = this.width; canvas.height = this.height;
-                this.context = canvas.getContext('2d');
-            },
-            render: function () {
-                const duration = 2000;
-                const t = (performance.now() % duration) / duration;
-                
-                // Animasyon Çizimi
-                const radius = (size / 2) * 0.3;
-                const outerRadius = (size / 2) * 0.7 * t + radius;
-                const context = this.context;
-                context.clearRect(0, 0, this.width, this.height);
-                
-                // Dış Halka
-                context.beginPath();
-                context.arc(this.width / 2, this.height / 2, outerRadius, 0, Math.PI * 2);
-                context.fillStyle = `rgba(241, 196, 15, ${1 - t})`;
-                context.fill();
+        list.appendChild(item);
+      }
+    }
 
-                // İç Daire
-                context.beginPath();
-                context.arc(this.width / 2, this.height / 2, radius, 0, Math.PI * 2);
-                context.fillStyle = '#000000';
-                context.strokeStyle = '#f1c40f';
-                context.lineWidth = 4;
-                context.fill();
-                context.stroke();
+    function applyFilters(){
+      const q = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+      const cat = (document.getElementById('categorySelect').value || '__all__');
 
-                this.data = context.getImageData(0, 0, this.width, this.height).data;
-                map.triggerRepaint(); // Sürekli boya (Animasyon)
-                return true;
-            }
-        };
+      FILTERED = TOURS.filter(t => {
+        const k = String(t.kategori || 'Genel');
+        if(cat !== '__all__' && k !== cat) return false;
+        if(!q) return true;
+        const blob = `${t.isim || ''} ${t.sehir || ''} ${t.kategori || ''}`.toLowerCase();
+        return blob.includes(q);
+      });
 
-        map.on('style.load', () => {
-            map.setFog({ 'range': [1, 10], 'color': '#000', 'horizon-blend': 0.1 });
-            map.addSource('mapbox-dem', { 'type': 'raster-dem', 'url': 'mapbox://mapbox.mapbox-terrain-dem-v1', 'tileSize': 512, 'maxzoom': 14 });
-            map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
-            
-            // Animasyonlu ikonu harita motoruna ekle
-            map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
-            
-            add3DBuildings();
-            loadMarkers();
+      renderList();
+
+      if (map.isStyleLoaded()) {
+        const built = buildFeatures(FILTERED);
+        upsertPoints(built.features);
+        bindPointEvents();
+      }
+    }
+
+    function loadMarkers() {
+      fetch('tours.json?v=' + Math.random())
+        .then(res => res.json())
+        .then(data => {
+          TOURS = Array.isArray(data) ? data : [];
+          FILTERED = [...TOURS];
+
+          fillCategories();
+          renderList();
+
+          const built = buildFeatures(FILTERED);
+
+          if (map.isStyleLoaded()) {
+            upsertPoints(built.features);
+            bindPointEvents();
+          }
+
+          if(built.features.length > 0) map.fitBounds(built.bounds, { padding: 100, pitch: 50 });
+        })
+        .catch(() => {
+          const count = document.getElementById('tourCount');
+          if(count) count.textContent = 'Veri okunamadı';
         });
+    }
 
-        function loadMarkers() {
-            fetch('tours.json?v=' + Math.random())
-                .then(res => res.json())
-                .then(data => {
-                    const bounds = new mapboxgl.LngLatBounds();
-                    
-                    // Veriyi GeoJSON'a çevir (Çivileme Yöntemi)
-                    const features = data.map(tur => {
-                        let lat = parseFloat(tur.lat);
-                        let lng = parseFloat(tur.lng);
-                        if(!(lat >= 35 && lat <= 43)) { let temp = lat; lat = lng; lng = temp; }
-                        bounds.extend([lng, lat]);
-                        
-                        return {
-                            'type': 'Feature',
-                            'geometry': { 'type': 'Point', 'coordinates': [lng, lat] },
-                            'properties': { 'title': tur.isim, 'image': tur.resim, 'url': tur.url }
-                        };
-                    });
+    // --- 3D binalar ---
+    function add3DBuildings() {
+      if (map.getLayer('3d-buildings')) return;
 
-                    // Kaynağı Ekle
-                    map.addSource('points', {
-                        'type': 'geojson',
-                        'data': { 'type': 'FeatureCollection', 'features': features }
-                    });
+      const layers = map.getStyle().layers || [];
+      const labelLayer = layers.find(l => l.type === 'symbol' && l.layout && l.layout['text-field']);
+      const labelLayerId = labelLayer ? labelLayer.id : undefined;
 
-                    // KATMAN EKLE (CSS DEĞİL, WEBGL)
-                    // Mobilde asla kaymaz, çoğalmaz.
-                    map.addLayer({
-                        'id': 'points',
-                        'type': 'symbol',
-                        'source': 'points',
-                        'layout': {
-                            'icon-image': 'pulsing-dot', // Yukarıdaki animasyonlu ikon
-                            'icon-allow-overlap': true
-                        }
-                    });
-
-                    // Tıklama Olayı
-                    map.on('click', 'points', (e) => {
-                        const coords = e.features[0].geometry.coordinates.slice();
-                        const props = e.features[0].properties;
-                        map.flyTo({ center: coords, zoom: 16, pitch: 50 });
-                        new mapboxgl.Popup({ offset: 25, maxWidth: '300px' })
-                            .setLngLat(coords)
-                            .setHTML(`
-                                <img src="${props.image}" class="popup-img">
-                                <div class="popup-info">
-                                    <h3>${props.title}</h3>
-                                    <a href="${props.url}" class="popup-btn" target="_blank">SANAL TURU AÇ ►</a>
-                                </div>
-                            `).addTo(map);
-                    });
-
-                    // Mouse Efekti
-                    map.on('mouseenter', 'points', () => { map.getCanvas().style.cursor = 'pointer'; });
-                    map.on('mouseleave', 'points', () => { map.getCanvas().style.cursor = ''; });
-
-                    if(data.length > 0) map.fitBounds(bounds, { padding: 100, pitch: 50 });
-                });
+      const layerDef = {
+        id: '3d-buildings',
+        source: 'composite',
+        'source-layer': 'building',
+        filter: ['==', 'extrude', 'true'],
+        type: 'fill-extrusion',
+        minzoom: 13,
+        paint: {
+          'fill-extrusion-color': '#aaa',
+          'fill-extrusion-height': ['get', 'height'],
+          'fill-extrusion-base': ['get', 'min_height'],
+          'fill-extrusion-opacity': 0.8
         }
+      };
 
-        function add3DBuildings() {
-            if (map.getLayer('3d-buildings')) return;
-            const layers = map.getStyle().layers;
-            const labelLayerId = layers.find((l) => l.type === 'symbol' && l.layout['text-field']).id;
-            map.addLayer({
-                'id': '3d-buildings', 'source': 'composite', 'source-layer': 'building',
-                'filter': ['==', 'extrude', 'true'], 'type': 'fill-extrusion', 'minzoom': 13,
-                'paint': {
-                    'fill-extrusion-color': '#aaa', 'fill-extrusion-height': ['get', 'height'],
-                    'fill-extrusion-base': ['get', 'min_height'], 'fill-extrusion-opacity': 0.8
-                }
-            }, labelLayerId);
-        }
+      if (labelLayerId) map.addLayer(layerDef, labelLayerId);
+      else map.addLayer(layerDef);
+    }
 
-        function changeStyle(styleID) {
-            map.setStyle('mapbox://styles/mapbox/' + styleID);
-            map.once('style.load', () => {
-                map.addSource('mapbox-dem', { 'type': 'raster-dem', 'url': 'mapbox://mapbox.mapbox-terrain-dem-v1', 'tileSize': 512, 'maxzoom': 14 });
-                map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
-                
-                // Stil değişince ikonu tekrar tanıt
-                if (!map.hasImage('pulsing-dot')) map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
+    // inline onclick için global
+    function changeStyle(styleID) {
+      map.setStyle('mapbox://styles/mapbox/' + styleID);
+    }
 
-                if(document.getElementById('buildingToggle').checked) add3DBuildings();
-            });
-        }
+    function toggleBuildings() {
+      const isChecked = document.getElementById('buildingToggle').checked;
+      if (isChecked) {
+        add3DBuildings();
+        if(map.getLayer('3d-buildings')) map.setLayoutProperty('3d-buildings', 'visibility', 'visible');
+      } else {
+        if(map.getLayer('3d-buildings')) map.setLayoutProperty('3d-buildings', 'visibility', 'none');
+      }
+    }
 
-        function toggleBuildings() {
-            const isChecked = document.getElementById('buildingToggle').checked;
-            if (isChecked) { add3DBuildings(); map.setLayoutProperty('3d-buildings', 'visibility', 'visible'); }
-            else { if(map.getLayer('3d-buildings')) map.setLayoutProperty('3d-buildings', 'visibility', 'none'); }
-        }
+    // --- Style yüklenince her şeyi kur ---
+    map.on('style.load', () => {
+      // Fog
+      try {
+        map.setFog({ range: [1, 10], color: '#000', 'horizon-blend': 0.1 });
+      } catch(e) {}
 
-        map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
-    </script>
+      // DEM/Terrain
+      if (!map.getSource('mapbox-dem')) {
+        map.addSource('mapbox-dem', {
+          type: 'raster-dem',
+          url: 'mapbox://mapbox.mapbox-terrain-dem-v1',
+          tileSize: 512,
+          maxzoom: 14
+        });
+      }
+      map.setTerrain({ source: 'mapbox-dem', exaggeration: 1.5 });
+
+      // Icon
+      if (!map.hasImage('pulsing-dot')) map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
+
+      // 3D binalar (toggle açık ise)
+      const toggleEl = document.getElementById('buildingToggle');
+      if (toggleEl && toggleEl.checked) add3DBuildings();
+
+      // Noktalar
+      if (TOURS && TOURS.length > 0) applyFilters();
+      else loadMarkers();
+    });
+  </script>
 </body>
 </html>
