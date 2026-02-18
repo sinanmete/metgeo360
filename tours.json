@@ -3,40 +3,40 @@
         "id": "aydinsehircilik",
         "isim": "AYDINSEHIRCILIK",
         "url": "https://metgeo360.com/aydinsehircilik/",
-        "lat": "37.853796",        
-        "lng": "32.514967",
+        "lat": 37.8716,
+        "lng": 32.4853,
         "resim": "aydinsehircilik/kapak.jpg"
     },
     {
         "id": "bubblebee",
         "isim": "BUBBLEBEE",
         "url": "https://metgeo360.com/bubblebee/",
-        "lat": "37.8670548",
-        "lng": "32.4619351",
+        "lat": 37.8716,
+        "lng": 32.4853,
         "resim": "bubblebee/kapak.jpg"
     },
     {
         "id": "enkayinsaat",
         "isim": "ENKAYINSAAT",
         "url": "https://metgeo360.com/enkayinsaat/",
-        "lat": "37.850721",  
-        "lng": "32.511799",
+        "lat": 37.8716,
+        "lng": 32.4853,
         "resim": "enkayinsaat/kapak.jpg"
     },
     {
         "id": "kagithane",
         "isim": "KAGITHANE",
         "url": "https://metgeo360.com/kagithane/",
-        "lat": "37.947893",  
-        "lng": "32.498040",
+        "lat": 37.8716,
+        "lng": 32.4853,
         "resim": "kagithane/kapak.jpg"
     },
     {
         "id": "neselisaatler",
         "isim": "NESELISAATLER",
         "url": "https://metgeo360.com/neselisaatler/",
-         "lat": "37.902102",       
-        "lng": "32.477172",
-        "resim": "arkaplan.jpg"
+        "lat": 37.8716,
+        "lng": 32.4853,
+        "resim": "neselisaatler/kapak.jpg"
     }
 ]

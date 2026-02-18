@@ -1,0 +1,9 @@
+{
+  "isim": "Örnek Kafe",
+  "lat": "37.8746",
+  "lng": "32.4932",
+  "resim": "images/ornek.jpg",
+  "url": "https://www.metgeo360.com/tur/ornek",
+  "kategori": "Kafe",
+  "sehir": "Konya"
+}
