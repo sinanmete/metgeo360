@@ -16,22 +16,6 @@
         "resim": "bubblebee/kapak.jpg"
     },
     {
-        "id": "enkayinsaat",
-        "isim": "ENKAYINSAAT",
-        "url": "https://metgeo360.com/enkayinsaat/",
-        "lat": 37.8716,
-        "lng": 32.4853,
-        "resim": "enkayinsaat/kapak.jpg"
-    },
-    {
-        "id": "kagithane",
-        "isim": "KAGITHANE",
-        "url": "https://metgeo360.com/kagithane/",
-        "lat": 37.8716,
-        "lng": 32.4853,
-        "resim": "kagithane/kapak.jpg"
-    },
-    {
         "id": "neselisaatler",
         "isim": "NESELISAATLER",
         "url": "https://metgeo360.com/neselisaatler/",
