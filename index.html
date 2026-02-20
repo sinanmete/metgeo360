@@ -48,7 +48,7 @@
         }
         .intro-btn:hover { background: #fff; transform: translateY(-2px); }
 
-        /* --- MODERN MENÜ (GLASSMORPHISM) --- */
+        /* --- MODERN MENÜ --- */
         .layer-control-container {
             position: absolute; top: 20px; right: 20px; z-index: 10;
             display: flex; flex-direction: column; align-items: flex-end;
@@ -94,8 +94,8 @@
         .switch input:checked + .slider { background-color: var(--primary); }
         .switch input:checked + .slider:before { transform: translateX(14px); }
 
-        /* --- YENİ POPUP TASARIMI --- */
-        .mapboxgl-popup-content { background: #1a1a1a !important; color: #fff !important; border: 1px solid #333 !important; padding: 0 !important; border-radius: 8px !important; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); width: 280px; }
+        /* --- POPUP TASARIMI (MOBİL UYUMLU) --- */
+        .mapboxgl-popup-content { background: #1a1a1a !important; color: #fff !important; border: 1px solid #333 !important; padding: 0 !important; border-radius: 8px !important; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); width: 280px; max-width: 90vw; }
         .mapboxgl-popup-tip { border-top-color: #1a1a1a !important; }
         .popup-img { width: 100%; height: 140px; object-fit: cover; display: block; }
         .popup-info { padding: 15px; text-align: left; }
@@ -116,11 +116,11 @@
 
     <div id="intro-overlay">
         <div class="intro-box">
-            <span class="intro-close" onclick="closeIntro()">&times;</span>
+            <span class="intro-close" onclick="closeIntro()">×</span>
             <h2 class="intro-title">METGEO360 AĞI</h2>
             <div class="intro-text">
-                Coğrafi veri sistemimiz şu anda entegrasyon aşamasındadır.<br><br>
-                Harita üzerinde projelerimizin yoğunluk haritasını görebilir, kümelere tıklayarak ilgili lokasyonlara yaklaşabilir ve detayları inceleyebilirsiniz.
+                Coğrafi veri sistemimiz entegrasyon aşamasındadır.<br><br>
+                Harita üzerinde projelerimizin yoğunluk haritasını görebilir, kümelere tıklayarak ilgili lokasyonlara yaklaşabilir ve sanal turları inceleyebilirsiniz.
             </div>
             <button class="intro-btn" onclick="closeIntro()">SİSTEME GİRİŞ YAP</button>
         </div>
@@ -185,7 +185,7 @@
 
         map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
 
-        // --- HAREKETLİ NABIZ İKONU (WEBGL) ---
+        // --- HAREKETLİ NABIZ İKONU ---
         const size = 150;
         const pulsingDot = {
             width: size, height: size,
@@ -198,19 +198,16 @@
             render: function () {
                 const duration = 2000;
                 const t = (performance.now() % duration) / duration;
-                
                 const radius = (size / 2) * 0.3;
                 const outerRadius = (size / 2) * 0.7 * t + radius;
                 const context = this.context;
-                context.clearRect(0, 0, this.width, this.height);
                 
-                // Dış Halka
+                context.clearRect(0, 0, this.width, this.height);
                 context.beginPath();
                 context.arc(this.width / 2, this.height / 2, outerRadius, 0, Math.PI * 2);
-                context.fillStyle = `rgba(248, 151, 20, ${1 - t})`; // Tema rengi (Turuncu)
+                context.fillStyle = `rgba(248, 151, 20, ${1 - t})`; 
                 context.fill();
 
-                // İç Daire
                 context.beginPath();
                 context.arc(this.width / 2, this.height / 2, radius, 0, Math.PI * 2);
                 context.fillStyle = '#000000';
@@ -230,11 +227,10 @@
             map.addSource('mapbox-dem', { 'type': 'raster-dem', 'url': 'mapbox://mapbox.mapbox-terrain-dem-v1', 'tileSize': 512, 'maxzoom': 14 });
             map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
             
-            // İkonu Mapbox'a tanıtıyoruz
             if (!map.hasImage('pulsing-dot')) map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
-            
             if(document.getElementById('buildingToggle').checked) add3DBuildings();
 
+            // Katmanları yeniden kur (Stil değişimi sorununu çözer)
             if (geojsonData) {
                 setupMapLayers();
             } else {
@@ -243,21 +239,23 @@
         });
 
         function fetchData() {
-            // Test için JSON'ı dinamik de oluşturabilirsin, R2'den çekeceğiz.
-            fetch('tours.json?v=' + Math.random())
+            // Canlı ortam için Cache-busting (Math.random) kaldırıldı. 
+            fetch('tours.json')
                 .then(res => res.json())
                 .then(data => {
                     const features = data.map(tur => {
                         let lat = parseFloat(tur.lat);
                         let lng = parseFloat(tur.lng);
+                        // Hata sigortası: Lat/Lng ters girilirse düzeltir.
                         if(!(lat >= 35 && lat <= 43)) { let temp = lat; lat = lng; lng = temp; }
+                        
                         return {
                             'type': 'Feature',
                             'geometry': { 'type': 'Point', 'coordinates': [lng, lat] },
                             'properties': { 
                                 'title': tur.isim, 
                                 'image': tur.resim, 
-                                'url': tur.url, // R2'deki index.html linkin buraya gelecek
+                                'url': tur.url,
                                 'description': tur.aciklama || 'Bu mekan için henüz bir açıklama girilmemiştir.',
                                 'rating': tur.puan || '5.0',
                                 'lat': lat,
@@ -268,113 +266,113 @@
                     
                     geojsonData = { 'type': 'FeatureCollection', 'features': features };
                     setupMapLayers();
-                }).catch(err => console.error("Veri çekilemedi:", err));
+                }).catch(err => console.error("Veri çekilemedi. JSON formatını kontrol et:", err));
         }
 
         function setupMapLayers() {
-            if (map.getSource('points')) return;
-
-            map.addSource('points', {
-                'type': 'geojson',
-                'data': geojsonData,
-                'cluster': true,
-                'clusterMaxZoom': 14,
-                'clusterRadius': 50 
-            });
-
-            // 1. KÜMELER
-            map.addLayer({
-                id: 'clusters',
-                type: 'circle',
-                source: 'points',
-                filter: ['has', 'point_count'],
-                paint: {
-                    'circle-color': ['step', ['get', 'point_count'], '#F89714', 10, '#e74c3c', 30, '#8e44ad'],
-                    'circle-radius': ['step', ['get', 'point_count'], 20, 10, 30, 30, 40],
-                    'circle-stroke-width': 2,
-                    'circle-stroke-color': '#fff'
-                }
-            });
-
-            map.addLayer({
-                id: 'cluster-count',
-                type: 'symbol',
-                source: 'points',
-                filter: ['has', 'point_count'],
-                layout: {
-                    'text-field': '{point_count_abbreviated}',
-                    'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-                    'text-size': 14
-                },
-                paint: { 'text-color': '#ffffff' }
-            });
-
-            // 2. TEKLİ PİMLER (Artık Daire değil, Nabız İkonu)
-            map.addLayer({
-                'id': 'unclustered-point',
-                'type': 'symbol',
-                'source': 'points',
-                'filter': ['!', ['has', 'point_count']],
-                'layout': {
-                    'icon-image': 'pulsing-dot',
-                    'icon-allow-overlap': true
-                }
-            });
-
-            // Kümeye Tıklayınca Yaklaşma
-            map.on('click', 'clusters', (e) => {
-                const features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
-                const clusterId = features[0].properties.cluster_id;
-                map.getSource('points').getClusterExpansionZoom(clusterId, (err, zoom) => {
-                    if (err) return;
-                    map.easeTo({ center: features[0].geometry.coordinates, zoom: zoom });
+            // Stil değişince Mapbox source'u siler, bu yüzden tekrar eklememiz lazım.
+            if (!map.getSource('points')) {
+                map.addSource('points', {
+                    'type': 'geojson',
+                    'data': geojsonData,
+                    'cluster': true,
+                    'clusterMaxZoom': 14,
+                    'clusterRadius': 50 
                 });
-            });
+            }
 
-            // Tekli Pime Tıklayınca YENİ Popup Açma
-            map.on('click', 'unclustered-point', (e) => {
-                const coordinates = e.features[0].geometry.coordinates.slice();
-                const props = e.features[0].properties;
+            if (!map.getLayer('clusters')) {
+                map.addLayer({
+                    id: 'clusters',
+                    type: 'circle',
+                    source: 'points',
+                    filter: ['has', 'point_count'],
+                    paint: {
+                        'circle-color': ['step', ['get', 'point_count'], '#F89714', 10, '#e74c3c', 30, '#8e44ad'],
+                        'circle-radius': ['step', ['get', 'point_count'], 20, 10, 30, 30, 40],
+                        'circle-stroke-width': 2,
+                        'circle-stroke-color': '#fff'
+                    }
+                });
 
-                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-                }
-                
-                map.flyTo({ center: coordinates, zoom: 16, pitch: 50 });
+                map.addLayer({
+                    id: 'cluster-count',
+                    type: 'symbol',
+                    source: 'points',
+                    filter: ['has', 'point_count'],
+                    layout: {
+                        'text-field': '{point_count_abbreviated}',
+                        'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+                        'text-size': 14
+                    },
+                    paint: { 'text-color': '#ffffff' }
+                });
 
-                // Puanı Yıldızlara Çevirme (Basit Mantık)
-                const score = parseFloat(props.rating);
-                const stars = '★'.repeat(Math.round(score)) + '☆'.repeat(5 - Math.round(score));
-                
-                // Google Maps Yönlendirme Linki (Evrensel Parametre)
-                const routeUrl = `https://www.google.com/maps/dir/?api=1&destination=${props.lat},${props.lng}`;
+                map.addLayer({
+                    'id': 'unclustered-point',
+                    'type': 'symbol',
+                    'source': 'points',
+                    'filter': ['!', ['has', 'point_count']],
+                    'layout': {
+                        'icon-image': 'pulsing-dot',
+                        'icon-allow-overlap': true
+                    }
+                });
 
-                new mapboxgl.Popup({ offset: 15, closeButton: false })
-                    .setLngLat(coordinates)
-                    .setHTML(`
-                        <img src="${props.image}" class="popup-img">
-                        <div class="popup-info">
-                            <h3>${props.title}</h3>
-                            <div class="popup-rating">${stars} <span>(${props.rating})</span></div>
-                            <div class="popup-desc">${props.description}</div>
-                            <div class="popup-buttons">
-                                <a href="${props.url}" class="popup-btn" target="_blank">TURA GİT</a>
-                                <a href="${routeUrl}" class="popup-btn route" target="_blank">YOL TARİFİ</a>
+                map.on('click', 'clusters', (e) => {
+                    const features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
+                    const clusterId = features[0].properties.cluster_id;
+                    map.getSource('points').getClusterExpansionZoom(clusterId, (err, zoom) => {
+                        if (err) return;
+                        map.easeTo({ center: features[0].geometry.coordinates, zoom: zoom });
+                    });
+                });
+
+                map.on('click', 'unclustered-point', (e) => {
+                    const coordinates = e.features[0].geometry.coordinates.slice();
+                    const props = e.features[0].properties;
+
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
+                    
+                    map.flyTo({ center: coordinates, zoom: 16, pitch: 50 });
+
+                    // NaN hatasını engellemek için güvenlik
+                    const score = parseFloat(props.rating) || 5;
+                    const stars = '★'.repeat(Math.round(score)) + '☆'.repeat(5 - Math.round(score));
+                    
+                    const routeUrl = `https://www.google.com/maps/dir/?api=1&destination=${props.lat},${props.lng}`;
+
+                    new mapboxgl.Popup({ offset: 15, closeButton: false, maxWidth: '300px' })
+                        .setLngLat(coordinates)
+                        .setHTML(`
+                            <img src="${props.image}" class="popup-img">
+                            <div class="popup-info">
+                                <h3>${props.title}</h3>
+                                <div class="popup-rating">${stars} <span>(${score.toFixed(1)})</span></div>
+                                <div class="popup-desc">${props.description}</div>
+                                <div class="popup-buttons">
+                                    <a href="${props.url}" class="popup-btn" target="_blank">TURA GİT</a>
+                                    <a href="${routeUrl}" class="popup-btn route" target="_blank">YOL TARİFİ</a>
+                                </div>
                             </div>
-                        </div>
-                    `).addTo(map);
-            });
+                        `).addTo(map);
+                });
 
-            map.on('mouseenter', 'clusters', () => { map.getCanvas().style.cursor = 'pointer'; });
-            map.on('mouseleave', 'clusters', () => { map.getCanvas().style.cursor = ''; });
-            map.on('mouseenter', 'unclustered-point', () => { map.getCanvas().style.cursor = 'pointer'; });
-            map.on('mouseleave', 'unclustered-point', () => { map.getCanvas().style.cursor = ''; });
+                map.on('mouseenter', 'clusters', () => { map.getCanvas().style.cursor = 'pointer'; });
+                map.on('mouseleave', 'clusters', () => { map.getCanvas().style.cursor = ''; });
+                map.on('mouseenter', 'unclustered-point', () => { map.getCanvas().style.cursor = 'pointer'; });
+                map.on('mouseleave', 'unclustered-point', () => { map.getCanvas().style.cursor = ''; });
+            }
         }
 
         function add3DBuildings() {
             if (map.getLayer('3d-buildings')) return;
             const layers = map.getStyle().layers;
-            const labelLayerId = layers.find((l) => l.type === 'symbol' && l.layout['text-field']).id;
+            const labelLayerId = layers.find((l) => l.type === 'symbol' && l.layout['text-field']);
+            const insertBefore = labelLayerId ? labelLayerId.id : undefined;
+            
             map.addLayer({
                 'id': '3d-buildings', 'source': 'composite', 'source-layer': 'building',
                 'filter': ['==', 'extrude', 'true'], 'type': 'fill-extrusion', 'minzoom': 13,
@@ -382,7 +380,7 @@
                     'fill-extrusion-color': '#aaa', 'fill-extrusion-height': ['get', 'height'],
                     'fill-extrusion-base': ['get', 'min_height'], 'fill-extrusion-opacity': 0.8
                 }
-            }, labelLayerId);
+            }, insertBefore);
         }
 
         function toggleBuildings() {
@@ -393,9 +391,6 @@
 
         function changeStyle(styleID) {
             map.setStyle('mapbox://styles/mapbox/' + styleID);
-            map.once('style.load', () => {
-                if (!map.hasImage('pulsing-dot')) map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
-            });
         }
     </script>
 </body>

@@ -1,14 +1,16 @@
 [
   {
     "isim": "Villa Projesi",
+    "kategori": "diger",
     "aciklama": "Modern mimari ve lüks detaylarla tasarlanmış dış ve iç mekan sanal turu.",
     "puan": "5.0",
-    "lat": "37.8319353",  
-    "lng": "32.4741753,8912",
-    "resim": "https://tur.metgeo360.com/villa/thumb.jpg", 
+    "lat": "37.8319353",
+    "lng": "32.4741753",
+    "resim": "https://tur.metgeo360.com/villa/thumb.jpg",
     "url": "https://tur.metgeo360.com/villa/index.htm"
+  },
   {
-    "isim": "buble bee tea & Coffe",
+    "isim": "Bubble Bee Tea & Coffee",
     "kategori": "cafe",
     "aciklama": "Metehan harita mühendislik 360 derece sanal tur",
     "puan": "5.0",
@@ -16,6 +18,5 @@
     "lng": "32.4853",
     "resim": "https://tur.metgeo360.com/bubblebee/kapak.jpg",
     "url": "https://tur.metgeo360.com/bubblebee/index.html"
-  },  
-}
+  }
 ]
