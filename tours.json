@@ -58,6 +58,17 @@
     "lng": "32.477227",
     "resim": "https://tur.metgeo360.com/neselisaatler/kapak.jpg",
     "url": "https://tur.metgeo360.com/neselisaatler/index.html"
+  },
+  {
+    "isim": "bluediamond",
+    "kategori": "diger",
+    "aciklama": "AKKÖYLÜLER KUYUMCULUK ENTEPE MAĞAZASI SANAL TUR
+",
+    "puan": "5.0",
+    "lat": "37.886596",
+    "lng": "32.500916",
+    "resim": "https://tur.metgeo360.com/bluediamond/kapak.jpg",
+    "url": "https://tur.metgeo360.com/bluediamond/index.html"
   }
 
 ]
