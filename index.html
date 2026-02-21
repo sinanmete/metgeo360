@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>MetGeo360 | Coğrafi Bilgi Portalı</title>
     
+    <link rel="icon" type="image/png" href="logo.png" />
+    
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
 
@@ -18,112 +20,190 @@
         body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; }
         #map { height: 100%; width: 100%; }
 
+        /* --- MARKA LOGOSU --- */
+        .brand-logo {
+            position: absolute; top: 20px; left: 20px; z-index: 10;
+            display: flex; align-items: center; gap: 10px;
+            background: var(--bg-glass); padding: 8px 15px; border-radius: 30px;
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5); color: #fff; font-size: 14px; letter-spacing: 1px;
+        }
+        .brand-logo img { height: 20px; width: auto; }
+        .brand-logo b { color: var(--primary); font-weight: 800; }
+
         /* --- GİRİŞ EKRANI (MODAL) --- */
         #intro-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             z-index: 9999; display: flex; justify-content: center; align-items: center;
-            opacity: 1; transition: opacity 0.6s ease;
+            opacity: 1; transition: opacity 0.6s ease; cursor: pointer;
         }
         .intro-box {
             background: var(--bg-glass); border: 1px solid var(--border-glass); padding: 40px;
             max-width: 600px; width: 90%; text-align: center; color: #fff;
-            position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            border-radius: 12px;
+            position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border-radius: 12px; cursor: default;
         }
-        .intro-close {
-            position: absolute; top: 15px; right: 20px; font-size: 28px;
-            color: #888; cursor: pointer; transition: 0.3s;
-        }
+        .intro-close { position: absolute; top: 15px; right: 20px; font-size: 28px; color: #888; cursor: pointer; transition: 0.3s; }
         .intro-close:hover { color: var(--primary); }
-        .intro-title { 
-            color: var(--primary); font-size: 22px; margin-bottom: 20px; 
-            letter-spacing: 2px; font-weight: 700; border-bottom: 1px solid var(--border-glass); padding-bottom: 15px; 
-        }
-        .intro-text { font-size: 15px; line-height: 1.7; color: #ddd; margin-bottom: 25px; font-weight: 300; }
-        .intro-btn {
-            background: var(--primary); color: #000; border: none; padding: 12px 30px;
-            font-size: 14px; font-weight: bold; border-radius: 30px; cursor: pointer;
-            transition: 0.3s; letter-spacing: 1px;
-        }
-        .intro-btn:hover { background: #fff; transform: translateY(-2px); }
+        .intro-title { color: var(--primary); font-size: 20px; margin-bottom: 20px; letter-spacing: 2px; font-weight: 700; border-bottom: 1px solid var(--border-glass); padding-bottom: 15px; }
+        .intro-text { font-size: 14px; line-height: 1.7; color: #ddd; margin-bottom: 25px; font-weight: 300; }
+        .intro-footer { font-size: 11px; color: #888; border-top: 1px solid var(--border-glass); padding-top: 20px; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .intro-contact { color: var(--primary); font-weight: bold; font-size: 15px; margin-top: 8px; display: block; text-decoration: none; letter-spacing: 1px; transition: 0.2s; }
+        .intro-contact:hover { color: #fff; }
 
-        /* --- MODERN MENÜ --- */
-        .layer-control-container {
-            position: absolute; top: 20px; right: 20px; z-index: 10;
-            display: flex; flex-direction: column; align-items: flex-end;
+        /* --- KONTROL ÇEKMECESİ --- */
+        .sidebar-wrapper {
+            position: absolute; top: 75px; left: 0; z-index: 10; display: flex; align-items: flex-start;
+            transform: translateX(calc(-100% + 35px)); transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            height: calc(100vh - 90px); pointer-events: none; 
         }
-        .settings-btn {
-            width: 45px; height: 45px; background: var(--bg-glass); border: 1px solid var(--border-glass);
-            border-radius: 50%; color: #fff; font-size: 20px;
-            display: flex; justify-content: center; align-items: center; cursor: pointer;
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.3s;
+        .sidebar-wrapper.open { transform: translateX(20px); }
+        .sidebar-panel {
+            background: var(--bg-glass); border: 1px solid var(--border-glass); border-radius: 10px; padding: 12px; width: 220px;
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: flex; flex-direction: column; height: 100%; box-sizing: border-box; pointer-events: auto;
         }
+        
+        .sidebar-toggle-btn {
+            background: var(--bg-glass); border: 1px solid var(--border-glass); border-left: none;
+            border-radius: 0 8px 8px 0; color: var(--primary); width: 35px; height: 45px; display: flex; justify-content: center; align-items: center;
+            cursor: pointer; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            font-size: 16px; margin-top: 15px; box-shadow: 5px 0 15px rgba(0,0,0,0.3); transition: 0.3s; pointer-events: auto;
+        }
+        .sidebar-toggle-btn:hover { background: var(--primary); color: #fff; }
+
+        .search-input {
+            width: 100%; padding: 8px 10px; background: rgba(0,0,0,0.4); border: 1px solid #444; color: #fff;
+            border-radius: 4px; outline: none; margin-bottom: 12px; font-family: inherit; box-sizing: border-box; font-size: 12px;
+        }
+        .search-input:focus { border-color: var(--primary); }
+
+        /* Akordiyon Butonlar */
+        .accordion-btn {
+            background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: var(--primary); padding: 8px 4px; width: 100%; text-align: left;
+            cursor: pointer; font-size: 11px; font-weight: bold; letter-spacing: 1px;
+            display: flex; justify-content: space-between; align-items: center; transition: 0.3s; margin-bottom: 5px; text-transform: uppercase;
+        }
+        .accordion-btn:hover { border-bottom-color: var(--primary); color: #fff; }
+        .accordion-btn.secondary { color: #aaa; margin-top: 5px; }
+        .accordion-btn.secondary:hover { color: var(--primary); border-bottom-color: var(--primary); }
+
+        /* Kategoriler Listesi */
+        .category-list { display: none; flex-direction: column; margin-bottom: 5px; max-height: 160px; overflow-y: auto; padding-right: 5px; }
+        .category-list.open { display: flex; }
+        .category-list::-webkit-scrollbar { width: 3px; }
+        .category-list::-webkit-scrollbar-thumb { background: #555; border-radius: 3px; }
+
+        .filter-btn {
+            display: block; width: 100%; background: transparent; color: #bbb; border: 1px solid transparent; text-align: left; padding: 6px 8px;
+            border-radius: 4px; cursor: pointer; font-size: 11px; transition: 0.2s; margin-bottom: 2px;
+        }
+        .filter-btn:hover { background: rgba(255,255,255,0.05); color: #fff; }
+        .filter-btn.active { background: rgba(248, 151, 20, 0.1); color: var(--primary); font-weight: bold; border-left: 2px solid var(--primary); border-radius: 0 4px 4px 0;}
+
+        /* Proje Listesi */
+        .project-list { display: none; flex: 1; overflow-y: auto; flex-direction: column; gap: 4px; padding-right: 5px; }
+        .project-list.open { display: flex; }
+        .project-list::-webkit-scrollbar { width: 3px; }
+        .project-list::-webkit-scrollbar-track { background: transparent; }
+        .project-list::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+        .project-item {
+            background: rgba(255,255,255,0.03); padding: 8px; border-radius: 4px; cursor: pointer;
+            transition: 0.2s; border-left: 2px solid transparent; display: flex; flex-direction: column;
+        }
+        .project-item:hover { background: rgba(255,255,255,0.08); border-left-color: var(--primary); }
+        .project-item strong { color: #ddd; font-size: 11px; margin-bottom: 2px; font-weight: 600; }
+        .project-item span { color: #777; font-size: 9px; text-transform: uppercase; }
+
+        /* --- HARİTA AYARLARI MENÜSÜ --- */
+        .layer-control-container { position: absolute; top: 20px; right: 20px; z-index: 10; display: flex; flex-direction: column; align-items: flex-end; }
+        .settings-btn { width: 40px; height: 40px; background: var(--bg-glass); border: 1px solid var(--border-glass); border-radius: 50%; color: #fff; font-size: 18px; display: flex; justify-content: center; align-items: center; cursor: pointer; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.3s; }
         .settings-btn:hover, .settings-btn.active { background: var(--primary); color: #000; border-color: var(--primary); }
-        
-        .layer-content {
-            display: none; margin-top: 15px; background: var(--bg-glass);
-            padding: 20px; border-radius: 12px; border: 1px solid var(--border-glass);
-            width: 200px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); animation: fadeDown 0.3s ease;
-        }
+        .layer-content { display: none; margin-top: 10px; background: var(--bg-glass); padding: 15px; border-radius: 10px; border: 1px solid var(--border-glass); width: 160px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); animation: fadeDown 0.3s ease; }
         @keyframes fadeDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-        
-        .layer-title { color: #fff; font-size: 13px; font-weight: 600; margin-bottom: 15px; letter-spacing: 1px; }
-        .layer-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; border-bottom: 1px solid var(--border-glass); padding-bottom: 15px; }
-        
-        .custom-radio { display: flex; align-items: center; color: #bbb; font-size: 13px; cursor: pointer; transition: 0.2s; }
+        .layer-title { color: #fff; font-size: 11px; font-weight: 600; margin-bottom: 12px; letter-spacing: 1px; }
+        .layer-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px; }
+        .custom-radio { display: flex; align-items: center; color: #bbb; font-size: 11px; cursor: pointer; transition: 0.2s; }
         .custom-radio:hover { color: #fff; }
         .custom-radio input { display: none; }
-        .radio-mark { 
-            width: 16px; height: 16px; border: 2px solid #555; border-radius: 50%; 
-            margin-right: 10px; display: inline-block; position: relative; transition: 0.2s;
-        }
+        .radio-mark { width: 14px; height: 14px; border: 1px solid #555; border-radius: 50%; margin-right: 8px; display: inline-block; position: relative; transition: 0.2s; }
         .custom-radio input:checked + .radio-mark { border-color: var(--primary); }
-        .custom-radio input:checked + .radio-mark::after {
-            content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 8px; height: 8px; background: var(--primary); border-radius: 50%;
-        }
-
-        .switch-wrapper { display: flex; align-items: center; justify-content: space-between; color: #fff; font-size: 13px; cursor: pointer; }
-        .switch { position: relative; display: inline-block; width: 34px; height: 20px; }
+        .custom-radio input:checked + .radio-mark::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; background: var(--primary); border-radius: 50%; }
+        .switch-wrapper { display: flex; align-items: center; justify-content: space-between; color: #fff; font-size: 11px; cursor: pointer; }
+        .switch { position: relative; display: inline-block; width: 30px; height: 16px; }
         .switch input { opacity: 0; width: 0; height: 0; }
-        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #555; transition: .4s; border-radius: 34px; }
-        .slider:before { position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #555; transition: .4s; border-radius: 30px; }
+        .slider:before { position: absolute; content: ""; height: 10px; width: 10px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
         .switch input:checked + .slider { background-color: var(--primary); }
         .switch input:checked + .slider:before { transform: translateX(14px); }
 
-        /* --- POPUP TASARIMI (MOBİL UYUMLU) --- */
-        .mapboxgl-popup-content { background: #1a1a1a !important; color: #fff !important; border: 1px solid #333 !important; padding: 0 !important; border-radius: 8px !important; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); width: 280px; max-width: 90vw; }
+        /* --- POPUP TASARIMI --- */
+        .mapboxgl-popup-content { background: #1a1a1a !important; color: #fff !important; border: 1px solid #333 !important; padding: 0 !important; border-radius: 8px !important; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); width: 260px; max-width: 90vw; }
         .mapboxgl-popup-tip { border-top-color: #1a1a1a !important; }
-        .popup-img { width: 100%; height: 140px; object-fit: cover; display: block; }
-        .popup-info { padding: 15px; text-align: left; }
-        .popup-info h3 { margin: 0 0 5px 0; font-size: 16px; font-weight: 700; color: #fff; text-transform: uppercase; }
-        
-        .popup-rating { color: var(--primary); font-size: 13px; margin-bottom: 8px; font-weight: bold; display: flex; align-items: center; gap: 5px; }
-        .popup-rating span { color: #999; font-weight: normal; font-size: 12px; }
-        
-        .popup-desc { font-size: 12px; color: #bbb; margin-bottom: 15px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        
-        .popup-buttons { display: flex; gap: 8px; }
-        .popup-btn { flex: 1; display: block; background: var(--primary); color: #000; text-align: center; padding: 10px 5px; font-weight: 700; text-decoration: none; border-radius: 4px; font-size: 11px; transition: 0.2s; letter-spacing: 0.5px; }
+        .popup-img { width: 100%; height: 120px; object-fit: cover; display: block; }
+        .popup-info { padding: 12px; text-align: left; }
+        .popup-info h3 { margin: 0 0 5px 0; font-size: 14px; font-weight: 700; color: #fff; text-transform: uppercase; }
+        .popup-rating { color: var(--primary); font-size: 12px; margin-bottom: 6px; font-weight: bold; display: flex; align-items: center; gap: 5px; }
+        .popup-rating span { color: #999; font-weight: normal; font-size: 11px; }
+        .popup-desc { font-size: 11px; color: #bbb; margin-bottom: 12px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .popup-buttons { display: flex; gap: 6px; }
+        .popup-btn { flex: 1; display: block; background: var(--primary); color: #000; text-align: center; padding: 8px 5px; font-weight: 700; text-decoration: none; border-radius: 4px; font-size: 10px; transition: 0.2s; letter-spacing: 0.5px; }
         .popup-btn.route { background: transparent; color: #fff; border: 1px solid #555; }
         .popup-btn:hover { background: #fff; color: #000; border-color: #fff; }
     </style>
 </head>
 <body>
 
-    <div id="intro-overlay">
-        <div class="intro-box">
+    <div class="brand-logo">
+        <img src="logo.png" alt="Logo" onerror="this.style.display='none'">
+        <span>METGEO<b>360</b></span>
+    </div>
+
+    <div id="intro-overlay" onclick="closeIntro()">
+        <div class="intro-box" onclick="event.stopPropagation()">
             <span class="intro-close" onclick="closeIntro()">×</span>
-            <h2 class="intro-title">METGEO360 AĞI</h2>
+            <h2 class="intro-title">METGEO360 PROJE VİZYONU</h2>
             <div class="intro-text">
-                Coğrafi veri sistemimiz entegrasyon aşamasındadır.<br><br>
-                Harita üzerinde projelerimizin yoğunluk haritasını görebilir, kümelere tıklayarak ilgili lokasyonlara yaklaşabilir ve sanal turları inceleyebilirsiniz.
+                Web platformumuz şu anda <span style="color: var(--primary); font-weight: bold;">geliştirme</span> sürecindedir. İncelemekte olduğunuz bu sürüm, projelerimizi önizlemeniz amacıyla hazırlanmış bir <strong style="color: var(--primary);">DEMO</strong> versiyondur.
+                <br><br>
+                İşletmeleriniz, projeleriniz ve size özel çalışmalar yakında burada yayınlanacaktır.
+                <br><br>
+                Hem sosyal etkileşim kurabileceğiniz, hem de öncelikle <strong>Sanal Konya Turu</strong> ve ilerleyen süreçte tüm Türkiye'yi kapsayan dijital deneyimler yaşayabileceğiniz devasa bir platforma hazırlanıyoruz.
             </div>
-            <button class="intro-btn" onclick="closeIntro()">SİSTEME GİRİŞ YAP</button>
+            <div class="intro-footer">
+                <p>BU BİR <strong style="color: #fff;">METEHAN HARİTA MÜHENDİSLİK</strong> KURULUŞUDUR.</p>
+                <p style="margin-top:8px; color:#aaa;">Hamzaoğlu Mah. Büyük Kumköprü Cad. No:127/E Karatay/KONYA</p>
+                <a href="tel:05324666383" class="intro-contact">0 532 466 63 83</a>
+            </div>
         </div>
+    </div>
+
+    <div class="sidebar-wrapper" id="sidebarWrapper">
+        <div class="sidebar-panel">
+            
+            <input type="text" id="searchInput" class="search-input" placeholder="İşletme Ara..." onkeyup="searchProjects()">
+            
+            <button class="accordion-btn" onclick="toggleCategories()">KATEGORİLER <span id="accIcon">▼</span></button>
+            <div class="category-list" id="categoryList">
+                <button class="filter-btn active" onclick="filterCategory('tumu', this)">🌐 Tüm Projeler</button>
+                <button class="filter-btn" onclick="filterCategory('egitim', this)">🎓 Eğitim</button>
+                <button class="filter-btn" onclick="filterCategory('saglik', this)">🏥 Sağlık</button>
+                <button class="filter-btn" onclick="filterCategory('isletme', this)">🏢 İşletme</button>
+                <button class="filter-btn" onclick="filterCategory('emlak', this)">🏠 Emlak</button>
+                <button class="filter-btn" onclick="filterCategory('kultur', this)">🏛️ Kültür</button>
+                <button class="filter-btn" onclick="filterCategory('otel', this)">🏨 Otel</button>
+                <button class="filter-btn" onclick="filterCategory('magaza', this)">🛍️ Mağaza</button>
+                <button class="filter-btn" onclick="filterCategory('diger', this)">📌 Diğer</button>
+            </div>
+
+            <button class="accordion-btn secondary" onclick="toggleProjectList()">PROJE REHBERİ <span id="listIcon">▼</span></button>
+            <div class="project-list" id="projectList">
+                </div>
+
+        </div>
+        <div class="sidebar-toggle-btn" onclick="toggleSidebar()" id="sidebarArrow">❯</div>
     </div>
 
     <div class="layer-control-container">
@@ -144,7 +224,6 @@
                     <span class="radio-mark"></span> Sade (2D)
                 </label>
             </div>
-            
             <label class="switch-wrapper">
                 3D Binalar
                 <div class="switch">
@@ -160,12 +239,37 @@
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoibWFwZ2VvMzYwIiwiYSI6ImNtbDVzcWw0azA0aWIza3NjMTZoZ21rOWwifQ.agrbCVkuqhdshT8Yy6HuSw';
 
+        let allGeojsonData = null; 
         let geojsonData = null; 
 
         function toggleMenu(btn) {
             const menu = document.getElementById('layerMenu');
             if (menu.style.display === 'block') { menu.style.display = 'none'; btn.classList.remove('active'); }
             else { menu.style.display = 'block'; btn.classList.add('active'); }
+        }
+
+        function toggleSidebar() {
+            const wrapper = document.getElementById('sidebarWrapper');
+            const arrow = document.getElementById('sidebarArrow');
+            if (wrapper.classList.contains('open')) {
+                wrapper.classList.remove('open'); arrow.innerHTML = '❯';
+            } else {
+                wrapper.classList.add('open'); arrow.innerHTML = '❮';
+            }
+        }
+
+        function toggleCategories() {
+            const list = document.getElementById('categoryList');
+            const icon = document.getElementById('accIcon');
+            if (list.classList.contains('open')) { list.classList.remove('open'); icon.innerHTML = '▼'; } 
+            else { list.classList.add('open'); icon.innerHTML = '▲'; }
+        }
+
+        function toggleProjectList() {
+            const list = document.getElementById('projectList');
+            const icon = document.getElementById('listIcon');
+            if (list.classList.contains('open')) { list.classList.remove('open'); icon.innerHTML = '▼'; } 
+            else { list.classList.add('open'); icon.innerHTML = '▲'; }
         }
 
         function closeIntro() {
@@ -185,7 +289,6 @@
 
         map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
 
-        // --- HAREKETLİ NABIZ İKONU ---
         const size = 150;
         const pulsingDot = {
             width: size, height: size,
@@ -201,24 +304,14 @@
                 const radius = (size / 2) * 0.3;
                 const outerRadius = (size / 2) * 0.7 * t + radius;
                 const context = this.context;
-                
                 context.clearRect(0, 0, this.width, this.height);
-                context.beginPath();
-                context.arc(this.width / 2, this.height / 2, outerRadius, 0, Math.PI * 2);
-                context.fillStyle = `rgba(248, 151, 20, ${1 - t})`; 
-                context.fill();
-
-                context.beginPath();
-                context.arc(this.width / 2, this.height / 2, radius, 0, Math.PI * 2);
-                context.fillStyle = '#000000';
-                context.strokeStyle = '#F89714';
-                context.lineWidth = 4;
-                context.fill();
-                context.stroke();
-
+                context.beginPath(); context.arc(this.width / 2, this.height / 2, outerRadius, 0, Math.PI * 2);
+                context.fillStyle = `rgba(248, 151, 20, ${1 - t})`; context.fill();
+                context.beginPath(); context.arc(this.width / 2, this.height / 2, radius, 0, Math.PI * 2);
+                context.fillStyle = '#000000'; context.strokeStyle = '#F89714'; context.lineWidth = 4;
+                context.fill(); context.stroke();
                 this.data = context.getImageData(0, 0, this.width, this.height).data;
-                map.triggerRepaint();
-                return true;
+                map.triggerRepaint(); return true;
             }
         };
 
@@ -226,140 +319,140 @@
             map.setFog({ 'range': [1, 10], 'color': '#000', 'horizon-blend': 0.1 });
             map.addSource('mapbox-dem', { 'type': 'raster-dem', 'url': 'mapbox://mapbox.mapbox-terrain-dem-v1', 'tileSize': 512, 'maxzoom': 14 });
             map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
-            
             if (!map.hasImage('pulsing-dot')) map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
             if(document.getElementById('buildingToggle').checked) add3DBuildings();
 
-            // Katmanları yeniden kur (Stil değişimi sorununu çözer)
-            if (geojsonData) {
-                setupMapLayers();
-            } else {
-                fetchData();
-            }
+            if (geojsonData) { setupMapLayers(); } else { fetchData(); }
         });
 
+        // JSON HATA TESPİT SİSTEMİ EKLENDİ
         function fetchData() {
-            // Canlı ortam için Cache-busting (Math.random) kaldırıldı. 
             fetch('tours.json')
-                .then(res => res.json())
+                .then(res => {
+                    if (!res.ok) throw new Error("Sunucu JSON dosyasını bulamadı (404)");
+                    return res.json();
+                })
                 .then(data => {
                     const features = data.map(tur => {
-                        let lat = parseFloat(tur.lat);
-                        let lng = parseFloat(tur.lng);
-                        // Hata sigortası: Lat/Lng ters girilirse düzeltir.
+                        let lat = parseFloat(tur.lat); let lng = parseFloat(tur.lng);
                         if(!(lat >= 35 && lat <= 43)) { let temp = lat; lat = lng; lng = temp; }
-                        
                         return {
-                            'type': 'Feature',
-                            'geometry': { 'type': 'Point', 'coordinates': [lng, lat] },
+                            'type': 'Feature', 'geometry': { 'type': 'Point', 'coordinates': [lng, lat] },
                             'properties': { 
-                                'title': tur.isim, 
-                                'image': tur.resim, 
-                                'url': tur.url,
-                                'description': tur.aciklama || 'Bu mekan için henüz bir açıklama girilmemiştir.',
-                                'rating': tur.puan || '5.0',
-                                'lat': lat,
-                                'lng': lng
+                                'title': tur.isim, 'image': tur.resim, 'url': tur.url,
+                                'description': tur.aciklama || 'Açıklama girilmemiştir.', 'rating': tur.puan || '5.0',
+                                'category': tur.kategori || 'diger', 'lat': lat, 'lng': lng
                             }
                         };
                     });
-                    
-                    geojsonData = { 'type': 'FeatureCollection', 'features': features };
+                    allGeojsonData = { 'type': 'FeatureCollection', 'features': features };
+                    geojsonData = allGeojsonData;
                     setupMapLayers();
-                }).catch(err => console.error("Veri çekilemedi. JSON formatını kontrol et:", err));
+                    renderProjectList(features); 
+                })
+                .catch(err => {
+                    console.error("Kritik JSON Hatası:", err);
+                    alert("SİSTEM UYARISI: tours.json dosyası bozuk veya okunamıyor! JSON koduna elle müdahale ederken virgülleri veya parantezleri yanlış girmiş olabilirsin.");
+                });
+        }
+
+        function renderProjectList(features) {
+            const listContainer = document.getElementById('projectList');
+            listContainer.innerHTML = ''; 
+            const sortedFeatures = [...features].sort((a, b) => a.properties.title.localeCompare(b.properties.title));
+
+            sortedFeatures.forEach(f => {
+                const props = f.properties;
+                const div = document.createElement('div');
+                div.className = 'project-item';
+                div.innerHTML = `<strong>${props.title}</strong><span>${props.category}</span>`;
+                div.onclick = () => openProjectPopup(props); 
+                listContainer.appendChild(div);
+            });
+        }
+
+        function searchProjects() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = allGeojsonData.features.filter(f => 
+                f.properties.title.toLowerCase().includes(query) || 
+                f.properties.category.toLowerCase().includes(query)
+            );
+            renderProjectList(filtered);
+            // OTOMASYON İPTAL: Arama yapılsa da menü kendi kendine açılmayacak.
+        }
+
+        function filterCategory(category, btnElement) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            if (category === 'tumu') {
+                geojsonData = allGeojsonData;
+                renderProjectList(allGeojsonData.features);
+            } else {
+                const filteredFeatures = allGeojsonData.features.filter(f => f.properties.category === category);
+                geojsonData = { 'type': 'FeatureCollection', 'features': filteredFeatures };
+                renderProjectList(filteredFeatures); 
+            }
+
+            if (map.getSource('points')) { map.getSource('points').setData(geojsonData); }
+            // OTOMASYON İPTAL: Kategori menüsü veya liste otomatik toplanıp açılmayacak.
+        }
+
+        function openProjectPopup(props) {
+            const coordinates = [props.lng, props.lat];
+            map.flyTo({ center: coordinates, zoom: 16, pitch: 50 });
+
+            const popups = document.getElementsByClassName('mapboxgl-popup');
+            if (popups[0]) popups[0].remove();
+
+            const score = parseFloat(props.rating) || 5;
+            const stars = '★'.repeat(Math.round(score)) + '☆'.repeat(5 - Math.round(score));
+            
+            // Yol tarifi linki Google Maps standartlarına göre onarıldı
+            const routeUrl = `https://www.google.com/maps/dir/?api=1&destination=${props.lat},${props.lng}`;
+
+            new mapboxgl.Popup({ offset: 15, closeButton: false, maxWidth: '280px' })
+                .setLngLat(coordinates)
+                .setHTML(`
+                    <img src="${props.image}" class="popup-img">
+                    <div class="popup-info">
+                        <h3>${props.title}</h3>
+                        <div class="popup-rating">${stars} <span>(${score.toFixed(1)})</span></div>
+                        <div class="popup-desc">${props.description}</div>
+                        <div class="popup-buttons">
+                            <a href="${props.url}" class="popup-btn" target="_blank">TURA GİT</a>
+                            <a href="${routeUrl}" class="popup-btn route" target="_blank">YOL TARİFİ</a>
+                        </div>
+                    </div>
+                `).addTo(map);
+
+            if (window.innerWidth < 768) { toggleSidebar(); }
         }
 
         function setupMapLayers() {
-            // Stil değişince Mapbox source'u siler, bu yüzden tekrar eklememiz lazım.
-            if (!map.getSource('points')) {
-                map.addSource('points', {
-                    'type': 'geojson',
-                    'data': geojsonData,
-                    'cluster': true,
-                    'clusterMaxZoom': 14,
-                    'clusterRadius': 50 
-                });
-            }
-
+            if (!map.getSource('points')) { map.addSource('points', { 'type': 'geojson', 'data': geojsonData, 'cluster': true, 'clusterMaxZoom': 14, 'clusterRadius': 50 }); }
             if (!map.getLayer('clusters')) {
                 map.addLayer({
-                    id: 'clusters',
-                    type: 'circle',
-                    source: 'points',
-                    filter: ['has', 'point_count'],
-                    paint: {
-                        'circle-color': ['step', ['get', 'point_count'], '#F89714', 10, '#e74c3c', 30, '#8e44ad'],
-                        'circle-radius': ['step', ['get', 'point_count'], 20, 10, 30, 30, 40],
-                        'circle-stroke-width': 2,
-                        'circle-stroke-color': '#fff'
-                    }
+                    id: 'clusters', type: 'circle', source: 'points', filter: ['has', 'point_count'],
+                    paint: { 'circle-color': ['step', ['get', 'point_count'], '#F89714', 10, '#e74c3c', 30, '#8e44ad'], 'circle-radius': ['step', ['get', 'point_count'], 20, 10, 30, 30, 40], 'circle-stroke-width': 2, 'circle-stroke-color': '#fff' }
                 });
-
                 map.addLayer({
-                    id: 'cluster-count',
-                    type: 'symbol',
-                    source: 'points',
-                    filter: ['has', 'point_count'],
-                    layout: {
-                        'text-field': '{point_count_abbreviated}',
-                        'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-                        'text-size': 14
-                    },
+                    id: 'cluster-count', type: 'symbol', source: 'points', filter: ['has', 'point_count'],
+                    layout: { 'text-field': '{point_count_abbreviated}', 'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'], 'text-size': 14 },
                     paint: { 'text-color': '#ffffff' }
                 });
-
                 map.addLayer({
-                    'id': 'unclustered-point',
-                    'type': 'symbol',
-                    'source': 'points',
-                    'filter': ['!', ['has', 'point_count']],
-                    'layout': {
-                        'icon-image': 'pulsing-dot',
-                        'icon-allow-overlap': true
-                    }
+                    'id': 'unclustered-point', 'type': 'symbol', 'source': 'points', 'filter': ['!', ['has', 'point_count']],
+                    'layout': { 'icon-image': 'pulsing-dot', 'icon-allow-overlap': true }
                 });
-
                 map.on('click', 'clusters', (e) => {
                     const features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
                     const clusterId = features[0].properties.cluster_id;
-                    map.getSource('points').getClusterExpansionZoom(clusterId, (err, zoom) => {
-                        if (err) return;
-                        map.easeTo({ center: features[0].geometry.coordinates, zoom: zoom });
-                    });
+                    map.getSource('points').getClusterExpansionZoom(clusterId, (err, zoom) => { if (err) return; map.easeTo({ center: features[0].geometry.coordinates, zoom: zoom }); });
                 });
-
                 map.on('click', 'unclustered-point', (e) => {
-                    const coordinates = e.features[0].geometry.coordinates.slice();
-                    const props = e.features[0].properties;
-
-                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-                    }
-                    
-                    map.flyTo({ center: coordinates, zoom: 16, pitch: 50 });
-
-                    // NaN hatasını engellemek için güvenlik
-                    const score = parseFloat(props.rating) || 5;
-                    const stars = '★'.repeat(Math.round(score)) + '☆'.repeat(5 - Math.round(score));
-                    
-                    const routeUrl = `https://www.google.com/maps/dir/?api=1&destination=${props.lat},${props.lng}`;
-
-                    new mapboxgl.Popup({ offset: 15, closeButton: false, maxWidth: '300px' })
-                        .setLngLat(coordinates)
-                        .setHTML(`
-                            <img src="${props.image}" class="popup-img">
-                            <div class="popup-info">
-                                <h3>${props.title}</h3>
-                                <div class="popup-rating">${stars} <span>(${score.toFixed(1)})</span></div>
-                                <div class="popup-desc">${props.description}</div>
-                                <div class="popup-buttons">
-                                    <a href="${props.url}" class="popup-btn" target="_blank">TURA GİT</a>
-                                    <a href="${routeUrl}" class="popup-btn route" target="_blank">YOL TARİFİ</a>
-                                </div>
-                            </div>
-                        `).addTo(map);
+                    const props = e.features[0].properties; openProjectPopup(props); 
                 });
-
                 map.on('mouseenter', 'clusters', () => { map.getCanvas().style.cursor = 'pointer'; });
                 map.on('mouseleave', 'clusters', () => { map.getCanvas().style.cursor = ''; });
                 map.on('mouseenter', 'unclustered-point', () => { map.getCanvas().style.cursor = 'pointer'; });
@@ -372,14 +465,10 @@
             const layers = map.getStyle().layers;
             const labelLayerId = layers.find((l) => l.type === 'symbol' && l.layout['text-field']);
             const insertBefore = labelLayerId ? labelLayerId.id : undefined;
-            
             map.addLayer({
                 'id': '3d-buildings', 'source': 'composite', 'source-layer': 'building',
                 'filter': ['==', 'extrude', 'true'], 'type': 'fill-extrusion', 'minzoom': 13,
-                'paint': {
-                    'fill-extrusion-color': '#aaa', 'fill-extrusion-height': ['get', 'height'],
-                    'fill-extrusion-base': ['get', 'min_height'], 'fill-extrusion-opacity': 0.8
-                }
+                'paint': { 'fill-extrusion-color': '#aaa', 'fill-extrusion-height': ['get', 'height'], 'fill-extrusion-base': ['get', 'min_height'], 'fill-extrusion-opacity': 0.8 }
             }, insertBefore);
         }
 
@@ -389,9 +478,7 @@
             else { if(map.getLayer('3d-buildings')) map.setLayoutProperty('3d-buildings', 'visibility', 'none'); }
         }
 
-        function changeStyle(styleID) {
-            map.setStyle('mapbox://styles/mapbox/' + styleID);
-        }
+        function changeStyle(styleID) { map.setStyle('mapbox://styles/mapbox/' + styleID); }
     </script>
 </body>
 </html>
