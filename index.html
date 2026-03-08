@@ -6,12 +6,17 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-2BCTTB5Z22');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
     <title>MetGeo360 | Coğrafi Bilgi Portalı</title>
+    <meta name="description" content="Sanal Konya Turu ve Türkiye'yi kapsayan dijital harita ve 360 derece sanal tur platformu.">
+    <meta property="og:title" content="MetGeo360 | Sanal Tur ve Coğrafi Bilgi Portalı">
+    <meta property="og:description" content="İşletmeler, projeler ve 360 derece sanal turları harita üzerinde keşfedin.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
     
     <link rel="icon" type="image/png" href="logo.png" />
     
@@ -59,6 +64,8 @@
         .intro-footer { font-size: 11px; color: #888; border-top: 1px solid var(--border-glass); padding-top: 20px; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
         .intro-contact { color: var(--primary); font-weight: bold; font-size: 15px; margin-top: 8px; display: block; text-decoration: none; letter-spacing: 1px; transition: 0.2s; }
         .intro-contact:hover { color: #fff; }
+        .intro-btn { background: var(--primary); color: #000; border: none; padding: 10px 20px; font-size: 12px; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 15px; transition: 0.2s; }
+        .intro-btn:hover { background: #fff; }
 
         /* --- KONTROL ÇEKMECESİ --- */
         .sidebar-wrapper {
@@ -169,9 +176,9 @@
         <span>METGEO<b>360</b></span>
     </div>
 
-    <div id="intro-overlay" onclick="closeIntro()">
+    <div id="intro-overlay" onclick="closeIntro(false)">
         <div class="intro-box" onclick="event.stopPropagation()">
-            <span class="intro-close" onclick="closeIntro()">×</span>
+            <span class="intro-close" onclick="closeIntro(false)">×</span>
             <h2 class="intro-title">METGEO360 PROJE VİZYONU</h2>
             <div class="intro-text">
                 Web platformumuz şu anda <span style="color: var(--primary); font-weight: bold;">geliştirme</span> sürecindedir. İncelemekte olduğunuz bu sürüm, projelerimizi önizlemeniz amacıyla hazırlanmış bir <strong style="color: var(--primary);">DEMO</strong> versiyondur.
@@ -180,6 +187,7 @@
                 <br><br>
                 Hem sosyal etkileşim kurabileceğiniz, hem de öncelikle <strong>Sanal Konya Turu</strong> ve ilerleyen süreçte tüm Türkiye'yi kapsayan dijital deneyimler yaşayabileceğiniz devasa bir platforma hazırlanıyoruz.
             </div>
+            <button class="intro-btn" onclick="closeIntro(true)">Anladım, Bir Daha Gösterme</button>
             <div class="intro-footer">
                 <p>BU BİR <strong style="color: #fff;">METEHAN HARİTA MÜHENDİSLİK</strong> KURULUŞUDUR.</p>
                 <p style="margin-top:8px; color:#aaa;">Hamzaoğlu Mah. Büyük Kumköprü Cad. No:127/E Karatay/KONYA</p>
@@ -245,10 +253,18 @@
     <div id="map"></div>
 
     <script>
+        // Lütfen Mapbox panelinden bu token'a URL kısıtlaması ekle!
         mapboxgl.accessToken = 'pk.eyJ1IjoibWFwZ2VvMzYwIiwiYSI6ImNtbDVzcWw0azA0aWIza3NjMTZoZ21rOWwifQ.agrbCVkuqhdshT8Yy6HuSw';
 
         let allGeojsonData = null; 
         let geojsonData = null; 
+
+        // LocalStorage kontrolü (Açılış ekranı için)
+        document.addEventListener("DOMContentLoaded", () => {
+            if(localStorage.getItem('hideIntro') === 'true') {
+                document.getElementById('intro-overlay').style.display = 'none';
+            }
+        });
 
         function toggleMenu(btn) {
             const menu = document.getElementById('layerMenu');
@@ -280,7 +296,8 @@
             else { list.classList.add('open'); icon.innerHTML = '▲'; }
         }
 
-        function closeIntro() {
+        function closeIntro(forever) {
+            if(forever) localStorage.setItem('hideIntro', 'true');
             const overlay = document.getElementById('intro-overlay');
             overlay.style.opacity = '0';
             setTimeout(() => { overlay.style.display = 'none'; }, 600);
@@ -333,7 +350,6 @@
             if (geojsonData) { setupMapLayers(); } else { fetchData(); }
         });
 
-        // JSON HATA TESPİT SİSTEMİ EKLENDİ
         function fetchData() {
             fetch('tours.json')
                 .then(res => {
@@ -342,8 +358,11 @@
                 })
                 .then(data => {
                     const features = data.map(tur => {
-                        let lat = parseFloat(tur.lat); let lng = parseFloat(tur.lng);
-                        if(!(lat >= 35 && lat <= 43)) { let temp = lat; lat = lng; lng = temp; }
+                        let lat = parseFloat(tur.lat); 
+                        let lng = parseFloat(tur.lng);
+                        
+                        // Gereksiz düzeltme hack'i silindi. Verini Python'da doğru oluştur.
+                        
                         return {
                             'type': 'Feature', 'geometry': { 'type': 'Point', 'coordinates': [lng, lat] },
                             'properties': { 
@@ -360,7 +379,7 @@
                 })
                 .catch(err => {
                     console.error("Kritik JSON Hatası:", err);
-                    alert("SİSTEM UYARISI: tours.json dosyası bozuk veya okunamıyor! JSON koduna elle müdahale ederken virgülleri veya parantezleri yanlış girmiş olabilirsin.");
+                    alert("SİSTEM UYARISI: tours.json dosyası okunamıyor!");
                 });
         }
 
@@ -386,7 +405,6 @@
                 f.properties.category.toLowerCase().includes(query)
             );
             renderProjectList(filtered);
-            // OTOMASYON İPTAL: Arama yapılsa da menü kendi kendine açılmayacak.
         }
 
         function filterCategory(category, btnElement) {
@@ -403,7 +421,6 @@
             }
 
             if (map.getSource('points')) { map.getSource('points').setData(geojsonData); }
-            // OTOMASYON İPTAL: Kategori menüsü veya liste otomatik toplanıp açılmayacak.
         }
 
         function openProjectPopup(props) {
@@ -416,7 +433,7 @@
             const score = parseFloat(props.rating) || 5;
             const stars = '★'.repeat(Math.round(score)) + '☆'.repeat(5 - Math.round(score));
             
-            // Yol tarifi linki Google Maps standartlarına göre onarıldı
+            // Standart Google Maps Yol Tarifi Linki
             const routeUrl = `https://www.google.com/maps/dir/?api=1&destination=${props.lat},${props.lng}`;
 
             new mapboxgl.Popup({ offset: 15, closeButton: false, maxWidth: '280px' })
@@ -434,7 +451,16 @@
                     </div>
                 `).addTo(map);
 
-            if (window.innerWidth < 768) { toggleSidebar(); }
+            // MOBİLDE EKRAN KAPLAMA HATASI BURADA DÜZELTİLDİ.
+            // Sadece menü zaten açıksa kapatır. Kapalıysa kendi kendine açıp ekranı işgal etmez.
+            if (window.innerWidth < 768) { 
+                const wrapper = document.getElementById('sidebarWrapper');
+                const arrow = document.getElementById('sidebarArrow');
+                if (wrapper.classList.contains('open')) {
+                    wrapper.classList.remove('open');
+                    arrow.innerHTML = '❯';
+                }
+            }
         }
 
         function setupMapLayers() {
